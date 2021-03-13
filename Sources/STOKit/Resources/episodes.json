@@ -1,0 +1,547 @@
+[
+    {
+        "name": "Graduation Day",
+        "arc": "Starfleet2409Tutorial",
+        "number": 1
+    },
+    {
+        "name": "Training Cruise",
+        "arc": "Starfleet2409Tutorial",
+        "number": 2
+    },
+    {
+        "name": "Field Promotions",
+        "arc": "Starfleet2409Tutorial",
+        "number": 3
+    },
+    {
+        "name": "Communication Breakdown",
+        "arc": "Starfleet2409Tutorial",
+        "number": 4
+    },
+    {
+        "name": "Assimilation of the Innocent",
+        "arc": "Starfleet2409Tutorial",
+        "number": 5
+    },
+    {
+        "name": "I Sing of Arms",
+        "arc":"StarfleetTOSTutorial",
+        "number": 1
+    },
+    {
+        "name": "Search and Rescue",
+        "arc": "StarfleetTOSTutorial",
+        "number": 2
+    },
+    {
+        "name": "Bull by the Horns",
+        "arc": "StarfleetTOSTutorial",
+        "number": 3
+    },
+    {
+        "name": "Dislodging Klingons",
+        "arc": "StarfleetTOSTutorial",
+        "number": 4
+    },
+    {
+        "name": "The Taurean Affair",
+        "arc": "StarfleetTOSTutorial",
+        "number": 5
+    },
+    {
+        "name": "Earthward Bound",
+        "arc": "StarfleetTOSTutorial",
+        "number": 6
+    },
+    {
+        "name": "Graduation Day",
+        "arc": "StarfleetDSCTutorial",
+        "number": 1
+    },
+    {
+        "name": "Routine Maneuvers",
+        "arc": "StarfleetDSCTutorial",
+        "number": 2
+    },
+    {
+        "name": "Trial by Fire",
+        "arc": "StarfleetDSCTutorial",
+        "number": 3
+    },
+    {
+        "name": "The Shadow Knows",
+        "arc": "StarfleetDSCTutorial",
+        "number": 4
+    },
+    {
+        "name": "Children of War",
+        "arc": "StarfleetDSCTutorial",
+        "number": 5
+    },
+    {
+        "name": "Reporting In",
+        "arc": "StarfleetDSCTutorial",
+        "number": 6
+    },
+    {
+        "name": "Explore Earth Spacedock",
+        "arc": "AgentsOfYesterday",
+        "number": 1
+    },
+    {
+        "name": "In the Shadow of Cestus",
+        "arc": "AgentsOfYesterday",
+        "number": 2
+    },
+    {
+        "name": "Painful Omens",
+        "arc": "AgentsOfYesterday",
+        "number": 3
+    },
+    {
+        "name": "Return to Babel",
+        "arc": "AgentsOfYesterday",
+        "number": 4
+    },
+    {
+        "name": "Tangled Webs",
+        "arc": "AgentsOfYesterday",
+        "number": 5
+    },
+    {
+        "name": "The Battle of Caleb IV",
+        "arc": "AgentsOfYesterday",
+        "number": 6
+    },
+    {
+        "name": "Welcome to Earth Spacedock",
+        "arc": "KlingonWar",
+        "number": 1
+    },
+    {
+        "name": "Diplomatic Orders",
+        "arc": "KlingonWar",
+        "number": 2
+    },
+    {
+        "name": "Stranded in Space",
+        "arc": "KlingonWar",
+        "number": 3
+    },
+    {
+        "name": "Researcher Rescue",
+        "arc": "KlingonWar",
+        "number": 4
+    },
+    {
+        "name": "Secret Orders",
+        "arc": "KlingonWar",
+        "number": 5
+    },
+    {
+        "name": "The Doomsday Device",
+        "arc": "KlingonWar",
+        "number": 6
+    },
+    {
+        "name": "The Galaxy at Large",
+        "arc": "KlingonWar",
+        "number": 7
+    },
+    {
+        "name": "Heading Out",
+        "arc": "RomulanMystery",
+        "number": 1
+    },
+    {
+        "name": "Empress Sela",
+        "arc": "RomulanMystery",
+        "number": 2
+    },
+    {
+        "name": "Desperate Measures",
+        "arc": "RomulanMystery",
+        "number": 3
+    },
+    {
+        "name": "Shadow Play",
+        "arc": "RomulanMystery",
+        "number": 4
+    },
+    {
+        "name": "Taris",
+        "arc": "RomulanMystery",
+        "number": 5
+    },
+    {
+        "name": "End of Watch",
+        "arc": "KlingonTutorial",
+        "number": 1
+    },
+    {
+        "name": "Red Alert!",
+        "arc": "KlingonTutorial",
+        "number": 2
+    },
+    {
+        "name": "Intruder Alert",
+        "arc": "KlingonTutorial",
+        "number": 3
+    },
+    {
+        "name": "Challenge for Command",
+        "arc": "KlingonTutorial",
+        "number": 4
+    },
+    {
+        "name": "Your New Command",
+        "arc": "KlingonTutorial",
+        "number": 5
+    },
+    {
+        "name": "Journey to Qo'noS",
+        "arc": "KlingonTutorial",
+        "number": 6
+    },
+    {
+        "name": "Duties of Command",
+        "arc": "Empire",
+        "number": 1
+    },
+    {
+        "name": "The Hunt is On",
+        "arc": "Empire",
+        "number": 2
+    },
+    {
+        "name": "Space Chase",
+        "arc": "Empire",
+        "number": 3
+    },
+    {
+        "name": "Manhunt",
+        "arc": "Empire",
+        "number": 4
+    },
+    {
+        "name": "Friend or Foe",
+        "arc": "Empire",
+        "number": 5
+    },
+    {
+        "name": "Bringing Down the House",
+        "arc": "Warzone",
+        "number": 1
+    },
+    {
+        "name": "The House Always Wins",
+        "arc": "Warzone",
+        "number": 2
+    },
+    {
+        "name": "Mars, the Bringer of War",
+        "arc": "Warzone",
+        "number": 3
+    },
+    {
+        "name": "Alpha",
+        "arc": "Warzone",
+        "number": 4
+    },
+    {
+        "name": "Blood of the Empire",
+        "arc": "FekIhriReturn",
+        "number": 1
+    },
+    {
+        "name": "Destiny",
+        "arc": "FekIhriReturn",
+        "number": 2
+    },
+    {
+        "name": "Afterlife",
+        "arc": "FekIhriReturn",
+        "number": 3
+    },
+    {
+        "name": "Hunt",
+        "arc": "DominionTutorial",
+        "number": 1
+    },
+    {
+        "name": "Ceremony",
+        "arc": "DominionTutorial",
+        "number": 2
+    },
+    {
+        "name": "Turn the Tide",
+        "arc": "DominionTutorial",
+        "number": 3
+    },
+    {
+        "name": "A Day on the Farm",
+        "arc": "RomulanTutorial",
+        "number": 1
+    },
+    {
+        "name": "A Day in the Sun",
+        "arc": "RomulanTutorial",
+        "number": 2
+    },
+    {
+        "name": "Virinat, Invaded",
+        "arc": "RomulanTutorial",
+        "number": 3
+    },
+    {
+        "name": "Flight from Virinat",
+        "arc": "RomulanTutorial",
+        "number": 4
+    },
+    {
+        "name": "Explore the Flotilla",
+        "arc": "FromTheAshes",
+        "number": 1
+    },
+    {
+        "name": "The Helix",
+        "arc": "FromTheAshes",
+        "number": 2
+    },
+    {
+        "name": "Crossroads at Crateris",
+        "arc": "FromTheAshes",
+        "number": 3
+    },
+    {
+        "name": "Gasko Blues",
+        "arc": "FromTheAshes",
+        "number": 4
+    },
+    {
+        "name": "The Search for New Romulus",
+        "arc": "FromTheAshes",
+        "number": 5
+    },
+    {
+        "name": "Turning Point",
+        "arc": "FromTheAshes",
+        "number": 6
+    },
+    {
+        "name": "Neutral No More",
+        "arc": "FromTheAshes",
+        "number": 7
+    },
+    {
+        "name": "The Price of Neutrality",
+        "arc": "Allies",
+        "number": 1
+    },
+    {
+        "name": "Memory Lane",
+        "arc": "Allies",
+        "number": 2
+    },
+    {
+        "name": "Bigger Picture",
+        "arc": "Allies",
+        "number": 3
+    },
+    {
+        "name": "Smash and Grab",
+        "arc": "Allies",
+        "number": 4
+    },
+    {
+        "name": "Tradecraft",
+        "arc": "Allies",
+        "number": 5
+    },
+    {
+        "name": "An Inside Job",
+        "arc": "InShadows",
+        "number": 1
+    },
+    {
+        "name": "Enemy Action",
+        "arc": "InShadows",
+        "number": 2
+    },
+    {
+        "name": "Sleepers",
+        "arc": "InShadows",
+        "number": 3
+    },
+    {
+        "name": "Cloak and Dagger",
+        "arc": "InShadows",
+        "number": 4
+    },
+    {
+        "name": "Revelation",
+        "arc": "InShadows",
+        "number": 5
+    },
+    {
+        "name": "Mind Game",
+        "arc": "InShadows",
+        "number": 6
+    },
+    {
+        "name": "Secrets of Nimbus",
+        "arc": "Wasteland",
+        "number": 1
+    },
+    {
+        "name": "The Lost City of Paradise",
+        "arc": "Wasteland",
+        "number": 2
+    },
+    {
+        "name": "Blind Men Tell All Tales",
+        "arc": "Wasteland",
+        "number": 3
+    },
+    {
+        "name": "The Undying",
+        "arc": "Wasteland",
+        "number": 4
+    },
+    {
+        "name": "A Fistful of Gorn",
+        "arc": "Wasteland",
+        "number": 5
+    },
+    {
+        "name": "Installation 18",
+        "arc": "Wasteland",
+        "number": 6
+    },
+    {
+        "name": "Voice of the Voiceless",
+        "arc": "Vengeance",
+        "number": 1
+    },
+    {
+        "name": "Abducted",
+        "arc": "Vengeance",
+        "number": 2
+    },
+    {
+        "name": "Small Packages",
+        "arc": "Vengeance",
+        "number": 3
+    },
+    {
+        "name": "Last Stand",
+        "arc": "Vengeance",
+        "number": 4
+    },
+    {
+        "name": "The Best Defense",
+        "arc": "Vengeance",
+        "number": 5
+    },
+    {
+        "name": "Turnabout",
+        "arc": "Vengeance",
+        "number": 6
+    },
+    {
+        "name": "Devil's Choice",
+        "arc": "Vengeance",
+        "number": 7
+    },
+    {
+        "name": "Toward Freedom",
+        "arc": "Freedom",
+        "number": 1
+    },
+    {
+        "name": "The Vault",
+        "arc": "CloakedIntentions",
+        "number": 1
+    },
+    {
+        "name": "Mine Enemy",
+        "arc": "CloakedIntentions",
+        "number": 2
+    },
+    {
+        "name": "Frozen",
+        "arc": "CloakedIntentions",
+        "number": 3
+    },
+    {
+        "name": "Coliseum",
+        "arc": "CloakedIntentions",
+        "number": 4
+    },
+    {
+        "name": "Cutting the Cord",
+        "arc": "CloakedIntentions",
+        "number": 5
+    },
+    {
+        "name": "Darkness Before the Dawn",
+        "arc": "CloakedIntentions",
+        "number": 6
+    },
+    {
+        "name": "Lost and Found",
+        "arc": "CardassianStruggle",
+        "number": 1
+    },
+    {
+        "name": "Spoils of War",
+        "arc": "CardassianStruggle",
+        "number": 2
+    },
+    {
+        "name": "Jabberwocky",
+        "arc": "CardassianStruggle",
+        "number": 3
+    },
+    {
+        "name": "The Factory",
+        "arc": "CardassianStruggle",
+        "number": 4
+    },
+    {
+        "name": "The New Link",
+        "arc": "CardassianStruggle",
+        "number": 5
+    },
+    {
+        "name": "Lost Dominion",
+        "arc": "The2800",
+        "number": 1
+    },
+    {
+        "name": "Second Wave",
+        "arc": "The2800",
+        "number": 2
+    },
+    {
+        "name": "Of Bajor",
+        "arc": "The2800",
+        "number": 3
+    },
+    {
+        "name": "Operation Gamma",
+        "arc": "The2800",
+        "number": 4
+    },
+    {
+        "name": "Facility 4028",
+        "arc": "The2800",
+        "number": 5
+    },
+    {
+        "name": "Boldly They Rode",
+        "arc": "The2800",
+        "number": 6
+    }
+]

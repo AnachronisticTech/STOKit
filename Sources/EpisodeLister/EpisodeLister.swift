@@ -4,9 +4,11 @@ import STOKit
 struct EpisodeLister {
     static func main() {
         // getEpisodes()
-        // save(character: STOPlayableCharacter(name: "Iesel", faction: .StarfleetDSC))
+        save(character: STOPlayableCharacter(name: "Iesel", faction: .StarfleetDSC))
         // save(character: STOPlayableCharacter(name: "Talia", faction: .Starfleet2409))
-        loadCharacter(named: "Talia")
+        // loadCharacter(named: "Talia")
+        guard var iesel = loadCharacter(named: "Iesel") as? STOPlayableCharacter else { fatalError() }
+        print(iesel.reputations)
     }
 
     static func getEpisodes() {
@@ -27,12 +29,14 @@ struct EpisodeLister {
         character.save()
     }
 
-    static func loadCharacter(named name: String) {
+    @discardableResult
+    static func loadCharacter(named name: String) -> STOCharacter? {
         print("Loading character")
-        guard let character = STOPlayableCharacter.load(character: name) else { return }
+        guard let character = STOPlayableCharacter.load(character: name) else { return nil }
         print(character.journal.episodes.completed)
         print(character.journal.episodes.incomplete)
         print(character.journal.episodes[.Starfleet2409Tutorial])
         print(character.journal.episodes[.StarfleetDSCTutorial])
+        return character
     }
 }

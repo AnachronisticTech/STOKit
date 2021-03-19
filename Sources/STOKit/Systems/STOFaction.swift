@@ -58,6 +58,20 @@ public enum STOFaction: String, CaseIterable, Codable {
                 ] + STOStoryArc.crossFaction
         }
     }
+
+    public var permittedOfficerFactions: [STOFaction] {
+        switch self {
+            case .Starfleet2409, .StarfleetTOS, .StarfleetDSC:
+                return [.Starfleet2409, .StarfleetTOS, .StarfleetDSC]
+            case .KDF: return [.KDF]
+            case .RomulanFED:
+                return [.Starfleet2409, .StarfleetTOS, .StarfleetDSC, .RomulanFED]
+            case .RomulanKDF: return [.KDF, .RomulanKDF]
+            case .DominionFED:
+                return [.Starfleet2409, .StarfleetTOS, .StarfleetDSC, .DominionFED]
+            case .DominionKDF: return [.KDF, .DominionKDF]
+        }
+    }
 }
 
 extension STOFaction: CustomStringConvertible {

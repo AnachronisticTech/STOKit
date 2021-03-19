@@ -4,15 +4,22 @@ import STOKit
 struct EpisodeLister {
     static func main() {
         // getEpisodes()
-        var character = STOPlayableCharacter(name: "Iesel", faction: .StarfleetDSC)
+
+        let boff = STOBridgeOfficer(name: "Jessica", faction: .Starfleet2409, career: .Tactical, "47B2B728-566A-41E0-845F-DC630BBFBC72")
+        let id = boff.identifier
+        boff.save()
+        guard let jessica = STOBridgeOfficer.load(with: id) else { fatalError() }
+        print(jessica.name)
+
+        var character = STOPlayableCharacter(name: "Talia", faction: .Starfleet2409, career: .Engineering)
         character.journal.episodes[STOEpisode(name: "Graduation Day", arc: .StarfleetDSCTutorial, number: 1)] = true
         character.reputations[.Omega].set(xp: 7500)
-        save(character: character)
-        // save(character: STOPlayableCharacter(name: "Talia", faction: .Starfleet2409))
-        // loadCharacter(named: "Talia")
-        guard var iesel = loadCharacter(named: "Iesel") as? STOPlayableCharacter else { fatalError() }
-        print("eps: \(iesel.journal.episodes.sorted())")
-        print("reps: \(iesel.reputations.sorted())")
+        character.bridgeOfficers.append(jessica)
+        character.save()
+        guard let talia = STOPlayableCharacter.load("Talia") else { fatalError() }
+        // print("eps: \(talia.journal.episodes.sorted())")
+        // print("reps: \(talia.reputations.sorted())")
+        print("boffs: \(talia.bridgeOfficers)")
     }
 
     static func getEpisodes() {
@@ -24,23 +31,5 @@ struct EpisodeLister {
                 print("\t\(arc.description): \(episodes.filter({ $0.arc == arc }).sorted().map({ $0.name }))")
             }
         }
-    }
-
-    static func save(character: STOPlayableCharacter) {
-        print("Saving character")
-        // print(character.journal.episodes.sorted())
-        // print(character.journal.episodes[.Starfleet2409Tutorial])
-        character.save()
-    }
-
-    @discardableResult
-    static func loadCharacter(named name: String) -> STOCharacter? {
-        print("Loading character")
-        guard let character = STOPlayableCharacter.load(character: name) else { return nil }
-        // print(character.journal.episodes.completed)
-        // print(character.journal.episodes.incomplete)
-        // print(character.journal.episodes[.Starfleet2409Tutorial])
-        // print(character.journal.episodes[.StarfleetDSCTutorial])
-        return character
     }
 }

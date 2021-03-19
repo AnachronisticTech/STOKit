@@ -1,4 +1,4 @@
-public struct STOReputation: Codable {
+public struct STOReputation {
     public let organization: STOReputationOrganization
 
     @Clamped(0...250000) public var xp: Int = 0
@@ -15,14 +15,20 @@ public struct STOReputation: Codable {
         }
     }
 
-    enum CodingKeys: String, CodingKey {
-        case org = "organization"
-        case xp
-    }
-
     public init(organization: STOReputationOrganization, xp: Int = 0) {
         self.organization = organization
         self.xp = xp
+    }
+
+    public mutating func set(xp: Int) {
+        self.xp = xp
+    }
+}
+
+extension STOReputation: Codable {
+    enum CodingKeys: String, CodingKey {
+        case org = "organization"
+        case xp
     }
 
     public init(from decoder: Decoder) throws {
@@ -35,5 +41,23 @@ public struct STOReputation: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(organization, forKey: .org)
         try container.encode(xp, forKey: .xp)
+    }
+}
+
+extension STOReputation: Comparable {
+    public static func <(lhs: STOReputation, rhs: STOReputation) -> Bool {
+        return lhs.organization.order < rhs.organization.order
+    }
+}
+
+extension STOReputation: Equatable {
+    public static func ==(lhs: STOReputation, rhs: STOReputation) -> Bool {
+        return lhs.organization == rhs.organization && lhs.xp == rhs.xp
+    }
+}
+
+extension STOReputation: CustomStringConvertible {
+    public var description: String {
+        return "\(organization): Tier \(tier) (\(xp) xp)"
     }
 }

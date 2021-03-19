@@ -1,8 +1,8 @@
 public struct STOPlayableCharacter: STOCharacter {
     public private(set) var name: String
     public private(set) var faction: STOFaction
-    public private(set) var journal: STOJournal
-    public private(set) var reputations: STOReputationCollection
+    public var journal: STOJournal
+    public var reputations: STOReputationCollection
 
     public init(name: String, faction: STOFaction) {
         self.name = name

@@ -1,207 +1,207 @@
 [
     {
         "name": "Graduation Day",
-        "arc": "Starfleet2409Tutorial",
+        "arc": "Starfleet Tutorial (2409)",
         "number": 1
     },
     {
         "name": "Training Cruise",
-        "arc": "Starfleet2409Tutorial",
+        "arc": "Starfleet Tutorial (2409)",
         "number": 2
     },
     {
         "name": "Field Promotions",
-        "arc": "Starfleet2409Tutorial",
+        "arc": "Starfleet Tutorial (2409)",
         "number": 3
     },
     {
         "name": "Communication Breakdown",
-        "arc": "Starfleet2409Tutorial",
+        "arc": "Starfleet Tutorial (2409)",
         "number": 4
     },
     {
         "name": "Assimilation of the Innocent",
-        "arc": "Starfleet2409Tutorial",
+        "arc": "Starfleet Tutorial (2409)",
         "number": 5
     },
     {
         "name": "I Sing of Arms",
-        "arc":"StarfleetTOSTutorial",
+        "arc":"Starfleet Tutorial (TOS)",
         "number": 1
     },
     {
         "name": "Search and Rescue",
-        "arc": "StarfleetTOSTutorial",
+        "arc": "Starfleet Tutorial (TOS)",
         "number": 2
     },
     {
         "name": "Bull by the Horns",
-        "arc": "StarfleetTOSTutorial",
+        "arc": "Starfleet Tutorial (TOS)",
         "number": 3
     },
     {
         "name": "Dislodging Klingons",
-        "arc": "StarfleetTOSTutorial",
+        "arc": "Starfleet Tutorial (TOS)",
         "number": 4
     },
     {
         "name": "The Taurean Affair",
-        "arc": "StarfleetTOSTutorial",
+        "arc": "Starfleet Tutorial (TOS)",
         "number": 5
     },
     {
         "name": "Earthward Bound",
-        "arc": "StarfleetTOSTutorial",
+        "arc": "Starfleet Tutorial (TOS)",
         "number": 6
     },
     {
         "name": "Graduation Day",
-        "arc": "StarfleetDSCTutorial",
+        "arc": "Starfleet Tutorial (DSC)",
         "number": 1
     },
     {
         "name": "Routine Maneuvers",
-        "arc": "StarfleetDSCTutorial",
+        "arc": "Starfleet Tutorial (DSC)",
         "number": 2
     },
     {
         "name": "Trial by Fire",
-        "arc": "StarfleetDSCTutorial",
+        "arc": "Starfleet Tutorial (DSC)",
         "number": 3
     },
     {
         "name": "The Shadow Knows",
-        "arc": "StarfleetDSCTutorial",
+        "arc": "Starfleet Tutorial (DSC)",
         "number": 4
     },
     {
         "name": "Children of War",
-        "arc": "StarfleetDSCTutorial",
+        "arc": "Starfleet Tutorial (DSC)",
         "number": 5
     },
     {
         "name": "Reporting In",
-        "arc": "StarfleetDSCTutorial",
+        "arc": "Starfleet Tutorial (DSC)",
         "number": 6
     },
     {
         "name": "Explore Earth Spacedock",
-        "arc": "AgentsOfYesterday",
+        "arc": "Agents of Yesterday",
         "number": 1
     },
     {
         "name": "In the Shadow of Cestus",
-        "arc": "AgentsOfYesterday",
+        "arc": "Agents of Yesterday",
         "number": 2
     },
     {
         "name": "Painful Omens",
-        "arc": "AgentsOfYesterday",
+        "arc": "Agents of Yesterday",
         "number": 3
     },
     {
         "name": "Return to Babel",
-        "arc": "AgentsOfYesterday",
+        "arc": "Agents of Yesterday",
         "number": 4
     },
     {
         "name": "Tangled Webs",
-        "arc": "AgentsOfYesterday",
+        "arc": "Agents of Yesterday",
         "number": 5
     },
     {
         "name": "The Battle of Caleb IV",
-        "arc": "AgentsOfYesterday",
+        "arc": "Agents of Yesterday",
         "number": 6
     },
     {
         "name": "Welcome to Earth Spacedock",
-        "arc": "KlingonWar",
+        "arc": "Klingon War",
         "number": 1
     },
     {
         "name": "Diplomatic Orders",
-        "arc": "KlingonWar",
+        "arc": "Klingon War",
         "number": 2
     },
     {
         "name": "Stranded in Space",
-        "arc": "KlingonWar",
+        "arc": "Klingon War",
         "number": 3
     },
     {
         "name": "Researcher Rescue",
-        "arc": "KlingonWar",
+        "arc": "Klingon War",
         "number": 4
     },
     {
         "name": "Secret Orders",
-        "arc": "KlingonWar",
+        "arc": "Klingon War",
         "number": 5
     },
     {
         "name": "The Doomsday Device",
-        "arc": "KlingonWar",
+        "arc": "Klingon War",
         "number": 6
     },
     {
         "name": "The Galaxy at Large",
-        "arc": "KlingonWar",
+        "arc": "Klingon War",
         "number": 7
     },
     {
         "name": "Heading Out",
-        "arc": "RomulanMystery",
+        "arc": "Romulan Mystery",
         "number": 1
     },
     {
         "name": "Empress Sela",
-        "arc": "RomulanMystery",
+        "arc": "Romulan Mystery",
         "number": 2
     },
     {
         "name": "Desperate Measures",
-        "arc": "RomulanMystery",
+        "arc": "Romulan Mystery",
         "number": 3
     },
     {
         "name": "Shadow Play",
-        "arc": "RomulanMystery",
+        "arc": "Romulan Mystery",
         "number": 4
     },
     {
         "name": "Taris",
-        "arc": "RomulanMystery",
+        "arc": "Romulan Mystery",
         "number": 5
     },
     {
         "name": "End of Watch",
-        "arc": "KlingonTutorial",
+        "arc": "Klingon Tutorial",
         "number": 1
     },
     {
         "name": "Red Alert!",
-        "arc": "KlingonTutorial",
+        "arc": "Klingon Tutorial",
         "number": 2
     },
     {
         "name": "Intruder Alert",
-        "arc": "KlingonTutorial",
+        "arc": "Klingon Tutorial",
         "number": 3
     },
     {
         "name": "Challenge for Command",
-        "arc": "KlingonTutorial",
+        "arc": "Klingon Tutorial",
         "number": 4
     },
     {
         "name": "Your New Command",
-        "arc": "KlingonTutorial",
+        "arc": "Klingon Tutorial",
         "number": 5
     },
     {
         "name": "Journey to Qo'noS",
-        "arc": "KlingonTutorial",
+        "arc": "Klingon Tutorial",
         "number": 6
     },
     {
@@ -251,87 +251,87 @@
     },
     {
         "name": "Blood of the Empire",
-        "arc": "FekIhriReturn",
+        "arc": "Fek'Ihri Return",
         "number": 1
     },
     {
         "name": "Destiny",
-        "arc": "FekIhriReturn",
+        "arc": "Fek'Ihri Return",
         "number": 2
     },
     {
         "name": "Afterlife",
-        "arc": "FekIhriReturn",
+        "arc": "Fek'Ihri Return",
         "number": 3
     },
     {
         "name": "Hunt",
-        "arc": "DominionTutorial",
+        "arc": "Engineered for War",
         "number": 1
     },
     {
         "name": "Ceremony",
-        "arc": "DominionTutorial",
+        "arc": "Engineered for War",
         "number": 2
     },
     {
         "name": "Turn the Tide",
-        "arc": "DominionTutorial",
+        "arc": "Engineered for War",
         "number": 3
     },
     {
         "name": "A Day on the Farm",
-        "arc": "RomulanTutorial",
+        "arc": "Romulan Tutorial",
         "number": 1
     },
     {
         "name": "A Day in the Sun",
-        "arc": "RomulanTutorial",
+        "arc": "Romulan Tutorial",
         "number": 2
     },
     {
         "name": "Virinat, Invaded",
-        "arc": "RomulanTutorial",
+        "arc": "Romulan Tutorial",
         "number": 3
     },
     {
         "name": "Flight from Virinat",
-        "arc": "RomulanTutorial",
+        "arc": "Romulan Tutorial",
         "number": 4
     },
     {
         "name": "Explore the Flotilla",
-        "arc": "FromTheAshes",
+        "arc": "From the Ashes",
         "number": 1
     },
     {
         "name": "The Helix",
-        "arc": "FromTheAshes",
+        "arc": "From the Ashes",
         "number": 2
     },
     {
         "name": "Crossroads at Crateris",
-        "arc": "FromTheAshes",
+        "arc": "From the Ashes",
         "number": 3
     },
     {
         "name": "Gasko Blues",
-        "arc": "FromTheAshes",
+        "arc": "From the Ashes",
         "number": 4
     },
     {
         "name": "The Search for New Romulus",
-        "arc": "FromTheAshes",
+        "arc": "From the Ashes",
         "number": 5
     },
     {
         "name": "Turning Point",
-        "arc": "FromTheAshes",
+        "arc": "From the Ashes",
         "number": 6
     },
     {
         "name": "Neutral No More",
-        "arc": "FromTheAshes",
+        "arc": "From the Ashes",
         "number": 7
     },
     {
@@ -361,32 +361,32 @@
     },
     {
         "name": "An Inside Job",
-        "arc": "InShadows",
+        "arc": "In Shadows",
         "number": 1
     },
     {
         "name": "Enemy Action",
-        "arc": "InShadows",
+        "arc": "In Shadows",
         "number": 2
     },
     {
         "name": "Sleepers",
-        "arc": "InShadows",
+        "arc": "In Shadows",
         "number": 3
     },
     {
         "name": "Cloak and Dagger",
-        "arc": "InShadows",
+        "arc": "In Shadows",
         "number": 4
     },
     {
         "name": "Revelation",
-        "arc": "InShadows",
+        "arc": "In Shadows",
         "number": 5
     },
     {
         "name": "Mind Game",
-        "arc": "InShadows",
+        "arc": "In Shadows",
         "number": 6
     },
     {
@@ -461,87 +461,87 @@
     },
     {
         "name": "The Vault",
-        "arc": "CloakedIntentions",
+        "arc": "Cloaked Intentions",
         "number": 1
     },
     {
         "name": "Mine Enemy",
-        "arc": "CloakedIntentions",
+        "arc": "Cloaked Intentions",
         "number": 2
     },
     {
         "name": "Frozen",
-        "arc": "CloakedIntentions",
+        "arc": "Cloaked Intentions",
         "number": 3
     },
     {
         "name": "Coliseum",
-        "arc": "CloakedIntentions",
+        "arc": "Cloaked Intentions",
         "number": 4
     },
     {
         "name": "Cutting the Cord",
-        "arc": "CloakedIntentions",
+        "arc": "Cloaked Intentions",
         "number": 5
     },
     {
         "name": "Darkness Before the Dawn",
-        "arc": "CloakedIntentions",
+        "arc": "Cloaked Intentions",
         "number": 6
     },
     {
         "name": "Lost and Found",
-        "arc": "CardassianStruggle",
+        "arc": "Cardassian Struggle",
         "number": 1
     },
     {
         "name": "Spoils of War",
-        "arc": "CardassianStruggle",
+        "arc": "Cardassian Struggle",
         "number": 2
     },
     {
         "name": "Jabberwocky",
-        "arc": "CardassianStruggle",
+        "arc": "Cardassian Struggle",
         "number": 3
     },
     {
         "name": "The Factory",
-        "arc": "CardassianStruggle",
+        "arc": "Cardassian Struggle",
         "number": 4
     },
     {
         "name": "The New Link",
-        "arc": "CardassianStruggle",
+        "arc": "Cardassian Struggle",
         "number": 5
     },
     {
         "name": "Lost Dominion",
-        "arc": "The2800",
+        "arc": "Lost Dominion: The 2800",
         "number": 1
     },
     {
         "name": "Second Wave",
-        "arc": "The2800",
+        "arc": "Lost Dominion: The 2800",
         "number": 2
     },
     {
         "name": "Of Bajor",
-        "arc": "The2800",
+        "arc": "Lost Dominion: The 2800",
         "number": 3
     },
     {
         "name": "Operation Gamma",
-        "arc": "The2800",
+        "arc": "Lost Dominion: The 2800",
         "number": 4
     },
     {
         "name": "Facility 4028",
-        "arc": "The2800",
+        "arc": "Lost Dominion: The 2800",
         "number": 5
     },
     {
         "name": "Boldly They Rode",
-        "arc": "The2800",
+        "arc": "Lost Dominion: The 2800",
         "number": 6
     }
 ]

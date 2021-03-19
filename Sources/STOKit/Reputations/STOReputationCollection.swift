@@ -1,12 +1,13 @@
 public struct STOReputationCollection: Codable {
     public typealias Reputations = [STOReputation]
 
-    private let reputations: Reputations
+    private var reputations: Reputations
 
     init() {
-        self.reputations = STOReputationOrganization.allCases.map { organization in
-            STOReputation(organization: organization)
-        }
+        self.reputations = STOReputationOrganization.allCases
+            .map { organization in
+                STOReputation(organization: organization)
+            }
     }
 
     internal init(_ reputations: [STOReputation]) {
@@ -14,7 +15,15 @@ public struct STOReputationCollection: Codable {
     }
 
     public subscript(organization: STOReputationOrganization) -> STOReputation {
-        get { return reputations.filter({ $0.organization == organization }).first! }
+        get {
+            return reputations
+                .filter({ $0.organization == organization })
+                .first!
+        }
+        set {
+            guard let index = reputations.firstIndex(where: { $0.organization == organization }) else { return }
+            reputations[index] = newValue
+        }
     }
 }
 
@@ -31,5 +40,11 @@ extension STOReputationCollection: Collection {
 
     public func index(after i: Index) -> Index {
         return reputations.index(after: i)
+    }
+}
+
+extension STOReputationCollection: CustomStringConvertible {
+    public var description: String {
+        return "\(reputations)"
     }
 }

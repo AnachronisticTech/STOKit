@@ -1,19 +1,12 @@
-public enum STOFaction: String, CaseIterable, Codable, Hashable {
-    case Starfleet2409, StarfleetTOS, StarfleetDSC
-    case KDF, RomulanFED, RomulanKDF, DominionFED, DominionKDF
-
-    public var description: String {
-        switch self {
-            case .Starfleet2409: return "Starfleet (2409)"
-            case .StarfleetTOS: return "Starfleet (TOS)"
-            case .StarfleetDSC: return "Starfleet (DSC)"
-            case .KDF: return "Klingon Defence Force"
-            case .RomulanFED: return "Romulan (FED Aligned)"
-            case .RomulanKDF: return "Romulan (KDF Aligned)"
-            case .DominionFED: return "Dominion (FED Aligned)"
-            case .DominionKDF: return "Dominion (KDF Aligned)"
-        }
-    }
+public enum STOFaction: String, CaseIterable, Codable {
+    case Starfleet2409 = "Starfleet (2409)"
+    case StarfleetTOS = "Starfleet (TOS)"
+    case StarfleetDSC = "Starfleet (DSC)"
+    case KDF = "Klingon Defence Force"
+    case RomulanFED = "Romulan (FED Aligned)"
+    case RomulanKDF = "Romulan (KDF Aligned)"
+    case DominionFED = "Dominion (FED Aligned)"
+    case DominionKDF = "Dominion (KDF Aligned)"
 
     public var arcs: [STOStoryArc] {
         switch self {
@@ -64,5 +57,11 @@ public enum STOFaction: String, CaseIterable, Codable, Hashable {
                     .DominionTutorial
                 ] + STOStoryArc.crossFaction
         }
+    }
+}
+
+extension STOFaction: CustomStringConvertible {
+    public var description: String {
+        return self.rawValue
     }
 }

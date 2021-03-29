@@ -21,13 +21,14 @@ public enum STOBeamWeaponType: String, STOWeaponType, Codable, CustomStringConve
 }
 
 public enum STOCannonWeaponType: String, STOWeaponType, Codable, CustomStringConvertible {
-    case Single, Dual, DualHeavy
+    case Single, Dual, DualHeavy, Quad
 
     public var description: String {
         switch self {
             case .Single: return "Single Cannon"
             case .Dual: return "Dual Cannons"
             case .DualHeavy: return "Dual Heavy Cannons"
+            case .Quad: return "Quad Cannons"
         }
     }
 }

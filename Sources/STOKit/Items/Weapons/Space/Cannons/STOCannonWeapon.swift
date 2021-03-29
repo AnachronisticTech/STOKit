@@ -12,7 +12,7 @@ open class STOCannonWeapon: STOWeapon {
         _damageType
     }
 
-    public init(
+    public required init(
         _ weaponType: STOCannonWeaponType, 
         _ damageType: STOEnergyDamageType, 
         _ mark: STOMark, 
@@ -43,4 +43,15 @@ open class STOCannonWeapon: STOWeapon {
         try container.encode(_weaponType, forKey: ._weaponType)
         try container.encode(_damageType, forKey: ._damageType)
     }
+
+    internal static let specialTypes: [String: STOCannonWeapon.Type] = {
+        return _specialTypes.reduce([String: STOCannonWeapon.Type]()) { (dict, type) -> [String: STOCannonWeapon.Type] in
+            var dict = dict
+            dict[String(describing: type.self)] = type.self
+            return dict
+        }
+    }()
+    private static let _specialTypes: [STOCannonWeapon.Type] = [
+        PhaserQuadCannons.self
+    ]
 }

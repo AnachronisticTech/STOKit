@@ -34,7 +34,7 @@ struct EpisodeLister {
         print(newShip)
         newShip.setForeWeapon(slot: 4, to: STOBeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
         newShip.setForeWeapon(slot: 2, to: STOBeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
-        newShip.setForeWeapon(slot: 3, to: STOBeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
+        newShip.setForeWeapon(slot: 3, to: PhaserQuadCannons(.XV, .Epic))
         newShip.setForeWeapon(slot: 1, to: STOKineticTorpedoWeapon(.WideAngle, .Quantum, .XV, .Epic))
         newShip.setRearWeapon(slot: 1, to: STOCannonWeapon(.Single, .Disruptor, .II, .Uncommon))
         newShip.setRearWeapon(slot: 2, to: PhotonTorpedo(.XV, .Epic))

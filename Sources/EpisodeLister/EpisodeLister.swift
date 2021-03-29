@@ -1,4 +1,5 @@
 import STOKit
+import Foundation
 
 @main
 struct EpisodeLister {
@@ -24,20 +25,43 @@ struct EpisodeLister {
         print("")
         let ship = LightCruiser("Hello world")
         print(ship)
-        ship.setForeWeapon(slot: 1, to: STOBeamArray(.Phaser, .I, .Common))
-        ship.setForeWeapon(slot: 2, to: STOPhotonTorpedo(.I, .Common))
-        ship.setRearWeapon(slot: 1, to: STOSingleCannon(.Disruptor, .II, .Uncommon))
+        ship.setForeWeapon(slot: 1, to: STOBeamWeapon(.BeamArray, .Phaser, .I, .Common))
+        ship.setForeWeapon(slot: 2, to: STOKineticTorpedoWeapon(.Standard, .Photon, .I, .Common))
+        ship.setRearWeapon(slot: 1, to: STOCannonWeapon(.Single, .Disruptor, .II, .Uncommon))
         print(ship)
         
         let newShip = AssaultCruiser("U.S.S. Pearce")
         print(newShip)
-        newShip.setForeWeapon(slot: 1, to: STOBeamArray(.Phaser, .XV, .Epic))
-        newShip.setForeWeapon(slot: 2, to: STOBeamArray(.Phaser, .XV, .Epic))
-        newShip.setForeWeapon(slot: 3, to: STOBeamArray(.Phaser, .XV, .Epic))
-        newShip.setForeWeapon(slot: 4, to: STOPhotonTorpedo(.XV, .Epic))
-        newShip.setRearWeapon(slot: 1, to: STOSingleCannon(.Disruptor, .XV, .Epic))
+        newShip.setForeWeapon(slot: 4, to: STOBeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
+        newShip.setForeWeapon(slot: 2, to: STOBeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
+        newShip.setForeWeapon(slot: 3, to: STOBeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
+        newShip.setForeWeapon(slot: 1, to: STOKineticTorpedoWeapon(.WideAngle, .Quantum, .XV, .Epic))
+        newShip.setRearWeapon(slot: 1, to: STOCannonWeapon(.Single, .Disruptor, .II, .Uncommon))
+        newShip.setRearWeapon(slot: 2, to: PhotonTorpedo(.XV, .Epic))
         newShip.setRearWeapon(slot: 4, to: AncientAntiprotonOmniBeamArray(.XV, .Epic))
         print(newShip)
+
+        let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
+            .appendingPathComponent("Characters")
+        if !FileManager.default.fileExists(atPath: directoryURL.path) {
+            try! FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        }
+        let fileURL = directoryURL.appendingPathComponent("ship.json")
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(newShip)
+            try data.write(to: fileURL)
+        } catch {
+            print(error)
+        }
+        let decoder = JSONDecoder()
+        do {
+            let data = try Data(contentsOf: fileURL)
+            let assaultCruiser = try decoder.decode(AssaultCruiser.self, from: data)
+            print(assaultCruiser)
+        } catch {
+            print(error)
+        }
     }
 
     static func getEpisodes() {

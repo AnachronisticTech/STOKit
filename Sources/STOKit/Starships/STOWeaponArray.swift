@@ -30,3 +30,30 @@ extension STOWeaponArray: CustomStringConvertible {
             .joined(separator: ", ")
     }
 }
+
+extension STOWeaponArray: Codable {
+    enum CodingKeys: String, CodingKey, CaseIterable {
+        case slot1, slot2, slot3, slot4, slot5
+    }
+
+    public init(from decoder: Decoder) throws {
+        fatalError("Not yet implemented")
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        for (index, weapon) in weapons.enumerated() {
+            let key = CodingKeys.allCases.filter({ $0.rawValue.contains("\(index+1)") }).first!
+            if let weapon = weapon {
+                switch weapon {
+                    case is STOBeamWeapon: try container.encode(weapon as! STOBeamWeapon, forKey: key)
+                    case is STOCannonWeapon: try container.encode(weapon as! STOCannonWeapon, forKey: key)
+                    case is STOKineticTorpedoWeapon: try container.encode(weapon as! STOKineticTorpedoWeapon, forKey: key)
+                    default: try container.encodeNil(forKey: key)
+                }
+            } else {
+                try container.encodeNil(forKey: key)
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-public enum STOQuality: String, CustomStringConvertible {
+public enum STOQuality: String, CustomStringConvertible, Codable {
     case Common, Uncommon, Rare
     case VeryRare, UltraRare, Epic
 

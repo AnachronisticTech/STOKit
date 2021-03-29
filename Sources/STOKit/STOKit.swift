@@ -35,35 +35,3 @@ import Foundation
 //         return components
 //     }
 // }
-
-public class AncientAntiprotonOmniBeamArray: STOOmniBeamArray {
-    public init(_ mark: STOMark, _ quality: STOQuality) {
-        super.init(.Antiproton, mark, quality)
-    }
-
-    public override var description: String {
-        return "Ancient \(super.description)"
-    }
-}
-
-public class STOPhotonTorpedo: STOTorpedo {
-    public init( _ mark: STOMark, _ quality: STOQuality) {
-        super.init(.Kinetic, mark, quality)
-    }
-
-    public override var description: String {
-        return "Photon Torpedo - Mk \(mark) \(quality)"
-    }
-}
-
-public class LightCruiser: STOStarship {
-    public init(_ name: String) {
-        super.init(name: name, foreWeapons: 2, rearWeapons: 1)
-    }
-}
-
-public class AssaultCruiser: STOStarship {
-    public init(_ name: String) {
-        super.init(name: name, foreWeapons: 4, rearWeapons: 4)
-    }
-}

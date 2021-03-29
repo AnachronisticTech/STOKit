@@ -1,20 +1,20 @@
-open class STOBeamWeapon: STOWeapon {
-    public let mark: STOMark
-    public let quality: STOQuality
+open class STOKineticTorpedoWeapon: STOWeapon {
+    public var mark: STOMark
+    public var quality: STOQuality
 
-    private let _weaponType: STOBeamWeaponType!
+    private let _weaponType: STOTorpedoWeaponType!
     public var weaponType: some STOWeaponType {
         _weaponType
     }
 
-    private let _damageType: STOEnergyDamageType!
+    private let _damageType: STOTorpedoKineticDamageType!
     public var damageType: some STODamageType {
         _damageType
     }
 
     public required init(
-        _ weaponType: STOBeamWeaponType, 
-        _ damageType: STOEnergyDamageType, 
+        _ weaponType: STOTorpedoWeaponType, 
+        _ damageType: STOTorpedoKineticDamageType, 
         _ mark: STOMark, 
         _ quality: STOQuality
     ) {
@@ -25,15 +25,15 @@ open class STOBeamWeapon: STOWeapon {
     }
 
     public var description: String {
-        return "\(damageType) \(weaponType) - Mk \(mark) \(quality)"
+        return "\(weaponType)\(damageType) Torpedo Launcher - Mk \(mark) \(quality)"
     }
 
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: STOWeaponCodingKeys.self)
         self.mark = try container.decode(STOMark.self, forKey: .mark)
         self.quality = try container.decode(STOQuality.self, forKey: .quality)
-        self._weaponType = try container.decode(STOBeamWeaponType.self, forKey: ._weaponType)
-        self._damageType = try container.decode(STOEnergyDamageType.self, forKey: ._damageType)
+        self._weaponType = try container.decode(STOTorpedoWeaponType.self, forKey: ._weaponType)
+        self._damageType = try container.decode(STOTorpedoKineticDamageType.self, forKey: ._damageType)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -44,14 +44,14 @@ open class STOBeamWeapon: STOWeapon {
         try container.encode(_damageType, forKey: ._damageType)
     }
 
-    internal static let specialTypes: [String: STOBeamWeapon.Type] = {
-        return _specialTypes.reduce([String: STOBeamWeapon.Type]()) { (dict, type) -> [String: STOBeamWeapon.Type] in
+    internal static let specialTypes: [String: STOKineticTorpedoWeapon.Type] = {
+        return _specialTypes.reduce([String: STOKineticTorpedoWeapon.Type]()) { (dict, type) -> [String: STOKineticTorpedoWeapon.Type] in
             var dict = dict
             dict[String(describing: type.self)] = type.self
             return dict
         }
     }()
-    private static let _specialTypes: [STOBeamWeapon.Type] = [
-        AncientAntiprotonOmniBeamArray.self
+    private static let _specialTypes: [STOKineticTorpedoWeapon.Type] = [
+        PhotonTorpedo.self
     ]
 }

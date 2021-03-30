@@ -1,5 +1,5 @@
-public struct STOReputation {
-    public let organization: STOReputationOrganization
+public struct Reputation {
+    public let organization: ReputationOrganization
 
     @Clamped(0...250000) public var xp: Int = 0
     
@@ -15,7 +15,7 @@ public struct STOReputation {
         }
     }
 
-    public init(organization: STOReputationOrganization, xp: Int = 0) {
+    public init(organization: ReputationOrganization, xp: Int = 0) {
         self.organization = organization
         self.xp = xp
     }
@@ -25,7 +25,7 @@ public struct STOReputation {
     }
 }
 
-extension STOReputation: Codable {
+extension Reputation: Codable {
     enum CodingKeys: String, CodingKey {
         case org = "organization"
         case xp
@@ -33,7 +33,7 @@ extension STOReputation: Codable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.organization = try container.decode(STOReputationOrganization.self, forKey: .org)
+        self.organization = try container.decode(ReputationOrganization.self, forKey: .org)
         self.xp = try container.decode(Int.self, forKey: .xp)
     }
 
@@ -44,19 +44,19 @@ extension STOReputation: Codable {
     }
 }
 
-extension STOReputation: Comparable {
-    public static func <(lhs: STOReputation, rhs: STOReputation) -> Bool {
+extension Reputation: Comparable {
+    public static func <(lhs: Reputation, rhs: Reputation) -> Bool {
         return lhs.organization.order < rhs.organization.order
     }
 }
 
-extension STOReputation: Equatable {
-    public static func ==(lhs: STOReputation, rhs: STOReputation) -> Bool {
+extension Reputation: Equatable {
+    public static func ==(lhs: Reputation, rhs: Reputation) -> Bool {
         return lhs.organization == rhs.organization && lhs.xp == rhs.xp
     }
 }
 
-extension STOReputation: CustomStringConvertible {
+extension Reputation: CustomStringConvertible {
     public var description: String {
         return "\(organization): Tier \(tier) (\(xp) xp)"
     }

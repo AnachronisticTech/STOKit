@@ -1,14 +1,14 @@
-public protocol STOWeapon: STOItem, CustomStringConvertible, Codable {}
+public protocol Weapon: Item, CustomStringConvertible, Codable {}
 
-enum STOWeaponCodingKeys: String, CodingKey {
+enum WeaponCodingKeys: String, CodingKey {
     case mark, quality, `class`
     case _weaponType = "weaponType"
     case _damageType = "damageType"
 }
 
-public protocol STOWeaponType {}
+public protocol WeaponType {}
 
-public enum STOBeamWeaponType: String, STOWeaponType, Codable, CustomStringConvertible {
+public enum BeamWeaponType: String, WeaponType, Codable, CustomStringConvertible {
     case BeamArray, DualBeamBank, OmnidirectionalBeamArray
 
     public var description: String {
@@ -20,7 +20,7 @@ public enum STOBeamWeaponType: String, STOWeaponType, Codable, CustomStringConve
     }
 }
 
-public enum STOCannonWeaponType: String, STOWeaponType, Codable, CustomStringConvertible {
+public enum CannonWeaponType: String, WeaponType, Codable, CustomStringConvertible {
     case Single, Dual, DualHeavy, Quad
 
     public var description: String {
@@ -33,7 +33,7 @@ public enum STOCannonWeaponType: String, STOWeaponType, Codable, CustomStringCon
     }
 }
 
-public enum STOTorpedoWeaponType: String, STOWeaponType, Codable, CustomStringConvertible {
+public enum TorpedoWeaponType: String, WeaponType, Codable, CustomStringConvertible {
     case Standard, WideAngle
 
     public var description: String {

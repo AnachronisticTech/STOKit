@@ -1,21 +1,21 @@
-public struct STOPlayableStoryArcCollection: Codable {
-    public typealias StoryArcs = [STOPlayableEpisode]
+public struct PlayableStoryArcCollection: Codable {
+    public typealias StoryArcs = [PlayableEpisode]
 
     private var episodes = StoryArcs()
 
-    init(for faction: STOFaction) {
-        self.episodes = STOEpisode.all()
+    init(for faction: Faction) {
+        self.episodes = Episode.all()
             .filter { episode in
                 faction.arcs.contains(episode.arc)
             }
-            .map { STOPlayableEpisode(episode: $0, played: false) }
+            .map { PlayableEpisode(episode: $0, played: false) }
     }
 
-    init(with episodes: [STOPlayableEpisode]) {
+    init(with episodes: [PlayableEpisode]) {
         self.episodes = episodes
     }
     
-    public subscript(arc: STOStoryArc) -> [STOPlayableEpisode] {
+    public subscript(arc: StoryArc) -> [PlayableEpisode] {
         get {
             return episodes
                 .filter { episode in
@@ -25,7 +25,7 @@ public struct STOPlayableStoryArcCollection: Codable {
         }
     }
 
-    public subscript(episode: STOEpisode) -> Bool {
+    public subscript(episode: Episode) -> Bool {
         get {
             return episodes.first(where: { $0 == episode })?.played ?? false
         }
@@ -35,20 +35,20 @@ public struct STOPlayableStoryArcCollection: Codable {
         }
     }
     
-    public var completed: [STOPlayableEpisode] {
+    public var completed: [PlayableEpisode] {
         return episodes
             .filter { $0.played }
             .sorted(by: { ($0.arc.order, $0.number) < ($1.arc.order, $1.number) })
     }
 
-    public var incomplete: [STOPlayableEpisode] {
+    public var incomplete: [PlayableEpisode] {
         return episodes
             .filter { !$0.played }
             .sorted(by: { ($0.arc.order, $0.number) < ($1.arc.order, $1.number) })
     }
 }
 
-extension STOPlayableStoryArcCollection: Collection {
+extension PlayableStoryArcCollection: Collection {
     public typealias Index = StoryArcs.Index
     public typealias Element = StoryArcs.Element
 

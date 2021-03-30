@@ -1,4 +1,4 @@
-public enum STOReputationOrganization: String, CaseIterable, Codable {
+public enum ReputationOrganization: String, CaseIterable, Codable {
     case Omega = "Task Force Omega"
     case Nukara = "Nukara Strikeforce"
     case NewRomulus = "New Romulus"
@@ -32,7 +32,7 @@ public enum STOReputationOrganization: String, CaseIterable, Codable {
     }
 }
 
-extension STOReputationOrganization: CustomStringConvertible {
+extension ReputationOrganization: CustomStringConvertible {
     public var description: String {
         return self.rawValue
     }

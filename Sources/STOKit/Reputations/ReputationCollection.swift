@@ -1,20 +1,20 @@
-public struct STOReputationCollection: Codable {
-    public typealias Reputations = [STOReputation]
+public struct ReputationCollection: Codable {
+    public typealias Reputations = [Reputation]
 
     private var reputations: Reputations
 
     init() {
-        self.reputations = STOReputationOrganization.allCases
+        self.reputations = ReputationOrganization.allCases
             .map { organization in
-                STOReputation(organization: organization)
+                Reputation(organization: organization)
             }
     }
 
-    internal init(_ reputations: [STOReputation]) {
+    internal init(_ reputations: [Reputation]) {
         self.reputations = reputations
     }
 
-    public subscript(organization: STOReputationOrganization) -> STOReputation {
+    public subscript(organization: ReputationOrganization) -> Reputation {
         get {
             return reputations
                 .filter({ $0.organization == organization })
@@ -27,7 +27,7 @@ public struct STOReputationCollection: Codable {
     }
 }
 
-extension STOReputationCollection: Collection {
+extension ReputationCollection: Collection {
     public typealias Index = Reputations.Index
     public typealias Element = Reputations.Element
 
@@ -43,7 +43,7 @@ extension STOReputationCollection: Collection {
     }
 }
 
-extension STOReputationCollection: CustomStringConvertible {
+extension ReputationCollection: CustomStringConvertible {
     public var description: String {
         return "\(reputations)"
     }

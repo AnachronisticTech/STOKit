@@ -1,23 +1,23 @@
 import Foundation
 
-public struct STOPlayableCharacter: STOCharacter {
+public struct PlayableCharacter: Character {
     public let identifier: UUID
 
     public private(set) var name: String
-    public private(set) var faction: STOFaction
-    public private(set) var career: STOCareer
+    public private(set) var faction: Faction
+    public private(set) var career: Career
 
-    public var journal: STOJournal
-    public var reputations: STOReputationCollection
-    public var bridgeOfficers: [STOBridgeOfficer]
+    public var journal: Journal
+    public var reputations: ReputationCollection
+    public var bridgeOfficers: [BridgeOfficer]
 
-    public init(name: String, faction: STOFaction, career: STOCareer) {
+    public init(name: String, faction: Faction, career: Career) {
         self.identifier = UUID()
         self.name = name
         self.faction = faction
         self.career = career
-        self.journal = STOJournal(faction: faction)
-        self.reputations = STOReputationCollection()
+        self.journal = Journal(faction: faction)
+        self.reputations = ReputationCollection()
         self.bridgeOfficers = []
     }
 
@@ -30,22 +30,22 @@ public struct STOPlayableCharacter: STOCharacter {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.identifier = try container.decode(UUID.self, forKey: .identifier)
         self.name = try container.decode(String.self, forKey: .name)
-        self.faction = try container.decode(STOFaction.self, forKey: .faction)
-        self.career = try container.decode(STOCareer.self, forKey: .career)
-        self.journal = try container.decode(STOJournal.self, forKey: .journal)
+        self.faction = try container.decode(Faction.self, forKey: .faction)
+        self.career = try container.decode(Career.self, forKey: .career)
+        self.journal = try container.decode(Journal.self, forKey: .journal)
 
         var reps = try container.nestedUnkeyedContainer(forKey: .reputations)
-        try self.reputations = STOReputationCollection(
-            STOReputationOrganization.allCases.map { _ in
-                try reps.decode(STOReputation.self)
+        try self.reputations = ReputationCollection(
+            ReputationOrganization.allCases.map { _ in
+                try reps.decode(Reputation.self)
             }
         )
 
         var bridgeOfficerContainer = try container.nestedUnkeyedContainer(forKey: .bridgeOfficers)
-        var bridgeOfficers = [STOBridgeOfficer]()
+        var bridgeOfficers = [BridgeOfficer]()
         while !bridgeOfficerContainer.isAtEnd {
             let identifier = try bridgeOfficerContainer.decode(UUID.self)
-            guard let officer = STOBridgeOfficer.load(with: identifier) else { continue }
+            guard let officer = BridgeOfficer.load(with: identifier) else { continue }
             guard self.faction.permittedOfficerFactions.contains(officer.faction) else { continue }
             bridgeOfficers.append(officer)
         }
@@ -72,13 +72,13 @@ public struct STOPlayableCharacter: STOCharacter {
     }
 }
 
-extension STOPlayableCharacter: CustomStringConvertible {
+extension PlayableCharacter: CustomStringConvertible {
     public var description: String {
         return "\(name) - \(faction) \(career)"
     }
 }
 
-extension STOPlayableCharacter {
+extension PlayableCharacter {
     public func save() {
         let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
             .appendingPathComponent("Output")
@@ -96,7 +96,7 @@ extension STOPlayableCharacter {
         }
     }
 
-    public static func load(_ name: String) -> STOPlayableCharacter? {
+    public static func load(_ name: String) -> PlayableCharacter? {
         let fileURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
             .appendingPathComponent("Output")
             .appendingPathComponent("Characters")
@@ -104,7 +104,7 @@ extension STOPlayableCharacter {
         if !FileManager.default.fileExists(atPath: fileURL.path) { return nil }
         let decoder = JSONDecoder()
         do {
-            return try decoder.decode(STOPlayableCharacter.self, from: try Data(contentsOf: fileURL))
+            return try decoder.decode(PlayableCharacter.self, from: try Data(contentsOf: fileURL))
         } catch {
             print(error)
             return nil

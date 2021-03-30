@@ -1,4 +1,4 @@
-public enum STOFaction: String, CaseIterable, Codable {
+public enum Faction: String, CaseIterable, Codable {
     case Starfleet2409 = "Starfleet (2409)"
     case StarfleetTOS = "Starfleet (TOS)"
     case StarfleetDSC = "Starfleet (DSC)"
@@ -8,30 +8,30 @@ public enum STOFaction: String, CaseIterable, Codable {
     case DominionFED = "Dominion (FED Aligned)"
     case DominionKDF = "Dominion (KDF Aligned)"
 
-    public var arcs: [STOStoryArc] {
+    public var arcs: [StoryArc] {
         switch self {
             case .Starfleet2409: return [
                     .Starfleet2409Tutorial,
                     .KlingonWar,
                     .RomulanMystery
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
             case .StarfleetTOS: return [
                     .StarfleetTOSTutorial,
                     .AgentsOfYesterday,
                     .KlingonWar,
                     .RomulanMystery
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
             case .StarfleetDSC: return [
                     .StarfleetDSCTutorial,
                     .KlingonWar,
                     .RomulanMystery
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
             case .KDF: return [
                     .KlingonTutorial,
                     .Empire,
                     .Warzone,
                     .FekIhriReturn
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
             case .RomulanFED: return [
                     .RomulanTutorial,
                     .FromTheAshes,
@@ -40,7 +40,7 @@ public enum STOFaction: String, CaseIterable, Codable {
                     .Wasteland,
                     .Vengeance,
                     .Freedom
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
             case .RomulanKDF: return [
                     .RomulanTutorial,
                     .FromTheAshes,
@@ -49,17 +49,17 @@ public enum STOFaction: String, CaseIterable, Codable {
                     .Wasteland,
                     .Vengeance,
                     .Freedom
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
             case .DominionFED: return [
                     .DominionTutorial
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
             case .DominionKDF: return [
                     .DominionTutorial
-                ] + STOStoryArc.crossFaction
+                ] + StoryArc.crossFaction
         }
     }
 
-    public var permittedOfficerFactions: [STOFaction] {
+    public var permittedOfficerFactions: [Faction] {
         switch self {
             case .Starfleet2409, .StarfleetTOS, .StarfleetDSC:
                 return [.Starfleet2409, .StarfleetTOS, .StarfleetDSC]
@@ -74,7 +74,7 @@ public enum STOFaction: String, CaseIterable, Codable {
     }
 }
 
-extension STOFaction: CustomStringConvertible {
+extension Faction: CustomStringConvertible {
     public var description: String {
         return self.rawValue
     }

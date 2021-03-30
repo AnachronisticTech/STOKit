@@ -1,12 +1,12 @@
-public struct STOJournal {
-    public var episodes: STOPlayableStoryArcCollection
+public struct Journal {
+    public var episodes: PlayableStoryArcCollection
 
-    public init(faction: STOFaction) {
-        self.episodes = STOPlayableStoryArcCollection(for: faction)
+    public init(faction: Faction) {
+        self.episodes = PlayableStoryArcCollection(for: faction)
     }
 }
 
-extension STOJournal: Codable {
+extension Journal: Codable {
     enum CodingKeys: CodingKey {
         case episodes
     }
@@ -14,11 +14,11 @@ extension STOJournal: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         var episodeContainer = try container.nestedUnkeyedContainer(forKey: .episodes)
-        var episodes = [STOPlayableEpisode]()
+        var episodes = [PlayableEpisode]()
         while !episodeContainer.isAtEnd {
-            episodes.append(try episodeContainer.decode(STOPlayableEpisode.self))
+            episodes.append(try episodeContainer.decode(PlayableEpisode.self))
         }
-        self.episodes = STOPlayableStoryArcCollection(with: episodes)
+        self.episodes = PlayableStoryArcCollection(with: episodes)
     }
 
     public func encode(to encoder: Encoder) throws {

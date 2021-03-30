@@ -1,12 +1,12 @@
-public class STOPlayableEpisode: STOEpisode {
+public class PlayableEpisode: Episode {
     public var played: Bool
 
-    public init(episode: STOEpisode, played: Bool) {
+    public init(episode: Episode, played: Bool) {
         self.played = played
         super.init(name: episode.name, arc: episode.arc, number: episode.number)
     }
 
-    public init(name: String, arc: STOStoryArc, number: Int, played: Bool) {
+    public init(name: String, arc: StoryArc, number: Int, played: Bool) {
         self.played = played
         super.init(name: name, arc: arc, number: number)
     }
@@ -20,7 +20,7 @@ public class STOPlayableEpisode: STOEpisode {
         self.played = try container.decode(Bool.self, forKey: .played)
         super.init(
             name: try container.decode(String.self, forKey: .name),
-            arc: try container.decode(STOStoryArc.self, forKey: .arc),
+            arc: try container.decode(StoryArc.self, forKey: .arc),
             number: try container.decode(Int.self, forKey: .number)
         )
     }

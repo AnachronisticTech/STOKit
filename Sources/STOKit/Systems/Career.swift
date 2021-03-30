@@ -1,8 +1,8 @@
-public enum STOCareer: String, Codable {
+public enum Career: String, Codable {
     case Tactical, Engineering, Science
 }
 
-extension STOCareer: CustomStringConvertible {
+extension Career: CustomStringConvertible {
     public var description: String {
         return "\(self.rawValue) Officer"
     }

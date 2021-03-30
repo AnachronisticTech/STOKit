@@ -1,16 +1,16 @@
 import Foundation
 
-internal protocol STOStarshipBase: Codable {
+internal protocol StarshipBase: Codable {
     var name: String { get set }
 
-    var foreWeapons: STOWeaponArray { get }
-    var rearWeapons: STOWeaponArray { get }
+    var foreWeapons: WeaponArray { get }
+    var rearWeapons: WeaponArray { get }
 }
 
-open class STOStarship: STOStarshipBase {
+open class Starship: StarshipBase {
     public var name: String
-    public private(set) var foreWeapons: STOWeaponArray
-    public private(set) var rearWeapons: STOWeaponArray
+    public private(set) var foreWeapons: WeaponArray
+    public private(set) var rearWeapons: WeaponArray
 
     internal enum CodingKeys: String, CodingKey {
         case name, `class`, foreWeapons, rearWeapons
@@ -18,8 +18,8 @@ open class STOStarship: STOStarshipBase {
 
     internal init(name: String, foreWeapons: Int, rearWeapons: Int) {
         self.name = name
-        self.foreWeapons = STOWeaponArray(size: foreWeapons)
-        self.rearWeapons = STOWeaponArray(size: rearWeapons)
+        self.foreWeapons = WeaponArray(size: foreWeapons)
+        self.rearWeapons = WeaponArray(size: rearWeapons)
     }
 
     public required init(from decoder: Decoder) throws {
@@ -33,77 +33,77 @@ open class STOStarship: STOStarshipBase {
         try container.encode(rearWeapons, forKey: .rearWeapons)
     }
 
-    public func setForeWeapon<W: STOWeapon>(slot index: Int, to weapon: W? = nil) {
+    public func setForeWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
         foreWeapons[index-1] = weapon
     }
 
-    public func setRearWeapon<W: STOWeapon>(slot index: Int, to weapon: W? = nil) {
-        if let _ = weapon.self as? STOCannonWeapon.Type { return }
+    public func setRearWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
+        if let _ = weapon.self as? CannonWeapon.Type { return }
         rearWeapons[index-1] = weapon
     }
 
     internal func decodeLoadout(from container: KeyedDecodingContainer<CodingKeys>) throws {
         let fore = try container.nestedContainer(
-            keyedBy: STOWeaponArray.CodingKeys.self,
+            keyedBy: WeaponArray.CodingKeys.self,
             forKey: .foreWeapons
         )
         try decode(weaponsContainer: fore)
         let rear = try container.nestedContainer(
-            keyedBy: STOWeaponArray.CodingKeys.self,
+            keyedBy: WeaponArray.CodingKeys.self,
             forKey: .rearWeapons
         )
         try decode(weaponsContainer: rear, true)
     }
 
     func decode(
-        weaponsContainer container: KeyedDecodingContainer<STOWeaponArray.CodingKeys>, 
+        weaponsContainer container: KeyedDecodingContainer<WeaponArray.CodingKeys>, 
         _ rear: Bool = false
     ) throws {
-        @inline(__always) func setWeapon<W: STOWeapon>(slot index: Int, to weapon: W?) {
+        @inline(__always) func setWeapon<W: Weapon>(slot index: Int, to weapon: W?) {
             rear ? setRearWeapon(slot: index, to: weapon) : setForeWeapon(slot: index, to: weapon)
         }
 
-        for (index, key) in STOWeaponArray.CodingKeys.allCases.enumerated() {
+        for (index, key) in WeaponArray.CodingKeys.allCases.enumerated() {
             if !container.allKeys.contains(key) { continue }
             if try container.decodeNil(forKey: key) { continue }
             let weaponContainer = try container.nestedContainer(
-                keyedBy: STOWeaponCodingKeys.self,
+                keyedBy: WeaponCodingKeys.self,
                 forKey: key
             )
             if 
                 let className = try? weaponContainer.decode(String.self, forKey: .class),
-                let type = STOBeamWeapon.specialTypes[className]
+                let type = BeamWeapon.specialTypes[className]
             {
-                let mark = try weaponContainer.decode(STOMark.self, forKey: .mark)
-                let quality = try weaponContainer.decode(STOQuality.self, forKey: .quality)
-                let weaponType = try weaponContainer.decode(STOBeamWeaponType.self, forKey: ._weaponType)
-                let damageType = try weaponContainer.decode(STOEnergyDamageType.self, forKey: ._damageType)
+                let mark = try weaponContainer.decode(Mark.self, forKey: .mark)
+                let quality = try weaponContainer.decode(Quality.self, forKey: .quality)
+                let weaponType = try weaponContainer.decode(BeamWeaponType.self, forKey: ._weaponType)
+                let damageType = try weaponContainer.decode(EnergyDamageType.self, forKey: ._damageType)
                 let weapon = type.init(weaponType, damageType, mark, quality)
                 setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(STOCannonWeapon.self, forKey: key) {
+            } else if let weapon = try? container.decode(CannonWeapon.self, forKey: key) {
                 setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(STOBeamWeapon.self, forKey: key) {
+            } else if let weapon = try? container.decode(BeamWeapon.self, forKey: key) {
                 setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(STOKineticTorpedoWeapon.self, forKey: key) {
+            } else if let weapon = try? container.decode(KineticTorpedoWeapon.self, forKey: key) {
                 setWeapon(slot: index+1, to: weapon)
             }
         }
     }
 
-    internal static let specialTypes: [String: STOStarship.Type] = {
-        return _specialTypes.reduce([String: STOStarship.Type]()) { (dict, type) -> [String: STOStarship.Type] in
+    internal static let specialTypes: [String: Starship.Type] = {
+        return _specialTypes.reduce([String: Starship.Type]()) { (dict, type) -> [String: Starship.Type] in
             var dict = dict
             dict[String(describing: type.self)] = type.self
             return dict
         }
     }()
-    private static let _specialTypes: [STOStarship.Type] = [
+    private static let _specialTypes: [Starship.Type] = [
         AssaultCruiser.self,
         LightCruiser.self
     ]
 }
 
-extension STOStarship: CustomStringConvertible {
+extension Starship: CustomStringConvertible {
     public var description: String {
         """
         \(name)
@@ -113,7 +113,7 @@ extension STOStarship: CustomStringConvertible {
     }
 }
 
-extension STOStarship {
+extension Starship {
     public func save() {
         let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
             .appendingPathComponent("Output")
@@ -131,7 +131,7 @@ extension STOStarship {
         }
     }
 
-    public static func load(named name: String) -> some STOStarship {
+    public static func load(named name: String) -> some Starship {
         let fileURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
             .appendingPathComponent("Output")
             .appendingPathComponent("Ships")
@@ -145,7 +145,7 @@ extension STOStarship {
             let data = try? Data(contentsOf: fileURL),
             let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
             let shipClass = dict["class"] as? String,
-            let shipType = STOStarship.specialTypes[shipClass],
+            let shipType = Starship.specialTypes[shipClass],
             let ship = try? decoder.decode(shipType, from: data)
         {
             return ship

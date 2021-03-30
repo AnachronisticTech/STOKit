@@ -1,5 +1,5 @@
-public struct STOWeaponArray {
-    public typealias Weapons = [STOWeapon?]
+public struct WeaponArray {
+    public typealias Weapons = [Weapon?]
 
     private var weapons: Weapons
 
@@ -8,7 +8,7 @@ public struct STOWeaponArray {
         self.weapons = Array(repeating: nil, count: _size)
     }
 
-    public subscript(index: Int) -> STOWeapon? {
+    public subscript(index: Int) -> Weapon? {
         get {
             guard (0..<weapons.count).contains(index) else { return nil }
             return weapons[index]
@@ -20,7 +20,7 @@ public struct STOWeaponArray {
     }
 }
 
-extension STOWeaponArray: CustomStringConvertible {
+extension WeaponArray: CustomStringConvertible {
     public var description: String {
         return weapons
             .map { weapon in
@@ -31,7 +31,7 @@ extension STOWeaponArray: CustomStringConvertible {
     }
 }
 
-extension STOWeaponArray: Codable {
+extension WeaponArray: Codable {
     enum CodingKeys: String, CodingKey, CaseIterable {
         case slot1, slot2, slot3, slot4, slot5
     }
@@ -46,9 +46,9 @@ extension STOWeaponArray: Codable {
             let key = CodingKeys.allCases.filter({ $0.rawValue.contains("\(index+1)") }).first!
             if let weapon = weapon {
                 switch weapon {
-                    case is STOBeamWeapon: try container.encode(weapon as! STOBeamWeapon, forKey: key)
-                    case is STOCannonWeapon: try container.encode(weapon as! STOCannonWeapon, forKey: key)
-                    case is STOKineticTorpedoWeapon: try container.encode(weapon as! STOKineticTorpedoWeapon, forKey: key)
+                    case is BeamWeapon: try container.encode(weapon as! BeamWeapon, forKey: key)
+                    case is CannonWeapon: try container.encode(weapon as! CannonWeapon, forKey: key)
+                    case is KineticTorpedoWeapon: try container.encode(weapon as! KineticTorpedoWeapon, forKey: key)
                     default: try container.encodeNil(forKey: key)
                 }
             } else {

@@ -1,13 +1,13 @@
-public class PhaserQuadCannons: STOCannonWeapon {
-    public init(_ mark: STOMark, _ quality: STOQuality) {
+public class PhaserQuadCannons: CannonWeapon {
+    public init(_ mark: Mark, _ quality: Quality) {
         super.init(.Quad, .Phaser, mark, quality)
     }
 
     internal required init(
-        _ weaponType: STOCannonWeaponType, 
-        _ damageType: STOEnergyDamageType, 
-        _ mark: STOMark, 
-        _ quality: STOQuality
+        _ weaponType: CannonWeaponType, 
+        _ damageType: EnergyDamageType, 
+        _ mark: Mark, 
+        _ quality: Quality
     ) {
         super.init(.Quad, .Phaser, mark, quality)
     }
@@ -17,7 +17,7 @@ public class PhaserQuadCannons: STOCannonWeapon {
     }
 
     public override func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: STOWeaponCodingKeys.self)
+        var container = encoder.container(keyedBy: WeaponCodingKeys.self)
         try container.encode(String(describing: type(of: self)), forKey: .class)
         try super.encode(to: encoder)
     }

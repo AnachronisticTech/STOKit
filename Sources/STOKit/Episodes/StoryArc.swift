@@ -1,4 +1,4 @@
-public enum STOStoryArc: String, CaseIterable, Codable {
+public enum StoryArc: String, CaseIterable, Codable {
     case Empire, Warzone, Allies, Wasteland, Vengeance, Freedom, Spectres
     case Starfleet2409Tutorial = "Starfleet Tutorial (2409)"
     case StarfleetTOSTutorial = "Starfleet Tutorial (TOS)"
@@ -29,7 +29,7 @@ public enum STOStoryArc: String, CaseIterable, Codable {
     case The2800 = "Lost Dominion: The 2800"
     case ColdWar = "Cold War"
 
-    static var crossFaction: [STOStoryArc] {
+    static var crossFaction: [StoryArc] {
         return [
             .CloakedIntentions, .CardassianStruggle, .The2800,
             .BorgAdvance, .ColdWar, .NewRomulus, .DysonSphere,
@@ -70,13 +70,13 @@ public enum STOStoryArc: String, CaseIterable, Codable {
     }
 }
 
-extension STOStoryArc: Comparable {
-    public static func <(lhs: STOStoryArc, rhs: STOStoryArc) -> Bool {
+extension StoryArc: Comparable {
+    public static func <(lhs: StoryArc, rhs: StoryArc) -> Bool {
         return lhs.order < rhs.order
     }
 }
 
-extension STOStoryArc: CustomStringConvertible {
+extension StoryArc: CustomStringConvertible {
     public var description: String {
         return self.rawValue
     }

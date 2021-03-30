@@ -1,13 +1,13 @@
 import Foundation
 
-public struct STOBridgeOfficer: STOCharacter {
+public struct BridgeOfficer: Character {
     public let identifier: UUID
 
     public private(set) var name: String
-    public private(set) var faction: STOFaction
-    public private(set) var career: STOCareer
+    public private(set) var faction: Faction
+    public private(set) var career: Career
 
-    public init(name: String, faction: STOFaction, career: STOCareer) {
+    public init(name: String, faction: Faction, career: Career) {
         self.identifier = UUID()
         self.name = name
         self.faction = faction
@@ -15,7 +15,7 @@ public struct STOBridgeOfficer: STOCharacter {
     }
 
     @available(*, deprecated, message: "For development use only")
-    public init(name: String, faction: STOFaction, career: STOCareer, _ uuidString: String? = nil) {
+    public init(name: String, faction: Faction, career: Career, _ uuidString: String? = nil) {
         if let uuidString = uuidString {
             self.identifier = UUID(uuidString: uuidString)!
         } else {
@@ -35,8 +35,8 @@ public struct STOBridgeOfficer: STOCharacter {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.identifier = try container.decode(UUID.self, forKey: .identifier)
         self.name = try container.decode(String.self, forKey: .name)
-        self.faction = try container.decode(STOFaction.self, forKey: .faction)
-        self.career = try container.decode(STOCareer.self, forKey: .career)
+        self.faction = try container.decode(Faction.self, forKey: .faction)
+        self.career = try container.decode(Career.self, forKey: .career)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -48,13 +48,13 @@ public struct STOBridgeOfficer: STOCharacter {
     }
 }
 
-extension STOBridgeOfficer: CustomStringConvertible {
+extension BridgeOfficer: CustomStringConvertible {
     public var description: String {
         return "\(name) - \(faction) \(career)"
     }
 }
 
-extension STOBridgeOfficer {
+extension BridgeOfficer {
     public func save() {
         let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
             .appendingPathComponent("Output")
@@ -72,7 +72,7 @@ extension STOBridgeOfficer {
         }
     }
 
-    public static func load(with identifier: UUID) -> STOBridgeOfficer? {
+    public static func load(with identifier: UUID) -> BridgeOfficer? {
         let fileURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
             .appendingPathComponent("Output")
             .appendingPathComponent("BridgeOfficers")
@@ -80,7 +80,7 @@ extension STOBridgeOfficer {
         if !FileManager.default.fileExists(atPath: fileURL.path) { return nil }
         let decoder = JSONDecoder()
         do {
-            return try decoder.decode(STOBridgeOfficer.self, from: try Data(contentsOf: fileURL))
+            return try decoder.decode(BridgeOfficer.self, from: try Data(contentsOf: fileURL))
         } catch {
             print(error)
             return nil

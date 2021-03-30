@@ -12,8 +12,8 @@ open class STOStarship: STOStarshipBase {
     public private(set) var foreWeapons: STOWeaponArray
     public private(set) var rearWeapons: STOWeaponArray
 
-    enum CodingKeys: String, CodingKey {
-        case name, foreWeapons, rearWeapons
+    internal enum CodingKeys: String, CodingKey {
+        case name, `class`, foreWeapons, rearWeapons
     }
 
     internal init(name: String, foreWeapons: Int, rearWeapons: Int) {
@@ -24,6 +24,13 @@ open class STOStarship: STOStarshipBase {
 
     public required init(from decoder: Decoder) throws {
         fatalError("You cannot instantiate an abstract starship")
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: .name)
+        try container.encode(foreWeapons, forKey: .foreWeapons)
+        try container.encode(rearWeapons, forKey: .rearWeapons)
     }
 
     public func setForeWeapon<W: STOWeapon>(slot index: Int, to weapon: W? = nil) {
@@ -82,6 +89,18 @@ open class STOStarship: STOStarshipBase {
             }
         }
     }
+
+    internal static let specialTypes: [String: STOStarship.Type] = {
+        return _specialTypes.reduce([String: STOStarship.Type]()) { (dict, type) -> [String: STOStarship.Type] in
+            var dict = dict
+            dict[String(describing: type.self)] = type.self
+            return dict
+        }
+    }()
+    private static let _specialTypes: [STOStarship.Type] = [
+        AssaultCruiser.self,
+        LightCruiser.self
+    ]
 }
 
 extension STOStarship: CustomStringConvertible {
@@ -91,5 +110,47 @@ extension STOStarship: CustomStringConvertible {
             Fore weapons: \(foreWeapons)
             Rear weapons: \(rearWeapons)
         """
+    }
+}
+
+extension STOStarship {
+    public func save() {
+        let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
+            .appendingPathComponent("Output")
+            .appendingPathComponent("Ships")
+        if !FileManager.default.fileExists(atPath: directoryURL.path) {
+            try! FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
+        }
+        let fileURL = directoryURL.appendingPathComponent("\(name).json")
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(self)
+            try data.write(to: fileURL)
+        } catch {
+            print(error)
+        }
+    }
+
+    public static func load(named name: String) -> some STOStarship {
+        let fileURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
+            .appendingPathComponent("Output")
+            .appendingPathComponent("Ships")
+            .appendingPathComponent("\(name).json")
+        guard FileManager.default.fileExists(atPath: fileURL.path) else {
+            fatalError("No ship named \(name) exists")
+        }
+
+        let decoder = JSONDecoder()
+        if
+            let data = try? Data(contentsOf: fileURL),
+            let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let shipClass = dict["class"] as? String,
+            let shipType = STOStarship.specialTypes[shipClass],
+            let ship = try? decoder.decode(shipType, from: data)
+        {
+            return ship
+        } else {
+            fatalError("Could not decode ship named \(name)")
+        }
     }
 }

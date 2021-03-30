@@ -81,6 +81,7 @@ extension STOPlayableCharacter: CustomStringConvertible {
 extension STOPlayableCharacter {
     public func save() {
         let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
+            .appendingPathComponent("Output")
             .appendingPathComponent("Characters")
         if !FileManager.default.fileExists(atPath: directoryURL.path) {
             try! FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
@@ -97,6 +98,7 @@ extension STOPlayableCharacter {
 
     public static func load(_ name: String) -> STOPlayableCharacter? {
         let fileURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
+            .appendingPathComponent("Output")
             .appendingPathComponent("Characters")
             .appendingPathComponent("\(name).json")
         if !FileManager.default.fileExists(atPath: fileURL.path) { return nil }

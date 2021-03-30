@@ -57,6 +57,7 @@ extension STOBridgeOfficer: CustomStringConvertible {
 extension STOBridgeOfficer {
     public func save() {
         let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
+            .appendingPathComponent("Output")
             .appendingPathComponent("BridgeOfficers")
         if !FileManager.default.fileExists(atPath: directoryURL.path) {
             try! FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
@@ -73,6 +74,7 @@ extension STOBridgeOfficer {
 
     public static func load(with identifier: UUID) -> STOBridgeOfficer? {
         let fileURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
+            .appendingPathComponent("Output")
             .appendingPathComponent("BridgeOfficers")
             .appendingPathComponent("\(identifier).json")
         if !FileManager.default.fileExists(atPath: fileURL.path) { return nil }

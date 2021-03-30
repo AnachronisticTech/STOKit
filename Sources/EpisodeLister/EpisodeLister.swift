@@ -23,12 +23,14 @@ struct EpisodeLister {
         // print("boffs: \(talia.bridgeOfficers)")
 
         print("")
-        let ship = LightCruiser("Hello world")
+        let ship = LightCruiser("U.S.S. Miranda")
         print(ship)
         ship.setForeWeapon(slot: 1, to: STOBeamWeapon(.BeamArray, .Phaser, .I, .Common))
         ship.setForeWeapon(slot: 2, to: STOKineticTorpedoWeapon(.Standard, .Photon, .I, .Common))
         ship.setRearWeapon(slot: 1, to: STOCannonWeapon(.Single, .Disruptor, .II, .Uncommon))
         print(ship)
+        ship.save()
+        print(STOStarship.load(named: "U.S.S. Miranda"))
         
         let newShip = AssaultCruiser("U.S.S. Pearce")
         print(newShip)
@@ -40,28 +42,8 @@ struct EpisodeLister {
         newShip.setRearWeapon(slot: 2, to: PhotonTorpedo(.XV, .Epic))
         newShip.setRearWeapon(slot: 4, to: AncientAntiprotonOmniBeamArray(.XV, .Epic))
         print(newShip)
-
-        let directoryURL = URL(string: "file:///\(FileManager.default.currentDirectoryPath)")!
-            .appendingPathComponent("Characters")
-        if !FileManager.default.fileExists(atPath: directoryURL.path) {
-            try! FileManager.default.createDirectory(at: directoryURL, withIntermediateDirectories: true)
-        }
-        let fileURL = directoryURL.appendingPathComponent("ship.json")
-        let encoder = JSONEncoder()
-        do {
-            let data = try encoder.encode(newShip)
-            try data.write(to: fileURL)
-        } catch {
-            print(error)
-        }
-        let decoder = JSONDecoder()
-        do {
-            let data = try Data(contentsOf: fileURL)
-            let assaultCruiser = try decoder.decode(AssaultCruiser.self, from: data)
-            print(assaultCruiser)
-        } catch {
-            print(error)
-        }
+        newShip.save()
+        print(STOStarship.load(named: "U.S.S. Pearce"))
     }
 
     static func getEpisodes() {

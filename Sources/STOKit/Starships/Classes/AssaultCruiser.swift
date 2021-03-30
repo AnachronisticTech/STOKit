@@ -1,12 +1,12 @@
 public class AssaultCruiser: Starship {
     public init(_ name: String) {
-        super.init(name: name, foreWeapons: 4, rearWeapons: 4)
+        super.init(name: name, foreWeapons: 4, rearWeapons: 4, engConsoles: 4)
     }
 
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let name = try container.decode(String.self, forKey: .name)
-        super.init(name: name, foreWeapons: 4, rearWeapons: 4)
+        super.init(name: name, foreWeapons: 4, rearWeapons: 4, engConsoles: 4)
         try super.decodeLoadout(from: container)
     }
 

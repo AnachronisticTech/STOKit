@@ -44,6 +44,14 @@ open class BeamWeapon: Weapon {
         try container.encode(_damageType, forKey: ._damageType)
     }
 
+    internal static func decode<W: BeamWeapon>(from container: KeyedDecodingContainer<WeaponCodingKeys>, as type: W.Type) throws -> W {
+        let mark = try container.decode(Mark.self, forKey: .mark)
+        let quality = try container.decode(Quality.self, forKey: .quality)
+        let weaponType = try container.decode(BeamWeaponType.self, forKey: ._weaponType)
+        let damageType = try container.decode(EnergyDamageType.self, forKey: ._damageType)
+        return type.init(weaponType, damageType, mark, quality)
+    }
+
     internal static let specialTypes: [String: BeamWeapon.Type] = {
         return _specialTypes.reduce([String: BeamWeapon.Type]()) { (dict, type) -> [String: BeamWeapon.Type] in
             var dict = dict

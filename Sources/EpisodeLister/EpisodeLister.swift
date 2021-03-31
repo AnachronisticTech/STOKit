@@ -40,6 +40,7 @@ struct EpisodeLister {
         newShip.setForeWeapon(slot: 1, to: KineticTorpedoWeapon(.WideAngle, .Quantum, .XV, .Epic))
         newShip.setRearWeapon(slot: 1, to: CannonWeapon(.Single, .Disruptor, .II, .Uncommon))
         newShip.setRearWeapon(slot: 2, to: PhotonTorpedo(.XV, .Epic))
+        newShip.setRearWeapon(slot: 3, to: BeamWeapon(.DualBeamBank, .Phaser, .XV, .Epic))
         newShip.setRearWeapon(slot: 4, to: AncientAntiprotonOmniBeamArray(.XV, .Epic))
         newShip.setEngineeringConsole(slot: 1, to: NeutroniumAlloy(.XV, .Epic))
         newShip.setTacticalConsole(slot: 1, to: PhaserRelay(.XV, .Epic))

@@ -64,6 +64,9 @@ open class Starship: StarshipBase {
 
     public func setRearWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
         if let _ = weapon.self as? CannonWeapon.Type { return }
+        if let weapon = weapon as? BeamWeapon {
+            if case .DualBeamBank = weapon.weaponType as! BeamWeaponType { return }
+        }
         rearWeapons[index-1] = weapon
     }
 

@@ -49,6 +49,10 @@ extension ConsoleArray: Codable {
                 switch console {
                     case is EngineeringConsole:
                         try container.encode(console as! EngineeringConsole, forKey: key)
+                    case is ScienceConsole:
+                        try container.encode(console as! ScienceConsole, forKey: key)
+                    case is TacticalConsole:
+                        try container.encode(console as! TacticalConsole, forKey: key)
                     default:
                         try container.encodeNil(forKey: key)
                 }

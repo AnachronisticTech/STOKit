@@ -1,6 +1,6 @@
-public class AssaultCruiser: Starship {
+public class FleetImperialIntelAssaultCruiserT6: Starship {
     public override var className: String {
-        "Assault Cruiser"
+        "Fleet Imperial Intel Assault Cruiser T6"
     }
 
     public init(_ name: String) {
@@ -8,9 +8,9 @@ public class AssaultCruiser: Starship {
             name: name,
             foreWeapons: 4,
             rearWeapons: 4,
-            engConsoles: 4,
+            engConsoles: 5,
             sciConsoles: 2,
-            tacConsoles: 3
+            tacConsoles: 4
         )
     }
 
@@ -21,9 +21,9 @@ public class AssaultCruiser: Starship {
             name: name,
             foreWeapons: 4,
             rearWeapons: 4,
-            engConsoles: 4,
+            engConsoles: 5,
             sciConsoles: 2,
-            tacConsoles: 3
+            tacConsoles: 4
         )
         try super.decodeLoadout(from: container)
     }

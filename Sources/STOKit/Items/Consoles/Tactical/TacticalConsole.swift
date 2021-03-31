@@ -1,4 +1,4 @@
-open class EngineeringConsole: Console {
+open class TacticalConsole: Console {
     public let mark: Mark
     public let quality: Quality
 
@@ -11,7 +11,7 @@ open class EngineeringConsole: Console {
         return "- Mk \(mark) \(quality)"
     }
 
-    internal static func decode<C: EngineeringConsole>(from container: KeyedDecodingContainer<ConsoleCodingKeys>, as type: C.Type) throws -> C {
+    internal static func decode<C: TacticalConsole>(from container: KeyedDecodingContainer<ConsoleCodingKeys>, as type: C.Type) throws -> C {
         let mark = try container.decode(Mark.self, forKey: .mark)
         let quality = try container.decode(Quality.self, forKey: .quality)
         return type.init(mark, quality)

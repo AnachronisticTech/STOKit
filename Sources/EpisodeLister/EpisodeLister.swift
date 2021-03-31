@@ -32,7 +32,7 @@ struct EpisodeLister {
         ship.save()
         print(Starship.load(named: "U.S.S. Miranda"))
         
-        let newShip = AssaultCruiser("U.S.S. Pearce")
+        let newShip = FleetImperialIntelAssaultCruiserT6("U.S.S. Pearce")
         print(newShip)
         newShip.setForeWeapon(slot: 4, to: BeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
         newShip.setForeWeapon(slot: 2, to: BeamWeapon(.BeamArray, .Phaser, .XV, .Epic))
@@ -42,6 +42,8 @@ struct EpisodeLister {
         newShip.setRearWeapon(slot: 2, to: PhotonTorpedo(.XV, .Epic))
         newShip.setRearWeapon(slot: 4, to: AncientAntiprotonOmniBeamArray(.XV, .Epic))
         newShip.setEngineeringConsole(slot: 1, to: NeutroniumAlloy(.XV, .Epic))
+        newShip.setTacticalConsole(slot: 1, to: PhaserRelay(.XV, .Epic))
+        newShip.setScienceConsole(slot: 1, to: FieldGenerator(.XV, .Epic))
         print(newShip)
         newShip.save()
         print(Starship.load(named: "U.S.S. Pearce"))

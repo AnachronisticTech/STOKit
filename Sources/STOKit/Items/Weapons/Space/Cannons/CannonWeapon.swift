@@ -51,15 +51,4 @@ open class CannonWeapon: Weapon {
         let damageType = try container.decode(EnergyDamageType.self, forKey: ._damageType)
         return type.init(weaponType, damageType, mark, quality)
     }
-
-    internal static let specialTypes: [String: CannonWeapon.Type] = {
-        return _specialTypes.reduce([String: CannonWeapon.Type]()) { (dict, type) -> [String: CannonWeapon.Type] in
-            var dict = dict
-            dict[String(describing: type.self)] = type.self
-            return dict
-        }
-    }()
-    private static let _specialTypes: [CannonWeapon.Type] = [
-        PhaserQuadCannons.self
-    ]
 }

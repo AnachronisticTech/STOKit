@@ -2,31 +2,46 @@ import Foundation
 
 internal protocol StarshipBase: Codable {
     var name: String { get set }
+    var className: String { get }
 
     var foreWeapons: WeaponArray { get }
     var rearWeapons: WeaponArray { get }
 
     var engConsoles: ConsoleArray<EngineeringConsole> { get }
+    var sciConsoles: ConsoleArray<ScienceConsole> { get }
+    var tacConsoles: ConsoleArray<TacticalConsole> { get }
 }
 
 open class Starship: StarshipBase {
     public var name: String
+    public var className: String { "" }
     public private(set) var foreWeapons: WeaponArray
     public private(set) var rearWeapons: WeaponArray
 
     public private(set) var engConsoles: ConsoleArray<EngineeringConsole>
+    public private(set) var sciConsoles: ConsoleArray<ScienceConsole>
+    public private(set) var tacConsoles: ConsoleArray<TacticalConsole>
 
     internal enum CodingKeys: String, CodingKey {
         case name, `class`
         case foreWeapons, rearWeapons
-        case engConsoles
+        case engConsoles, sciConsoles, tacConsoles
     }
 
-    internal init(name: String, foreWeapons: Int, rearWeapons: Int, engConsoles: Int) {
+    internal init(
+        name: String,
+        foreWeapons: Int,
+        rearWeapons: Int,
+        engConsoles: Int,
+        sciConsoles: Int,
+        tacConsoles: Int
+    ) {
         self.name = name
         self.foreWeapons = WeaponArray(size: foreWeapons)
         self.rearWeapons = WeaponArray(size: rearWeapons)
         self.engConsoles = ConsoleArray(size: engConsoles)
+        self.sciConsoles = ConsoleArray(size: sciConsoles)
+        self.tacConsoles = ConsoleArray(size: tacConsoles)
     }
 
     public required init(from decoder: Decoder) throws {
@@ -39,6 +54,8 @@ open class Starship: StarshipBase {
         try container.encode(foreWeapons, forKey: .foreWeapons)
         try container.encode(rearWeapons, forKey: .rearWeapons)
         try container.encode(engConsoles, forKey: .engConsoles)
+        try container.encode(sciConsoles, forKey: .sciConsoles)
+        try container.encode(tacConsoles, forKey: .tacConsoles)
     }
 
     public func setForeWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
@@ -52,7 +69,17 @@ open class Starship: StarshipBase {
 
     public func setEngineeringConsole<C: Console>(slot index: Int, to console: C? = nil) {
         guard let console = console as? EngineeringConsole else { return }
-        engConsoles[index-1] = console 
+        engConsoles[index-1] = console
+    }
+
+    public func setScienceConsole<C: Console>(slot index: Int, to console: C? = nil) {
+        guard let console = console as? ScienceConsole else { return }
+        sciConsoles[index-1] = console
+    }
+
+    public func setTacticalConsole<C: Console>(slot index: Int, to console: C? = nil) {
+        guard let console = console as? TacticalConsole else { return }
+        tacConsoles[index-1] = console
     }
 
     internal func decodeLoadout(from container: KeyedDecodingContainer<CodingKeys>) throws {
@@ -72,6 +99,16 @@ open class Starship: StarshipBase {
             forKey: .engConsoles
         )
         try decode(consolesContainer: eng)
+        let sci = try container.nestedContainer(
+            keyedBy: ConsoleArrayCodingKeys.self,
+            forKey: .sciConsoles
+        )
+        try decode(consolesContainer: sci)
+        let tac = try container.nestedContainer(
+            keyedBy: ConsoleArrayCodingKeys.self,
+            forKey: .tacConsoles
+        )
+        try decode(consolesContainer: tac)
     }
 
     internal func decode(
@@ -118,10 +155,10 @@ open class Starship: StarshipBase {
             if let console = console {
                 if let console = console as? EngineeringConsole {
                     setEngineeringConsole(slot: index, to: console)
-                // } else if let console = console as? ScienceConsole {
-                //     setScienceConsole(slot: index, to: console)
-                // } else if let console = console as? TacticalConsole {
-                //     setTacticalConsole(slot: index, to: console)
+                } else if let console = console as? ScienceConsole {
+                    setScienceConsole(slot: index, to: console)
+                } else if let console = console as? TacticalConsole {
+                    setTacticalConsole(slot: index, to: console)
                 }
             }
         }
@@ -137,38 +174,28 @@ open class Starship: StarshipBase {
                 if let type = EngineeringConsole.specialTypes[className] {
                     let console = try EngineeringConsole.decode(from: consoleContainer, as: type)
                     setConsole(slot: index+1, to: console)
-                // } else if let type = ScienceConsole.specialTypes[className] {
-                //     let console = try ScienceConsole.decode(from: consoleContainer, as: type)
-                //     setConsole(slot: index+1, to: console)
-                // } else if let type = TacticalConsole.specialTypes[className] {
-                //     let console = try TacticalConsole.decode(from: consoleContainer, as: type)
-                //     setConsole(slot: index+1, to: console)
+                } else if let type = ScienceConsole.specialTypes[className] {
+                    let console = try ScienceConsole.decode(from: consoleContainer, as: type)
+                    setConsole(slot: index+1, to: console)
+                } else if let type = TacticalConsole.specialTypes[className] {
+                    let console = try TacticalConsole.decode(from: consoleContainer, as: type)
+                    setConsole(slot: index+1, to: console)
                 }
             }
         }
     }
-
-    internal static let specialTypes: [String: Starship.Type] = {
-        return _specialTypes.reduce([String: Starship.Type]()) { (dict, type) -> [String: Starship.Type] in
-            var dict = dict
-            dict[String(describing: type.self)] = type.self
-            return dict
-        }
-    }()
-    private static let _specialTypes: [Starship.Type] = [
-        AssaultCruiser.self,
-        LightCruiser.self
-    ]
 }
 
 extension Starship: CustomStringConvertible {
     public var description: String {
         """
-        \(name)
-            Fore weapons: \(foreWeapons)
-            Rear weapons: \(rearWeapons)
-            ----
-            Engineering consoles: \(engConsoles)
+        \(name) - \(className)
+            Fore weapons         : \(foreWeapons)
+            Rear weapons         : \(rearWeapons)
+            ----------------------
+            Engineering consoles : \(engConsoles)
+            Science consoles     : \(sciConsoles)
+            Tactical consoles    : \(tacConsoles)
         """
     }
 }

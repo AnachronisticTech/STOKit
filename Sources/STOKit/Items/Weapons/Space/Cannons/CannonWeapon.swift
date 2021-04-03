@@ -1,7 +1,4 @@
 open class CannonWeapon: Weapon {
-    public let mark: Mark
-    public let quality: Quality
-
     private let _weaponType: CannonWeaponType!
     public var weaponType: some WeaponType {
         _weaponType
@@ -20,23 +17,24 @@ open class CannonWeapon: Weapon {
     ) {
         self._weaponType = weaponType
         self._damageType = damageType
-        self.mark = mark
-        self.quality = quality
+        super.init(mark, quality)
     }
 
-    public var description: String {
+    public override var description: String {
         return "\(damageType) \(weaponType) - Mk \(mark) \(quality)"
     }
 
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: WeaponCodingKeys.self)
-        self.mark = try container.decode(Mark.self, forKey: .mark)
-        self.quality = try container.decode(Quality.self, forKey: .quality)
         self._weaponType = try container.decode(CannonWeaponType.self, forKey: ._weaponType)
         self._damageType = try container.decode(EnergyDamageType.self, forKey: ._damageType)
+        super.init(
+            try container.decode(Mark.self, forKey: .mark),
+            try container.decode(Quality.self, forKey: .quality)
+        )
     }
 
-    public func encode(to encoder: Encoder) throws {
+    public override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: WeaponCodingKeys.self)
         try container.encode(mark, forKey: .mark)
         try container.encode(quality, forKey: .quality)

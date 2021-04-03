@@ -1,4 +1,24 @@
-public protocol Weapon: Item, CustomStringConvertible, Codable {}
+internal protocol WeaponBase: Item, CustomStringConvertible, Codable {}
+
+open class Weapon: WeaponBase {
+    public let mark: Mark
+    public let quality: Quality
+
+    public var description: String { "Weapon Base" }
+
+    internal init(_ mark: Mark, _ quality: Quality) {
+        self.mark = mark
+        self.quality = quality
+    }
+
+    public required init(from decoder: Decoder) throws {
+        fatalError("You cannot instantiate an abstract weapon")
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        fatalError("You cannot encode an abstract weapon")
+    }
+}
 
 enum WeaponCodingKeys: String, CodingKey {
     case mark, quality, `class`

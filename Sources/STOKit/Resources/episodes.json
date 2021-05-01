@@ -543,5 +543,520 @@
         "name": "Boldly They Rode",
         "arc": "Lost Dominion: The 2800",
         "number": 6
+    },
+    {
+        "name": "Report on Borg Activities",
+        "arc": "Borg Advance",
+        "number": 1
+    },
+    {
+        "name": "Where Angels Fear to Tread",
+        "arc": "Borg Advance",
+        "number": 2
+    },
+    {
+        "name": "A Gathering Darkness",
+        "arc": "Borg Advance",
+        "number": 3
+    },
+    {
+        "name": "Assimilation",
+        "arc": "Borg Advance",
+        "number": 4
+    },
+    {
+        "name": "Fluid Dynamics",
+        "arc": "Borg Advance",
+        "number": 5
+    },
+    {
+        "name": "Cold War",
+        "arc": "Cold War",
+        "number": 1
+    },
+    {
+        "name": "Cold Call",
+        "arc": "Cold War",
+        "number": 2
+    },
+    {
+        "name": "Out in the Cold",
+        "arc": "Cold War",
+        "number": 3
+    },
+    {
+        "name": "Cold Comfort",
+        "arc": "Cold War",
+        "number": 4
+    },
+    {
+        "name": "Cold Case",
+        "arc": "Cold War",
+        "number": 5
+    },
+    {
+        "name": "Cold Storage",
+        "arc": "Cold War",
+        "number": 6
+    },
+    {
+        "name": "New Romulus Aid",
+        "arc": "New Romulus",
+        "number": 1
+    },
+    {
+        "name": "Staging Area",
+        "arc": "New Romulus",
+        "number": 2
+    },
+    {
+        "name": "Hidden Camera",
+        "arc": "New Romulus",
+        "number": 3
+    },
+    {
+        "name": "Warehouse",
+        "arc": "New Romulus",
+        "number": 4
+    },
+    {
+        "name": "Mountain Base",
+        "arc": "New Romulus",
+        "number": 5
+    },
+    {
+        "name": "Secret Shuttle Codes",
+        "arc": "New Romulus",
+        "number": 6
+    },
+    {
+        "name": "Overgrown Caves",
+        "arc": "New Romulus",
+        "number": 7
+    },
+    {
+        "name": "Web Access",
+        "arc": "New Romulus",
+        "number": 8
+    },
+    {
+        "name": "Latest Findings",
+        "arc": "New Romulus",
+        "number": 9
+    },
+    {
+        "name": "The Power Source",
+        "arc": "New Romulus",
+        "number": 10
+    },
+    {
+        "name": "Secrets of the Ancients",
+        "arc": "New Romulus",
+        "number": 11
+    },
+    {
+        "name": "Sphere of Influence",
+        "arc": "The Dyson Sphere",
+        "number": 1
+    },
+    {
+        "name": "Circles within Circles",
+        "arc": "The Dyson Sphere",
+        "number": 2
+    },
+    {
+        "name": "Supply Woes",
+        "arc": "The Dyson Sphere",
+        "number": 3
+    },
+    {
+        "name": "The Contested Zone",
+        "arc": "The Dyson Sphere",
+        "number": 4
+    },
+    {
+        "name": "The Omega Standoff",
+        "arc": "The Dyson Sphere",
+        "number": 5
+    },
+    {
+        "name": "Tower Control",
+        "arc": "The Dyson Sphere",
+        "number": 6
+    },
+    {
+        "name": "A Step Between Stars",
+        "arc": "The Dyson Sphere",
+        "number": 7
+    },
+    {
+        "name": "Fluidic Destruction",
+        "arc": "The Dyson Sphere",
+        "number": 8
+    },
+    {
+        "name": "Surface Tension",
+        "arc": "The Dyson Sphere",
+        "number": 9
+    },
+    {
+        "name": "Escalation",
+        "arc": "Delta Quadrant",
+        "number": 1
+    },
+    {
+        "name": "Mindscape",
+        "arc": "Delta Quadrant",
+        "number": 2
+    },
+    {
+        "name": "Reunion",
+        "arc": "Delta Quadrant",
+        "number": 3
+    },
+    {
+        "name": "Friends in Unlikely Places",
+        "arc": "Delta Quadrant",
+        "number": 4
+    },
+    {
+        "name": "Revelations",
+        "arc": "Delta Quadrant",
+        "number": 5
+    },
+    {
+        "name": "Enemies in All the Usual Places",
+        "arc": "Delta Quadrant",
+        "number": 6
+    },
+    {
+        "name": "All That Glitters",
+        "arc": "Delta Quadrant",
+        "number": 7
+    },
+    {
+        "name": "Know Your Enemies",
+        "arc": "Delta Quadrant",
+        "number": 8
+    },
+    {
+        "name": "The Kobali Front",
+        "arc": "Delta Quadrant",
+        "number": 9
+    },
+    {
+        "name": "Capture the Flag",
+        "arc": "Delta Quadrant",
+        "number": 10
+    },
+    {
+        "name": "The Dragon's Deceit",
+        "arc": "Delta Quadrant",
+        "number": 11
+    },
+    {
+        "name": "Alliances",
+        "arc": "Delta Quadrant",
+        "number": 12
+    },
+    {
+        "name": "Better with Friends",
+        "arc": "Delta Quadrant",
+        "number": 13
+    },
+    {
+        "name": "Revolution",
+        "arc": "Delta Quadrant",
+        "number": 14
+    },
+    {
+        "name": "Taking Care of Enemies",
+        "arc": "Delta Quadrant",
+        "number": 15
+    },
+    {
+        "name": "Takedown",
+        "arc": "Delta Quadrant",
+        "number": 16
+    },
+    {
+        "name": "What's Left Behind",
+        "arc": "Delta Quadrant",
+        "number": 17
+    },
+    {
+        "name": "Dust to Dust",
+        "arc": "Delta Quadrant",
+        "number": 18
+    },
+    {
+        "name": "Uneasy Allies",
+        "arc": "Iconian War",
+        "number": 1
+    },
+    {
+        "name": "Blood of Ancients",
+        "arc": "Iconian War",
+        "number": 2
+    },
+    {
+        "name": "Delta Flight",
+        "arc": "Iconian War",
+        "number": 3
+    },
+    {
+        "name": "House Pegh",
+        "arc": "Iconian War",
+        "number": 4
+    },
+    {
+        "name": "Time in a Bottle",
+        "arc": "Iconian War",
+        "number": 5
+    },
+    {
+        "name": "Broken Circle",
+        "arc": "Iconian War",
+        "number": 6
+    },
+    {
+        "name": "Butterfly",
+        "arc": "Iconian War",
+        "number": 7
+    },
+    {
+        "name": "Midnight",
+        "arc": "Iconian War",
+        "number": 8
+    },
+    {
+        "name": "Temporal Ambassador",
+        "arc": "Yesterday's War",
+        "number": 1
+    },
+    {
+        "name": "The Once and Future Agent",
+        "arc": "Yesterday's War",
+        "number": 2
+    },
+    {
+        "name": "The Core of the Matter",
+        "arc": "Yesterday's War",
+        "number": 3
+    },
+    {
+        "name": "Vorgon Conclusions",
+        "arc": "Yesterday's War",
+        "number": 4
+    },
+    {
+        "name": "Terminal Expanse",
+        "arc": "Yesterday's War",
+        "number": 5
+    },
+    {
+        "name": "Survivor",
+        "arc": "Yesterday's War",
+        "number": 6
+    },
+    {
+        "name": "Sunrise",
+        "arc": "Future Proof",
+        "number": 1
+    },
+    {
+        "name": "Stormbound",
+        "arc": "Future Proof",
+        "number": 2
+    },
+    {
+        "name": "Time and Tide",
+        "arc": "Future Proof",
+        "number": 3
+    },
+    {
+        "name": "The Temporal Front",
+        "arc": "Future Proof",
+        "number": 4
+    },
+    {
+        "name": "Temporal Reckoning",
+        "arc": "Future Proof",
+        "number": 5
+    },
+    {
+        "name": "Ragnarok",
+        "arc": "Future Proof",
+        "number": 6
+    },
+    {
+        "name": "Echoes of Light",
+        "arc": "New Frontiers",
+        "number": 1
+    },
+    {
+        "name": "Of Signs and Portents",
+        "arc": "New Frontiers",
+        "number": 2
+    },
+    {
+        "name": "Mirrors and Smoke",
+        "arc": "New Frontiers",
+        "number": 3
+    },
+    {
+        "name": "Brushfire",
+        "arc": "New Frontiers",
+        "number": 4
+    },
+    {
+        "name": "Beyond the Nexus",
+        "arc": "New Frontiers",
+        "number": 5
+    },
+    {
+        "name": "Melting Pot",
+        "arc": "New Frontiers",
+        "number": 6
+    },
+    {
+        "name": "Scylla and Charybdis",
+        "arc": "New Frontiers",
+        "number": 7
+    },
+    {
+        "name": "The Renegade's Regret",
+        "arc": "New Frontiers",
+        "number": 8
+    },
+    {
+        "name": "Storm Clouds Gather",
+        "arc": "Gamma Quadrant",
+        "number": 1
+    },
+    {
+        "name": "Armistice",
+        "arc": "Gamma Quadrant",
+        "number": 2
+    },
+    {
+        "name": "The Search",
+        "arc": "Gamma Quadrant",
+        "number": 3
+    },
+    {
+        "name": "Doomed to Repeat",
+        "arc": "Gamma Quadrant",
+        "number": 4
+    },
+    {
+        "name": "Quark's Lucky Seven",
+        "arc": "Gamma Quadrant",
+        "number": 5
+    },
+    {
+        "name": "Tenebris Torquent",
+        "arc": "Gamma Quadrant",
+        "number": 6
+    },
+    {
+        "name": "Home",
+        "arc": "Gamma Quadrant",
+        "number": 7
+    },
+    {
+        "name": "The Plausibility of the Possible",
+        "arc": "Age of Discovery",
+        "number": 1
+    },
+    {
+        "name": "Impossibility of Reason",
+        "arc": "Age of Discovery",
+        "number": 2
+    },
+    {
+        "name": "Secrets",
+        "arc": "Age of Discovery",
+        "number": 3
+    },
+    {
+        "name": "Downfall",
+        "arc": "Age of Discovery",
+        "number": 4
+    },
+    {
+        "name": "Para Pacem",
+        "arc": "J'Ula's Discovery",
+        "number": 1
+    },
+    {
+        "name": "Illusion of Communication",
+        "arc": "J'Ula's Discovery",
+        "number": 2
+    },
+    {
+        "name": "Beneath the Skin",
+        "arc": "J'Ula's Discovery",
+        "number": 3
+    },
+    {
+        "name": "Sentinels",
+        "arc": "J'Ula's Discovery",
+        "number": 4
+    },
+    {
+        "name": "Rescue and Search",
+        "arc": "J'Ula's Discovery",
+        "number": 5
+    },
+    {
+        "name": "Within the Briars",
+        "arc": "J'Ula's Discovery",
+        "number": 6
+    },
+    {
+        "name": "The Ninth Rule",
+        "arc": "J'Ula's Discovery",
+        "number": 7
+    },
+    {
+        "name": "Ruins of Doom",
+        "arc": "J'Ula's Discovery",
+        "number": 8
+    },
+    {
+        "name": "The Measure of Morality (Part 1)",
+        "arc": "J'Ula's Discovery",
+        "number": 9
+    },
+    {
+        "name": "The Measure of Morality (Part 2)",
+        "arc": "J'Ula's Discovery",
+        "number": 10
+    },
+    {
+        "name": "The Centre Cannot Hold",
+        "arc": "Klingon Civil War",
+        "number": 1
+    },
+    {
+        "name": "The Khitomer Discord",
+        "arc": "Klingon Civil War",
+        "number": 2
+    },
+    {
+        "name": "Partisans",
+        "arc": "Klingon Civil War",
+        "number": 3
+    },
+    {
+        "name": "Knowledge is Power",
+        "arc": "Klingon Civil War",
+        "number": 4
+    },
+    {
+        "name": "Leap of Faith",
+        "arc": "Klingon Civil War",
+        "number": 5
     }
 ]

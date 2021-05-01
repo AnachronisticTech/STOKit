@@ -1,4 +1,4 @@
-open class ScienceConsole: Console {
+open class Deflector: Item, Codable, CustomStringConvertible {
     public let mark: Mark
     public let quality: Quality
 
@@ -11,7 +11,7 @@ open class ScienceConsole: Console {
         return "- Mk \(mark) \(quality)"
     }
 
-    internal static func decode<C: ScienceConsole>(from container: KeyedDecodingContainer<ItemCodingKeys>, as type: C.Type) throws -> C {
+    internal static func decode<C: Deflector>(from container: KeyedDecodingContainer<ItemCodingKeys>, as type: C.Type) throws -> C {
         let mark = try container.decode(Mark.self, forKey: .mark)
         let quality = try container.decode(Quality.self, forKey: .quality)
         return type.init(mark, quality)

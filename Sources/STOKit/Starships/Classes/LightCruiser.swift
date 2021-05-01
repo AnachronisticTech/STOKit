@@ -3,6 +3,8 @@ public class LightCruiser: Starship {
         "Light Cruiser"
     }
 
+    public override var canEquipDualCannons: Bool { true }
+
     public init(_ name: String) {
         super.init(
             name: name,

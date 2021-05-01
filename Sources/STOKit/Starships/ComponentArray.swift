@@ -40,25 +40,25 @@ extension ComponentArray: Encodable {
         var container = encoder.container(keyedBy: ComponentArrayCodingKeys.self)
         for (index, component) in components.enumerated() {
             let key = ComponentArrayCodingKeys.allCases.filter({ $0.rawValue.contains("\(index+1)") }).first!
-            if let component = component {
-                switch component {
-                    case is EngineeringConsole:
-                        try container.encode(component as! EngineeringConsole, forKey: key)
-                    case is ScienceConsole:
-                        try container.encode(component as! ScienceConsole, forKey: key)
-                    case is TacticalConsole:
-                        try container.encode(component as! TacticalConsole, forKey: key)
-                    case is BeamWeapon:
-                        try container.encode(component as! BeamWeapon, forKey: key)
-                    case is CannonWeapon:
-                        try container.encode(component as! CannonWeapon, forKey: key)
-                    case is KineticTorpedoWeapon:
-                        try container.encode(component as! KineticTorpedoWeapon, forKey: key)
-                    default:
-                        try container.encodeNil(forKey: key)
-                }
-            } else {
+            guard let component = component else {
                 try container.encodeNil(forKey: key)
+                continue
+            }
+            switch component {
+                case is EngineeringConsole:
+                    try container.encode(component as! EngineeringConsole, forKey: key)
+                case is ScienceConsole:
+                    try container.encode(component as! ScienceConsole, forKey: key)
+                case is TacticalConsole:
+                    try container.encode(component as! TacticalConsole, forKey: key)
+                case is BeamWeapon:
+                    try container.encode(component as! BeamWeapon, forKey: key)
+                case is CannonWeapon:
+                    try container.encode(component as! CannonWeapon, forKey: key)
+                case is KineticTorpedoWeapon:
+                    try container.encode(component as! KineticTorpedoWeapon, forKey: key)
+                default:
+                    try container.encodeNil(forKey: key)
             }
         }
     }

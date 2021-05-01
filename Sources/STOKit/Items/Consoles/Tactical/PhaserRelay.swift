@@ -8,7 +8,7 @@ public class PhaserRelay: TacticalConsole {
     }
 
     public override func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: ConsoleCodingKeys.self)
+        var container = encoder.container(keyedBy: ItemCodingKeys.self)
         try container.encode(String(describing: type(of: self)), forKey: .class)
         try super.encode(to: encoder)
     }

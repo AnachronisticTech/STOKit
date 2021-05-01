@@ -1,4 +1,4 @@
-public class NeutroniumAlloy: EngineeringConsole {
+public class PositronDeflector: Deflector {
     public required init(_ mark: Mark, _ quality: Quality) {
         super.init(mark, quality)
     }
@@ -14,6 +14,6 @@ public class NeutroniumAlloy: EngineeringConsole {
     }
 
     public override var description: String {
-        return "Neutronium Alloy \(super.description)"
+        return "Positron Deflector \(super.description)"
     }
 }

@@ -3,6 +3,7 @@ import Foundation
 internal protocol StarshipBase: Codable {
     var name: String { get set }
     var className: String { get }
+    var canEquipDualCannons: Bool { get }
 
     var foreWeapons: ComponentArray<Weapon> { get }
     var rearWeapons: ComponentArray<Weapon> { get }
@@ -10,11 +11,15 @@ internal protocol StarshipBase: Codable {
     var engConsoles: ComponentArray<EngineeringConsole> { get }
     var sciConsoles: ComponentArray<ScienceConsole> { get }
     var tacConsoles: ComponentArray<TacticalConsole> { get }
+
+    var deflector: Deflector? { get }
 }
 
 open class Starship: StarshipBase {
     public var name: String
-    public var className: String { "" }
+    public var className: String { String(describing: type(of: self)) }
+    var canEquipDualCannons: Bool { false }
+
     public private(set) var foreWeapons: ComponentArray<Weapon>
     public private(set) var rearWeapons: ComponentArray<Weapon>
 
@@ -22,10 +27,13 @@ open class Starship: StarshipBase {
     public private(set) var sciConsoles: ComponentArray<ScienceConsole>
     public private(set) var tacConsoles: ComponentArray<TacticalConsole>
 
+    public var deflector: Deflector?
+
     internal enum CodingKeys: String, CodingKey {
         case name, `class`
         case foreWeapons, rearWeapons
         case engConsoles, sciConsoles, tacConsoles
+        case deflector
     }
 
     internal init(
@@ -42,6 +50,7 @@ open class Starship: StarshipBase {
         self.engConsoles = ComponentArray(size: engConsoles)
         self.sciConsoles = ComponentArray(size: sciConsoles)
         self.tacConsoles = ComponentArray(size: tacConsoles)
+        self.deflector = nil
     }
 
     public required init(from decoder: Decoder) throws {
@@ -56,10 +65,19 @@ open class Starship: StarshipBase {
         try container.encode(engConsoles, forKey: .engConsoles)
         try container.encode(sciConsoles, forKey: .sciConsoles)
         try container.encode(tacConsoles, forKey: .tacConsoles)
+        try container.encode(deflector, forKey: .deflector)
     }
 
     public func setForeWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
-        foreWeapons[index-1] = weapon
+        if let weapon = weapon as? CannonWeapon {
+            if canEquipDualCannons {
+                foreWeapons[index-1] = weapon
+            } else if case .Single = weapon.weaponType as! CannonWeaponType {
+                foreWeapons[index-1] = weapon
+            }
+        } else {
+            foreWeapons[index-1] = weapon
+        }
     }
 
     public func setRearWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
@@ -86,32 +104,37 @@ open class Starship: StarshipBase {
     }
 
     internal func decodeLoadout(from container: KeyedDecodingContainer<CodingKeys>) throws {
-        let fore = try container.nestedContainer(
-            keyedBy: ComponentArrayCodingKeys.self,
-            forKey: .foreWeapons
-        )
-        try decode(weaponsContainer: fore)
-        let rear = try container.nestedContainer(
-            keyedBy: ComponentArrayCodingKeys.self,
-            forKey: .rearWeapons
-        )
-        try decode(weaponsContainer: rear, true)
+        let weaponKeys: [CodingKeys] = [.foreWeapons, .rearWeapons]
+        for weaponKey in weaponKeys {
+            try decode(weaponsContainer:
+                try container.nestedContainer(
+                    keyedBy: ComponentArrayCodingKeys.self,
+                    forKey: weaponKey
+                ),
+                weaponKey == .rearWeapons
+            )
+        }
 
-        let eng = try container.nestedContainer(
-            keyedBy: ComponentArrayCodingKeys.self,
-            forKey: .engConsoles
-        )
-        try decode(consolesContainer: eng)
-        let sci = try container.nestedContainer(
-            keyedBy: ComponentArrayCodingKeys.self,
-            forKey: .sciConsoles
-        )
-        try decode(consolesContainer: sci)
-        let tac = try container.nestedContainer(
-            keyedBy: ComponentArrayCodingKeys.self,
-            forKey: .tacConsoles
-        )
-        try decode(consolesContainer: tac)
+        let consoleKeys: [CodingKeys] = [.engConsoles, .sciConsoles, .tacConsoles]
+        for consoleKey in consoleKeys {
+            try decode(consolesContainer:
+                try container.nestedContainer(
+                    keyedBy: ComponentArrayCodingKeys.self,
+                    forKey: consoleKey
+                )
+            )
+        }
+
+        if
+            let deflectorContainer = try? container.nestedContainer(
+                keyedBy: ItemCodingKeys.self,
+                forKey: .deflector
+            ),
+            let className = try? deflectorContainer.decode(String.self, forKey: .class),
+            let type = Deflector.specialTypes[className]
+        {
+            deflector = try Deflector.decode(from: deflectorContainer, as: type.self)
+        }
     }
 
     internal func decode(
@@ -131,16 +154,16 @@ open class Starship: StarshipBase {
             )
             if let className = try? weaponContainer.decode(String.self, forKey: .class) {
                 if let type = BeamWeapon.specialTypes[className] {
-                    let weapon = try BeamWeapon.decode(from: weaponContainer, as: type.self)
+                    let weapon = try BeamWeapon.decode(from: weaponContainer, as: type)
                     setWeapon(slot: index+1, to: weapon)
                 } else if let type = CannonWeapon.specialTypes[className] {
-                    let weapon = try CannonWeapon.decode(from: weaponContainer, as: type.self)
+                    let weapon = try CannonWeapon.decode(from: weaponContainer, as: type)
                     setWeapon(slot: index+1, to: weapon)
                 } else if let type = KineticTorpedoWeapon.specialTypes[className] {
-                    let weapon = try KineticTorpedoWeapon.decode(from: weaponContainer, as: type.self)
+                    let weapon = try KineticTorpedoWeapon.decode(from: weaponContainer, as: type)
                     setWeapon(slot: index+1, to: weapon)
                 } else if let type = EnergyTorpedoWeapon.specialTypes[className] {
-                    let weapon = try EnergyTorpedoWeapon.decode(from: weaponContainer, as: type.self)
+                    let weapon = try EnergyTorpedoWeapon.decode(from: weaponContainer, as: type)
                     setWeapon(slot: index+1, to: weapon)
                 }
             } else if let weapon = try? container.decode(CannonWeapon.self, forKey: key) {
@@ -148,6 +171,8 @@ open class Starship: StarshipBase {
             } else if let weapon = try? container.decode(BeamWeapon.self, forKey: key) {
                 setWeapon(slot: index+1, to: weapon)
             } else if let weapon = try? container.decode(KineticTorpedoWeapon.self, forKey: key) {
+                setWeapon(slot: index+1, to: weapon)
+            } else if let weapon = try? container.decode(EnergyTorpedoWeapon.self, forKey: key) {
                 setWeapon(slot: index+1, to: weapon)
             }
         }
@@ -170,7 +195,7 @@ open class Starship: StarshipBase {
             if !container.allKeys.contains(key) { continue }
             if try container.decodeNil(forKey: key) { continue }
             let consoleContainer = try container.nestedContainer(
-                keyedBy: ConsoleCodingKeys.self,
+                keyedBy: ItemCodingKeys.self,
                 forKey: key
             )
             if let className = try? consoleContainer.decode(String.self, forKey: .class) {
@@ -194,6 +219,7 @@ extension Starship: CustomStringConvertible {
         """
         \(name) - \(className)
             Fore weapons         : \(foreWeapons)
+            Deflector            : \(deflector != nil ? String(describing: deflector!) : "Empty")
             Rear weapons         : \(rearWeapons)
             ----------------------
             Engineering consoles : \(engConsoles)

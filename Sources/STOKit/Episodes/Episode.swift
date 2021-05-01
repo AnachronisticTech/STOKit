@@ -1,14 +1,16 @@
 import Foundation
 
 public class Episode: Codable, CustomStringConvertible {
-    public var name: String
-    public var arc: StoryArc
-    public var number: Int
+    public let name: String
+    public let arc: StoryArc
+    public let number: Int
+    public let id: UUID
 
-    public init(name: String, arc: StoryArc, number: Int) {
+    internal init(name: String, arc: StoryArc, number: Int, id: UUID) {
         self.name = name
         self.arc = arc
         self.number = number
+        self.id = id
     }
 
     public static func all() -> [Episode] {
@@ -26,8 +28,7 @@ public class Episode: Codable, CustomStringConvertible {
 
 extension Episode: Hashable {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(number)
-        hasher.combine(arc)
+        hasher.combine(id)
     }
 }
 
@@ -39,6 +40,6 @@ extension Episode: Comparable {
 
 extension Episode: Equatable {
     public static func ==(lhs: Episode, rhs: Episode) -> Bool {
-        return lhs.name == rhs.name && lhs.arc == rhs.arc && lhs.number == rhs.number
+        return lhs.id == rhs.id
     }
 }

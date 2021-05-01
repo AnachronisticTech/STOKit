@@ -1,3 +1,5 @@
+import struct Foundation.UUID
+
 public struct PlayableStoryArcCollection: Codable {
     public typealias StoryArcs = [PlayableEpisode]
 
@@ -38,13 +40,13 @@ public struct PlayableStoryArcCollection: Codable {
     public var completed: [PlayableEpisode] {
         return episodes
             .filter { $0.played }
-            .sorted(by: { ($0.arc.order, $0.number) < ($1.arc.order, $1.number) })
+            .sorted()
     }
 
     public var incomplete: [PlayableEpisode] {
         return episodes
             .filter { !$0.played }
-            .sorted(by: { ($0.arc.order, $0.number) < ($1.arc.order, $1.number) })
+            .sorted()
     }
 }
 

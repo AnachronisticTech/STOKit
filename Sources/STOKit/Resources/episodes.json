@@ -1,1062 +1,1274 @@
 [
     {
-        "name": "Graduation Day",
         "arc": "Starfleet Tutorial (2409)",
+        "id": "BF97B041-7DAC-4E73-A2AA-1BBA06A7FF87",
+        "name": "Graduation Day",
         "number": 1
     },
     {
+        "arc": "Starfleet Tutorial (2409)",
+        "id": "1B78F0FE-2E96-4CEC-945F-573164BF5502",
         "name": "Training Cruise",
-        "arc": "Starfleet Tutorial (2409)",
         "number": 2
     },
     {
+        "arc": "Starfleet Tutorial (2409)",
+        "id": "23FCE285-ADFB-4171-95FE-7121174F3811",
         "name": "Field Promotions",
-        "arc": "Starfleet Tutorial (2409)",
         "number": 3
     },
     {
+        "arc": "Starfleet Tutorial (2409)",
+        "id": "5118A12E-7519-495F-9DB1-4394DD20F0B2",
         "name": "Communication Breakdown",
-        "arc": "Starfleet Tutorial (2409)",
         "number": 4
     },
     {
+        "arc": "Starfleet Tutorial (2409)",
+        "id": "674C835B-8879-4D43-B0F2-5056AAE2F245",
         "name": "Assimilation of the Innocent",
-        "arc": "Starfleet Tutorial (2409)",
         "number": 5
     },
     {
+        "arc": "Starfleet Tutorial (TOS)",
+        "id": "FA359820-AAD7-4D5D-A3A1-3D312A27DBEB",
         "name": "I Sing of Arms",
-        "arc":"Starfleet Tutorial (TOS)",
         "number": 1
     },
     {
+        "arc": "Starfleet Tutorial (TOS)",
+        "id": "603B96EC-5B8C-4425-BF66-905EC0ECF1B1",
         "name": "Search and Rescue",
-        "arc": "Starfleet Tutorial (TOS)",
         "number": 2
     },
     {
+        "arc": "Starfleet Tutorial (TOS)",
+        "id": "77A3B61D-5890-48FB-8F0C-B60F17614E6D",
         "name": "Bull by the Horns",
-        "arc": "Starfleet Tutorial (TOS)",
         "number": 3
     },
     {
+        "arc": "Starfleet Tutorial (TOS)",
+        "id": "741AC5F4-45F4-4BC0-B559-D1CA04CCDC63",
         "name": "Dislodging Klingons",
-        "arc": "Starfleet Tutorial (TOS)",
         "number": 4
     },
     {
+        "arc": "Starfleet Tutorial (TOS)",
+        "id": "92CC9FF0-6583-473D-84DA-2ACFE4730311",
         "name": "The Taurean Affair",
-        "arc": "Starfleet Tutorial (TOS)",
         "number": 5
     },
     {
+        "arc": "Starfleet Tutorial (TOS)",
+        "id": "9E261303-C1C1-43C4-B173-F33189CFFEC9",
         "name": "Earthward Bound",
-        "arc": "Starfleet Tutorial (TOS)",
         "number": 6
     },
     {
+        "arc": "Starfleet Tutorial (DSC)",
+        "id": "1123C61D-D9DE-4F78-BFF5-B8127E9F1178",
         "name": "Graduation Day",
-        "arc": "Starfleet Tutorial (DSC)",
         "number": 1
     },
     {
+        "arc": "Starfleet Tutorial (DSC)",
+        "id": "628D6828-7CD5-467A-A512-22091542F2E6",
         "name": "Routine Maneuvers",
-        "arc": "Starfleet Tutorial (DSC)",
         "number": 2
     },
     {
+        "arc": "Starfleet Tutorial (DSC)",
+        "id": "1C847158-207C-4228-AEBD-4F550FAF1D45",
         "name": "Trial by Fire",
-        "arc": "Starfleet Tutorial (DSC)",
         "number": 3
     },
     {
+        "arc": "Starfleet Tutorial (DSC)",
+        "id": "961E24C6-576D-4BE6-8781-07A0D29489C3",
         "name": "The Shadow Knows",
-        "arc": "Starfleet Tutorial (DSC)",
         "number": 4
     },
     {
+        "arc": "Starfleet Tutorial (DSC)",
+        "id": "4D4CC98D-F593-4A53-A444-18904FB1CB95",
         "name": "Children of War",
-        "arc": "Starfleet Tutorial (DSC)",
         "number": 5
     },
     {
+        "arc": "Starfleet Tutorial (DSC)",
+        "id": "60472C09-656D-40B6-A4D9-098573B4D21E",
         "name": "Reporting In",
-        "arc": "Starfleet Tutorial (DSC)",
         "number": 6
     },
     {
+        "arc": "Agents of Yesterday",
+        "id": "739D0AD7-3A59-4394-8571-690CCD45383F",
         "name": "Explore Earth Spacedock",
-        "arc": "Agents of Yesterday",
         "number": 1
     },
     {
+        "arc": "Agents of Yesterday",
+        "id": "E0BD3936-D48F-4BCA-932B-4CED0F4A9972",
         "name": "In the Shadow of Cestus",
-        "arc": "Agents of Yesterday",
         "number": 2
     },
     {
+        "arc": "Agents of Yesterday",
+        "id": "3A331420-B3A4-4D28-B5FA-B7B1103D5EB8",
         "name": "Painful Omens",
-        "arc": "Agents of Yesterday",
         "number": 3
     },
     {
+        "arc": "Agents of Yesterday",
+        "id": "FD77126C-E4F2-4E16-965E-CB4DC643202E",
         "name": "Return to Babel",
-        "arc": "Agents of Yesterday",
         "number": 4
     },
     {
+        "arc": "Agents of Yesterday",
+        "id": "CEB9E833-0D32-4D7B-BFEF-0806133E682B",
         "name": "Tangled Webs",
-        "arc": "Agents of Yesterday",
         "number": 5
     },
     {
+        "arc": "Agents of Yesterday",
+        "id": "28BF9830-E955-4BB8-88D3-57D11FEBF290",
         "name": "The Battle of Caleb IV",
-        "arc": "Agents of Yesterday",
         "number": 6
     },
     {
+        "arc": "Klingon War",
+        "id": "3EC891DD-3F3B-4B15-8162-1AA691E6BEE5",
         "name": "Welcome to Earth Spacedock",
-        "arc": "Klingon War",
         "number": 1
     },
     {
+        "arc": "Klingon War",
+        "id": "6C9AEF08-B2CB-4D8F-B450-E2998618FCC3",
         "name": "Diplomatic Orders",
-        "arc": "Klingon War",
         "number": 2
     },
     {
+        "arc": "Klingon War",
+        "id": "24D00E81-B35C-414D-8663-27C5BE06F0D8",
         "name": "Stranded in Space",
-        "arc": "Klingon War",
         "number": 3
     },
     {
+        "arc": "Klingon War",
+        "id": "12177E17-FDBD-416D-AE1F-3253B3981856",
         "name": "Researcher Rescue",
-        "arc": "Klingon War",
         "number": 4
     },
     {
+        "arc": "Klingon War",
+        "id": "DF03B9F4-C289-4BFD-B9BA-A3E6129FE942",
         "name": "Secret Orders",
-        "arc": "Klingon War",
         "number": 5
     },
     {
+        "arc": "Klingon War",
+        "id": "A42733E0-D688-4A88-9301-5E2FB9D8DB4A",
         "name": "The Doomsday Device",
-        "arc": "Klingon War",
         "number": 6
     },
     {
+        "arc": "Klingon War",
+        "id": "7C05764F-E29F-476E-B49A-25CF6B74D5D0",
         "name": "The Galaxy at Large",
-        "arc": "Klingon War",
         "number": 7
     },
     {
+        "arc": "Romulan Mystery",
+        "id": "243CF975-A554-4E6D-893F-EB393199B280",
         "name": "Heading Out",
-        "arc": "Romulan Mystery",
         "number": 1
     },
     {
+        "arc": "Romulan Mystery",
+        "id": "9DBED5F8-5972-4BFD-BB66-00ECEF391F8F",
         "name": "Empress Sela",
-        "arc": "Romulan Mystery",
         "number": 2
     },
     {
+        "arc": "Romulan Mystery",
+        "id": "40ECCD0F-CCDE-49C6-B322-6423624E3DC9",
         "name": "Desperate Measures",
-        "arc": "Romulan Mystery",
         "number": 3
     },
     {
+        "arc": "Romulan Mystery",
+        "id": "0A99FD03-DDE8-4C34-800D-023668C3ACF9",
         "name": "Shadow Play",
-        "arc": "Romulan Mystery",
         "number": 4
     },
     {
+        "arc": "Romulan Mystery",
+        "id": "A3F73901-63D6-4861-A8AC-F89C337CAA9C",
         "name": "Taris",
-        "arc": "Romulan Mystery",
         "number": 5
     },
     {
+        "arc": "Klingon Tutorial",
+        "id": "28DF1754-399A-4968-866A-58697EB115FE",
         "name": "End of Watch",
-        "arc": "Klingon Tutorial",
         "number": 1
     },
     {
+        "arc": "Klingon Tutorial",
+        "id": "12D60618-E0A2-4D02-8C88-0BB77166F3D0",
         "name": "Red Alert!",
-        "arc": "Klingon Tutorial",
         "number": 2
     },
     {
+        "arc": "Klingon Tutorial",
+        "id": "29DE4017-413A-4829-8DE7-65C4CE321D49",
         "name": "Intruder Alert",
-        "arc": "Klingon Tutorial",
         "number": 3
     },
     {
+        "arc": "Klingon Tutorial",
+        "id": "7BBC652D-8977-4060-BCD9-A5105E1F447A",
         "name": "Challenge for Command",
-        "arc": "Klingon Tutorial",
         "number": 4
     },
     {
+        "arc": "Klingon Tutorial",
+        "id": "B4799BA8-F04A-4A9E-B320-0FA28B07849E",
         "name": "Your New Command",
-        "arc": "Klingon Tutorial",
         "number": 5
     },
     {
+        "arc": "Klingon Tutorial",
+        "id": "B51168CA-DCA4-48D9-9DC4-BC8CB60EEDF1",
         "name": "Journey to Qo'noS",
-        "arc": "Klingon Tutorial",
         "number": 6
     },
     {
+        "arc": "Empire",
+        "id": "1A2F34EC-241A-4832-8836-C6A4D83C1443",
         "name": "Duties of Command",
-        "arc": "Empire",
         "number": 1
     },
     {
+        "arc": "Empire",
+        "id": "6140CFC0-CD23-45A7-B94A-297608F00C7A",
         "name": "The Hunt is On",
-        "arc": "Empire",
         "number": 2
     },
     {
+        "arc": "Empire",
+        "id": "94BB5C80-7564-4A59-8A1F-D80807074289",
         "name": "Space Chase",
-        "arc": "Empire",
         "number": 3
     },
     {
+        "arc": "Empire",
+        "id": "94CB03AD-E3EE-4DA9-BD71-1678616556A9",
         "name": "Manhunt",
-        "arc": "Empire",
         "number": 4
     },
     {
+        "arc": "Empire",
+        "id": "A447A447-9D6E-41D7-9F92-D6E6F87434CB",
         "name": "Friend or Foe",
-        "arc": "Empire",
         "number": 5
     },
     {
+        "arc": "Warzone",
+        "id": "9C569856-1C40-4A89-8228-959BCFBC5A28",
         "name": "Bringing Down the House",
-        "arc": "Warzone",
         "number": 1
     },
     {
+        "arc": "Warzone",
+        "id": "F21488DB-EF30-400D-BC61-036F8DF8460B",
         "name": "The House Always Wins",
-        "arc": "Warzone",
         "number": 2
     },
     {
+        "arc": "Warzone",
+        "id": "63AB2B5E-6B5B-4E81-BB07-95FFDFED43DA",
         "name": "Mars, the Bringer of War",
-        "arc": "Warzone",
         "number": 3
     },
     {
+        "arc": "Warzone",
+        "id": "885D67C9-A529-43A4-B349-111054EAF082",
         "name": "Alpha",
-        "arc": "Warzone",
         "number": 4
     },
     {
+        "arc": "Fek'Ihri Return",
+        "id": "AFA51BB8-97E3-41EC-8689-2306058869A6",
         "name": "Blood of the Empire",
-        "arc": "Fek'Ihri Return",
         "number": 1
     },
     {
+        "arc": "Fek'Ihri Return",
+        "id": "010554B6-2FD4-44D2-912C-A5856931E09F",
         "name": "Destiny",
-        "arc": "Fek'Ihri Return",
         "number": 2
     },
     {
+        "arc": "Fek'Ihri Return",
+        "id": "861C08E1-AD18-4B93-A545-EFE2FD4BFD41",
         "name": "Afterlife",
-        "arc": "Fek'Ihri Return",
         "number": 3
     },
     {
+        "arc": "Engineered for War",
+        "id": "5369D427-68C0-444B-A3BB-66B8733967C4",
         "name": "Hunt",
-        "arc": "Engineered for War",
         "number": 1
     },
     {
+        "arc": "Engineered for War",
+        "id": "E59E83BB-A150-4663-BAE5-FA9961D5309A",
         "name": "Ceremony",
-        "arc": "Engineered for War",
         "number": 2
     },
     {
+        "arc": "Engineered for War",
+        "id": "A9FBAC8B-32CA-4E41-B343-001ACFC18512",
         "name": "Turn the Tide",
-        "arc": "Engineered for War",
         "number": 3
     },
     {
+        "arc": "Romulan Tutorial",
+        "id": "813F139B-5850-4F2B-A498-E6F268829582",
         "name": "A Day on the Farm",
-        "arc": "Romulan Tutorial",
         "number": 1
     },
     {
+        "arc": "Romulan Tutorial",
+        "id": "E0F86A90-005F-4075-BE6B-CAE6A9C98C05",
         "name": "A Day in the Sun",
-        "arc": "Romulan Tutorial",
         "number": 2
     },
     {
+        "arc": "Romulan Tutorial",
+        "id": "92899645-A3D7-4D6E-9DDC-9F37E7E9745E",
         "name": "Virinat, Invaded",
-        "arc": "Romulan Tutorial",
         "number": 3
     },
     {
+        "arc": "Romulan Tutorial",
+        "id": "08D91E9A-D977-42D7-9964-02A97EE27509",
         "name": "Flight from Virinat",
-        "arc": "Romulan Tutorial",
         "number": 4
     },
     {
+        "arc": "From the Ashes",
+        "id": "FABD2FEE-2735-460A-874E-A06C813DB8E5",
         "name": "Explore the Flotilla",
-        "arc": "From the Ashes",
         "number": 1
     },
     {
+        "arc": "From the Ashes",
+        "id": "4538CB47-FD18-4037-9B8A-D36B2073D9FF",
         "name": "The Helix",
-        "arc": "From the Ashes",
         "number": 2
     },
     {
+        "arc": "From the Ashes",
+        "id": "5C29B4EB-391D-4D7F-A898-6A064FDF1109",
         "name": "Crossroads at Crateris",
-        "arc": "From the Ashes",
         "number": 3
     },
     {
+        "arc": "From the Ashes",
+        "id": "BCB0A6A5-4EA5-4D3B-A9CB-51354D6F98EE",
         "name": "Gasko Blues",
-        "arc": "From the Ashes",
         "number": 4
     },
     {
+        "arc": "From the Ashes",
+        "id": "02B4A7A0-DFAC-4ADD-8577-C328D403D779",
         "name": "The Search for New Romulus",
-        "arc": "From the Ashes",
         "number": 5
     },
     {
+        "arc": "From the Ashes",
+        "id": "FC2A226F-E749-4F5A-9320-C231BA2BD8B7",
         "name": "Turning Point",
-        "arc": "From the Ashes",
         "number": 6
     },
     {
+        "arc": "From the Ashes",
+        "id": "131BEBB2-D205-4DB7-A771-B7A017F9F5CC",
         "name": "Neutral No More",
-        "arc": "From the Ashes",
         "number": 7
     },
     {
+        "arc": "Allies",
+        "id": "91F0DC69-4DD4-4141-9E72-29461C49F129",
         "name": "The Price of Neutrality",
-        "arc": "Allies",
         "number": 1
     },
     {
+        "arc": "Allies",
+        "id": "9583FFBE-9A38-499C-9733-C8A80328537E",
         "name": "Memory Lane",
-        "arc": "Allies",
         "number": 2
     },
     {
+        "arc": "Allies",
+        "id": "33374357-CCDC-43C0-941E-1AAF2A0A6CB0",
         "name": "Bigger Picture",
-        "arc": "Allies",
         "number": 3
     },
     {
+        "arc": "Allies",
+        "id": "0BBD76EE-0D60-45A7-8B02-70D1395D5DB6",
         "name": "Smash and Grab",
-        "arc": "Allies",
         "number": 4
     },
     {
+        "arc": "Allies",
+        "id": "02A44ACA-7F9C-4934-AA39-1AE263139140",
         "name": "Tradecraft",
-        "arc": "Allies",
         "number": 5
     },
     {
+        "arc": "In Shadows",
+        "id": "7602CBBD-4449-4F24-A777-472219E26807",
         "name": "An Inside Job",
-        "arc": "In Shadows",
         "number": 1
     },
     {
+        "arc": "In Shadows",
+        "id": "833F6C13-A8E1-40B2-B2F7-0EBDABD3E050",
         "name": "Enemy Action",
-        "arc": "In Shadows",
         "number": 2
     },
     {
+        "arc": "In Shadows",
+        "id": "CDEB0203-2F12-4DEB-AE41-E519740DBE17",
         "name": "Sleepers",
-        "arc": "In Shadows",
         "number": 3
     },
     {
+        "arc": "In Shadows",
+        "id": "D5D487A6-05BD-4A5D-BCE9-D8B6AA2AA969",
         "name": "Cloak and Dagger",
-        "arc": "In Shadows",
         "number": 4
     },
     {
+        "arc": "In Shadows",
+        "id": "645AAE29-F6D8-4AE9-8CFF-9E0B1FEBEB46",
         "name": "Revelation",
-        "arc": "In Shadows",
         "number": 5
     },
     {
+        "arc": "In Shadows",
+        "id": "AD69F115-3D05-4B89-B9A7-7B1FFDB0AE21",
         "name": "Mind Game",
-        "arc": "In Shadows",
         "number": 6
     },
     {
+        "arc": "Wasteland",
+        "id": "FB4FD0BF-2B5A-4048-AF10-BB506C4E8D61",
         "name": "Secrets of Nimbus",
-        "arc": "Wasteland",
         "number": 1
     },
     {
+        "arc": "Wasteland",
+        "id": "9D3BABA8-BF6D-4519-A018-DED4DD2804DF",
         "name": "The Lost City of Paradise",
-        "arc": "Wasteland",
         "number": 2
     },
     {
+        "arc": "Wasteland",
+        "id": "3A6DA922-62BC-479D-B436-8965263469D4",
         "name": "Blind Men Tell All Tales",
-        "arc": "Wasteland",
         "number": 3
     },
     {
+        "arc": "Wasteland",
+        "id": "DABBA4A4-CD6F-4104-84F0-7A57D8C1FDC1",
         "name": "The Undying",
-        "arc": "Wasteland",
         "number": 4
     },
     {
+        "arc": "Wasteland",
+        "id": "7443F3F8-2D22-4981-9913-CB04A6CD0D0E",
         "name": "A Fistful of Gorn",
-        "arc": "Wasteland",
         "number": 5
     },
     {
+        "arc": "Wasteland",
+        "id": "D0DE5AEA-9D0C-466B-B5FC-36C2D2956A9A",
         "name": "Installation 18",
-        "arc": "Wasteland",
         "number": 6
     },
     {
+        "arc": "Vengeance",
+        "id": "6F54812E-AEAB-4088-AD8D-FD6293E464A2",
         "name": "Voice of the Voiceless",
-        "arc": "Vengeance",
         "number": 1
     },
     {
+        "arc": "Vengeance",
+        "id": "FD3A8D45-C2D3-404F-89C3-8F6BCF8301F2",
         "name": "Abducted",
-        "arc": "Vengeance",
         "number": 2
     },
     {
+        "arc": "Vengeance",
+        "id": "5230EA26-95BC-4DCA-8160-20E4F99BCF89",
         "name": "Small Packages",
-        "arc": "Vengeance",
         "number": 3
     },
     {
+        "arc": "Vengeance",
+        "id": "055A9C34-E453-4417-B5B5-08C5714C173B",
         "name": "Last Stand",
-        "arc": "Vengeance",
         "number": 4
     },
     {
+        "arc": "Vengeance",
+        "id": "FE419692-F8E4-42B0-85E4-0D69060B38F9",
         "name": "The Best Defense",
-        "arc": "Vengeance",
         "number": 5
     },
     {
+        "arc": "Vengeance",
+        "id": "566C6337-566F-4D35-841A-054C1F180EAC",
         "name": "Turnabout",
-        "arc": "Vengeance",
         "number": 6
     },
     {
+        "arc": "Vengeance",
+        "id": "2CD1DB17-406B-4C6C-8A0F-8D4DFF21F677",
         "name": "Devil's Choice",
-        "arc": "Vengeance",
         "number": 7
     },
     {
-        "name": "Toward Freedom",
         "arc": "Freedom",
+        "id": "0A959BD8-6DD1-4FFB-97B5-9D0ABD3C71F4",
+        "name": "Toward Freedom",
         "number": 1
     },
     {
+        "arc": "Cloaked Intentions",
+        "id": "9F0F52BA-78A5-4C67-A5FB-E57819BA6D1F",
         "name": "The Vault",
-        "arc": "Cloaked Intentions",
         "number": 1
     },
     {
+        "arc": "Cloaked Intentions",
+        "id": "A1C8CD28-70AC-4245-A382-6A839585C690",
         "name": "Mine Enemy",
-        "arc": "Cloaked Intentions",
         "number": 2
     },
     {
+        "arc": "Cloaked Intentions",
+        "id": "8855A800-FF97-4F6B-89DA-8AF1C59495F0",
         "name": "Frozen",
-        "arc": "Cloaked Intentions",
         "number": 3
     },
     {
+        "arc": "Cloaked Intentions",
+        "id": "01072C17-1124-4747-A49D-6709099C0BFE",
         "name": "Coliseum",
-        "arc": "Cloaked Intentions",
         "number": 4
     },
     {
+        "arc": "Cloaked Intentions",
+        "id": "3710A900-37CB-4EE3-888D-E99EDEFA454A",
         "name": "Cutting the Cord",
-        "arc": "Cloaked Intentions",
         "number": 5
     },
     {
+        "arc": "Cloaked Intentions",
+        "id": "28A15A83-9EC7-42F8-9ADA-0BF0FE5EEA09",
         "name": "Darkness Before the Dawn",
-        "arc": "Cloaked Intentions",
         "number": 6
     },
     {
+        "arc": "Cardassian Struggle",
+        "id": "B483D6BA-93D0-487E-9F94-C50C8D0C266F",
         "name": "Lost and Found",
-        "arc": "Cardassian Struggle",
         "number": 1
     },
     {
+        "arc": "Cardassian Struggle",
+        "id": "3BF8D82D-DB76-418E-AF1C-F6AC9885E828",
         "name": "Spoils of War",
-        "arc": "Cardassian Struggle",
         "number": 2
     },
     {
+        "arc": "Cardassian Struggle",
+        "id": "EC7270E2-0E0A-4CFD-809E-61CAD9D8EA3F",
         "name": "Jabberwocky",
-        "arc": "Cardassian Struggle",
         "number": 3
     },
     {
+        "arc": "Cardassian Struggle",
+        "id": "C99BFCC1-70E0-4C7A-9C4D-CF7CA26D12D0",
         "name": "The Factory",
-        "arc": "Cardassian Struggle",
         "number": 4
     },
     {
+        "arc": "Cardassian Struggle",
+        "id": "C42823A3-C141-4228-BD64-2056714F7CEC",
         "name": "The New Link",
-        "arc": "Cardassian Struggle",
         "number": 5
     },
     {
+        "arc": "Lost Dominion: The 2800",
+        "id": "D4B68F72-AB1C-491D-B539-C57C02D561D9",
         "name": "Lost Dominion",
-        "arc": "Lost Dominion: The 2800",
         "number": 1
     },
     {
+        "arc": "Lost Dominion: The 2800",
+        "id": "33F2ADBB-E16A-4B6B-80E9-628B1012A30B",
         "name": "Second Wave",
-        "arc": "Lost Dominion: The 2800",
         "number": 2
     },
     {
+        "arc": "Lost Dominion: The 2800",
+        "id": "6CDB5B22-30E6-4464-8301-B37681249D22",
         "name": "Of Bajor",
-        "arc": "Lost Dominion: The 2800",
         "number": 3
     },
     {
+        "arc": "Lost Dominion: The 2800",
+        "id": "E0BF7329-8F6A-4BFE-9E54-91EC83A52E99",
         "name": "Operation Gamma",
-        "arc": "Lost Dominion: The 2800",
         "number": 4
     },
     {
+        "arc": "Lost Dominion: The 2800",
+        "id": "B6A3B21F-272A-48E1-980A-32D7DCC2D758",
         "name": "Facility 4028",
-        "arc": "Lost Dominion: The 2800",
         "number": 5
     },
     {
+        "arc": "Lost Dominion: The 2800",
+        "id": "2CDF7DB3-A3C7-498A-8E35-1358FCF2B638",
         "name": "Boldly They Rode",
-        "arc": "Lost Dominion: The 2800",
         "number": 6
     },
     {
+        "arc": "Borg Advance",
+        "id": "B52B94D1-CF1B-4D8C-8B96-7DD0D3031F52",
         "name": "Report on Borg Activities",
-        "arc": "Borg Advance",
         "number": 1
     },
     {
+        "arc": "Borg Advance",
+        "id": "D69F8451-3521-4BCE-8323-3DD2491F6CE4",
         "name": "Where Angels Fear to Tread",
-        "arc": "Borg Advance",
         "number": 2
     },
     {
+        "arc": "Borg Advance",
+        "id": "F54218E1-5E7B-4CCD-BDC5-318E720AB55F",
         "name": "A Gathering Darkness",
-        "arc": "Borg Advance",
         "number": 3
     },
     {
+        "arc": "Borg Advance",
+        "id": "EC385D72-6D24-4BA7-B964-79B6102E9AC4",
         "name": "Assimilation",
-        "arc": "Borg Advance",
         "number": 4
     },
     {
+        "arc": "Borg Advance",
+        "id": "76D19861-3A91-49BF-B36C-A904D32BB592",
         "name": "Fluid Dynamics",
-        "arc": "Borg Advance",
         "number": 5
     },
     {
+        "arc": "Cold War",
+        "id": "A177B35D-B7BF-4169-BEDF-2A66B39DCD8D",
         "name": "Cold War",
-        "arc": "Cold War",
         "number": 1
     },
     {
+        "arc": "Cold War",
+        "id": "2538BF61-A134-487C-BDA7-94751AE975C4",
         "name": "Cold Call",
-        "arc": "Cold War",
         "number": 2
     },
     {
+        "arc": "Cold War",
+        "id": "7424DD59-B52E-49B0-AF8F-614530708FDA",
         "name": "Out in the Cold",
-        "arc": "Cold War",
         "number": 3
     },
     {
+        "arc": "Cold War",
+        "id": "9375BD6D-7DDB-407E-9101-1855F5D3A3A7",
         "name": "Cold Comfort",
-        "arc": "Cold War",
         "number": 4
     },
     {
+        "arc": "Cold War",
+        "id": "7E4C3B72-17BD-42A4-869A-889EC5953021",
         "name": "Cold Case",
-        "arc": "Cold War",
         "number": 5
     },
     {
+        "arc": "Cold War",
+        "id": "8CC22CEF-8B9F-4D6D-9D97-DE67B312C268",
         "name": "Cold Storage",
-        "arc": "Cold War",
         "number": 6
     },
     {
+        "arc": "New Romulus",
+        "id": "DA59DDD2-D1B4-4294-8BB6-F33B27BBE19A",
         "name": "New Romulus Aid",
-        "arc": "New Romulus",
         "number": 1
     },
     {
+        "arc": "New Romulus",
+        "id": "CD9B2DD8-DE33-4ABA-B457-2B6470A737ED",
         "name": "Staging Area",
-        "arc": "New Romulus",
         "number": 2
     },
     {
+        "arc": "New Romulus",
+        "id": "3851A6F1-6BD1-46FC-AB73-73DA99ECE3F1",
         "name": "Hidden Camera",
-        "arc": "New Romulus",
         "number": 3
     },
     {
+        "arc": "New Romulus",
+        "id": "1A4C0D2B-1AEE-4FA9-BB33-56D9CBCE669D",
         "name": "Warehouse",
-        "arc": "New Romulus",
         "number": 4
     },
     {
+        "arc": "New Romulus",
+        "id": "9BC0FE46-3216-4D40-B6A8-44DD0C4098A4",
         "name": "Mountain Base",
-        "arc": "New Romulus",
         "number": 5
     },
     {
+        "arc": "New Romulus",
+        "id": "F746CE34-7D26-4BF7-B85C-BCB7B0D443EF",
         "name": "Secret Shuttle Codes",
-        "arc": "New Romulus",
         "number": 6
     },
     {
+        "arc": "New Romulus",
+        "id": "7526167D-5C38-41EB-89B8-5935F81B6245",
         "name": "Overgrown Caves",
-        "arc": "New Romulus",
         "number": 7
     },
     {
+        "arc": "New Romulus",
+        "id": "76BB1C2D-8637-4514-9E17-AD0F8F31002D",
         "name": "Web Access",
-        "arc": "New Romulus",
         "number": 8
     },
     {
+        "arc": "New Romulus",
+        "id": "D168F2FD-CC99-4499-BA50-C910C3946D72",
         "name": "Latest Findings",
-        "arc": "New Romulus",
         "number": 9
     },
     {
+        "arc": "New Romulus",
+        "id": "9BB1347C-1E3D-4FF9-A291-A7B4D11B9A67",
         "name": "The Power Source",
-        "arc": "New Romulus",
         "number": 10
     },
     {
+        "arc": "New Romulus",
+        "id": "EDC4AD0E-5E36-4281-BE86-5B17F9B8CEBB",
         "name": "Secrets of the Ancients",
-        "arc": "New Romulus",
         "number": 11
     },
     {
+        "arc": "The Dyson Sphere",
+        "id": "FFD11157-0A93-46BF-99A8-5A231A274AC3",
         "name": "Sphere of Influence",
-        "arc": "The Dyson Sphere",
         "number": 1
     },
     {
+        "arc": "The Dyson Sphere",
+        "id": "09F3FAF1-6D44-4497-AA90-0FEF0C915292",
         "name": "Circles within Circles",
-        "arc": "The Dyson Sphere",
         "number": 2
     },
     {
-        "name": "Supply Woes",
         "arc": "The Dyson Sphere",
+        "id": "C8734C88-87B4-4999-980A-E840F5F8F162",
+        "name": "Supply Woes",
         "number": 3
     },
     {
-        "name": "The Contested Zone",
         "arc": "The Dyson Sphere",
+        "id": "26FF59A6-2D0F-4339-987B-CAA3E06B1B3B",
+        "name": "The Contested Zone",
         "number": 4
     },
     {
-        "name": "The Omega Standoff",
         "arc": "The Dyson Sphere",
+        "id": "6F1E615B-0C2A-45F8-9744-153790C62F16",
+        "name": "The Omega Standoff",
         "number": 5
     },
     {
-        "name": "Tower Control",
         "arc": "The Dyson Sphere",
+        "id": "14640723-575B-4267-9137-579F15EC4714",
+        "name": "Tower Control",
         "number": 6
     },
     {
-        "name": "A Step Between Stars",
         "arc": "The Dyson Sphere",
+        "id": "0F79D9F1-208E-4CAF-890A-6C672AAB85F5",
+        "name": "A Step Between Stars",
         "number": 7
     },
     {
-        "name": "Fluidic Destruction",
         "arc": "The Dyson Sphere",
+        "id": "6B1B9DCC-5335-4356-AB62-9137BC95598A",
+        "name": "Fluidic Destruction",
         "number": 8
     },
     {
-        "name": "Surface Tension",
         "arc": "The Dyson Sphere",
+        "id": "B281075C-0AD8-4B97-85B3-B061FE0D7B44",
+        "name": "Surface Tension",
         "number": 9
     },
     {
-        "name": "Escalation",
         "arc": "Delta Quadrant",
+        "id": "2D17685D-E314-4E98-8668-017956ACE8FC",
+        "name": "Escalation",
         "number": 1
     },
     {
-        "name": "Mindscape",
         "arc": "Delta Quadrant",
+        "id": "C886FCE2-4811-4F30-B13A-81DE48BA633A",
+        "name": "Mindscape",
         "number": 2
     },
     {
-        "name": "Reunion",
         "arc": "Delta Quadrant",
+        "id": "207D7900-3740-4157-B81B-77A292193C43",
+        "name": "Reunion",
         "number": 3
     },
     {
-        "name": "Friends in Unlikely Places",
         "arc": "Delta Quadrant",
+        "id": "ADFC3801-24EF-4384-8EEC-36CD4EB5D20F",
+        "name": "Friends in Unlikely Places",
         "number": 4
     },
     {
-        "name": "Revelations",
         "arc": "Delta Quadrant",
+        "id": "A288A26F-695D-4E15-A882-DAB5ABD50B47",
+        "name": "Revelations",
         "number": 5
     },
     {
-        "name": "Enemies in All the Usual Places",
         "arc": "Delta Quadrant",
+        "id": "918C8A46-C681-496E-A3F1-35A1F8C13187",
+        "name": "Enemies in All the Usual Places",
         "number": 6
     },
     {
-        "name": "All That Glitters",
         "arc": "Delta Quadrant",
+        "id": "D9B9E0A4-EEDA-4787-82DF-854BE11E10D6",
+        "name": "All That Glitters",
         "number": 7
     },
     {
-        "name": "Know Your Enemies",
         "arc": "Delta Quadrant",
+        "id": "4F49ED9F-88A2-4EBF-B1BF-0F0420368950",
+        "name": "Know Your Enemies",
         "number": 8
     },
     {
-        "name": "The Kobali Front",
         "arc": "Delta Quadrant",
+        "id": "F2569303-50F0-4F06-9955-54E14FDDC1AA",
+        "name": "The Kobali Front",
         "number": 9
     },
     {
-        "name": "Capture the Flag",
         "arc": "Delta Quadrant",
+        "id": "9591E54B-E2FA-4D89-87F3-4C217CD533F8",
+        "name": "Capture the Flag",
         "number": 10
     },
     {
-        "name": "The Dragon's Deceit",
         "arc": "Delta Quadrant",
+        "id": "EF6CE50C-A8B8-4CE0-A5F7-89BF2946A390",
+        "name": "The Dragon's Deceit",
         "number": 11
     },
     {
-        "name": "Alliances",
         "arc": "Delta Quadrant",
+        "id": "734B22E6-D79D-4E29-8773-AE3A044555A6",
+        "name": "Alliances",
         "number": 12
     },
     {
-        "name": "Better with Friends",
         "arc": "Delta Quadrant",
+        "id": "B0EF25A7-95D2-4448-BBA4-B0226047CB1D",
+        "name": "Better with Friends",
         "number": 13
     },
     {
-        "name": "Revolution",
         "arc": "Delta Quadrant",
+        "id": "5B09FD7E-18D4-4274-9D54-263FF7CCA53B",
+        "name": "Revolution",
         "number": 14
     },
     {
-        "name": "Taking Care of Enemies",
         "arc": "Delta Quadrant",
+        "id": "67E8C33D-FA6D-48F6-A053-D12EFEE4D8AB",
+        "name": "Taking Care of Enemies",
         "number": 15
     },
     {
-        "name": "Takedown",
         "arc": "Delta Quadrant",
+        "id": "0B47F182-21FB-4D32-A71E-251D704D0B6E",
+        "name": "Takedown",
         "number": 16
     },
     {
-        "name": "What's Left Behind",
         "arc": "Delta Quadrant",
+        "id": "3942DA25-3EC1-4FF6-8F27-750EB345D8A9",
+        "name": "What's Left Behind",
         "number": 17
     },
     {
-        "name": "Dust to Dust",
         "arc": "Delta Quadrant",
+        "id": "8E9B5408-43A1-41F0-B543-4482423039C7",
+        "name": "Dust to Dust",
         "number": 18
     },
     {
+        "arc": "Iconian War",
+        "id": "6078729D-9E9E-4CA8-85E8-3987F7AA013A",
         "name": "Uneasy Allies",
-        "arc": "Iconian War",
         "number": 1
     },
     {
+        "arc": "Iconian War",
+        "id": "29AE9C66-F21D-40BB-A70B-3B012A11415E",
         "name": "Blood of Ancients",
-        "arc": "Iconian War",
         "number": 2
     },
     {
+        "arc": "Iconian War",
+        "id": "7F49D4E6-9A45-48DA-BB71-657D5DB797F1",
         "name": "Delta Flight",
-        "arc": "Iconian War",
         "number": 3
     },
     {
+        "arc": "Iconian War",
+        "id": "497E95BB-708A-416B-B0C6-F337AE1F9601",
         "name": "House Pegh",
-        "arc": "Iconian War",
         "number": 4
     },
     {
+        "arc": "Iconian War",
+        "id": "4939BC29-86E1-4CD7-A389-3F1BEE2B65EF",
         "name": "Time in a Bottle",
-        "arc": "Iconian War",
         "number": 5
     },
     {
+        "arc": "Iconian War",
+        "id": "46A57D6D-A380-4F9D-8715-A837953E6250",
         "name": "Broken Circle",
-        "arc": "Iconian War",
         "number": 6
     },
     {
+        "arc": "Iconian War",
+        "id": "F310E5A3-162F-49CE-97D4-237C94A41763",
         "name": "Butterfly",
-        "arc": "Iconian War",
         "number": 7
     },
     {
+        "arc": "Iconian War",
+        "id": "3A134F81-6159-4DC2-8BF9-E1EF6B0DC693",
         "name": "Midnight",
-        "arc": "Iconian War",
         "number": 8
     },
     {
+        "arc": "Yesterday's War",
+        "id": "B32D8943-9CD4-44EB-9B5F-DB5B3C2FA3F9",
         "name": "Temporal Ambassador",
-        "arc": "Yesterday's War",
         "number": 1
     },
     {
+        "arc": "Yesterday's War",
+        "id": "DC06515B-E91A-4E30-9C5B-E103A9A4A965",
         "name": "The Once and Future Agent",
-        "arc": "Yesterday's War",
         "number": 2
     },
     {
+        "arc": "Yesterday's War",
+        "id": "F94080D1-A5CA-41B8-9D6E-82DD72B9420D",
         "name": "The Core of the Matter",
-        "arc": "Yesterday's War",
         "number": 3
     },
     {
+        "arc": "Yesterday's War",
+        "id": "03CB811A-2DDC-4E72-9AFD-8AD040324738",
         "name": "Vorgon Conclusions",
-        "arc": "Yesterday's War",
         "number": 4
     },
     {
+        "arc": "Yesterday's War",
+        "id": "A0BB51A0-1159-4869-990F-0B722C14F2DE",
         "name": "Terminal Expanse",
-        "arc": "Yesterday's War",
         "number": 5
     },
     {
+        "arc": "Yesterday's War",
+        "id": "BAB59800-99B0-4846-8A0F-BBD9502A2DE3",
         "name": "Survivor",
-        "arc": "Yesterday's War",
         "number": 6
     },
     {
+        "arc": "Future Proof",
+        "id": "5554C7C2-EA28-4691-869F-2504C43FB1CB",
         "name": "Sunrise",
-        "arc": "Future Proof",
         "number": 1
     },
     {
+        "arc": "Future Proof",
+        "id": "4E9E8B49-B0F0-4397-83CF-756B6C85AF1D",
         "name": "Stormbound",
-        "arc": "Future Proof",
         "number": 2
     },
     {
+        "arc": "Future Proof",
+        "id": "9ACB9397-8CFA-49DF-AF3D-A37A44429607",
         "name": "Time and Tide",
-        "arc": "Future Proof",
         "number": 3
     },
     {
+        "arc": "Future Proof",
+        "id": "DE940028-3232-47CC-849E-72423C12B886",
         "name": "The Temporal Front",
-        "arc": "Future Proof",
         "number": 4
     },
     {
+        "arc": "Future Proof",
+        "id": "D5515BAF-7290-4F00-ACF6-2B682619DECC",
         "name": "Temporal Reckoning",
-        "arc": "Future Proof",
         "number": 5
     },
     {
+        "arc": "Future Proof",
+        "id": "30E049C0-A529-43F9-A39B-1E6F000E76B0",
         "name": "Ragnarok",
-        "arc": "Future Proof",
         "number": 6
     },
     {
+        "arc": "New Frontiers",
+        "id": "52874816-9257-475A-B7DC-8E0F15DAF974",
         "name": "Echoes of Light",
-        "arc": "New Frontiers",
         "number": 1
     },
     {
+        "arc": "New Frontiers",
+        "id": "1D5CAB27-A06E-480F-B456-592F08C6E337",
         "name": "Of Signs and Portents",
-        "arc": "New Frontiers",
         "number": 2
     },
     {
+        "arc": "New Frontiers",
+        "id": "D5645DBD-DD1D-44B9-BDC8-0943E81501B2",
         "name": "Mirrors and Smoke",
-        "arc": "New Frontiers",
         "number": 3
     },
     {
+        "arc": "New Frontiers",
+        "id": "37476516-B0EB-480E-B513-B3EF45FC888A",
         "name": "Brushfire",
-        "arc": "New Frontiers",
         "number": 4
     },
     {
+        "arc": "New Frontiers",
+        "id": "053631E3-7B4D-410A-B781-A06536E54F35",
         "name": "Beyond the Nexus",
-        "arc": "New Frontiers",
         "number": 5
     },
     {
+        "arc": "New Frontiers",
+        "id": "2270BAC6-8B71-4E84-8D26-84E00ED1CBF1",
         "name": "Melting Pot",
-        "arc": "New Frontiers",
         "number": 6
     },
     {
+        "arc": "New Frontiers",
+        "id": "F0CEA1B9-C252-49DA-9433-6B5E6327042E",
         "name": "Scylla and Charybdis",
-        "arc": "New Frontiers",
         "number": 7
     },
     {
+        "arc": "New Frontiers",
+        "id": "A6A49BEF-A247-4A9B-A54D-661F204F63C3",
         "name": "The Renegade's Regret",
-        "arc": "New Frontiers",
         "number": 8
     },
     {
+        "arc": "Gamma Quadrant",
+        "id": "E94BBAFC-953A-4E60-90FB-E9A8A5B49CA8",
         "name": "Storm Clouds Gather",
-        "arc": "Gamma Quadrant",
         "number": 1
     },
     {
+        "arc": "Gamma Quadrant",
+        "id": "52B2AC8B-3198-4CF3-947C-5BF85A73755F",
         "name": "Armistice",
-        "arc": "Gamma Quadrant",
         "number": 2
     },
     {
+        "arc": "Gamma Quadrant",
+        "id": "86A5CAA9-6F16-4322-AB3B-7BF022B3F44D",
         "name": "The Search",
-        "arc": "Gamma Quadrant",
         "number": 3
     },
     {
+        "arc": "Gamma Quadrant",
+        "id": "9A2D183F-DE43-4362-AA5E-DC791995970E",
         "name": "Doomed to Repeat",
-        "arc": "Gamma Quadrant",
         "number": 4
     },
     {
+        "arc": "Gamma Quadrant",
+        "id": "B66FF210-FB9D-4C9A-9DCB-C284FDBA6DA3",
         "name": "Quark's Lucky Seven",
-        "arc": "Gamma Quadrant",
         "number": 5
     },
     {
+        "arc": "Gamma Quadrant",
+        "id": "50FBAA45-105D-4177-886D-F8B2F3890DAE",
         "name": "Tenebris Torquent",
-        "arc": "Gamma Quadrant",
         "number": 6
     },
     {
-        "name": "Home",
         "arc": "Gamma Quadrant",
+        "id": "4BB76DAB-B33B-4D9F-929D-29F9983991EA",
+        "name": "Home",
         "number": 7
     },
     {
+        "arc": "Age of Discovery",
+        "id": "6C49D7D5-B879-4E0D-8A25-AD52953B72B5",
         "name": "The Plausibility of the Possible",
-        "arc": "Age of Discovery",
         "number": 1
     },
     {
+        "arc": "Age of Discovery",
+        "id": "1BD9A39A-7A1A-434A-861B-3F5433910EAD",
         "name": "Impossibility of Reason",
-        "arc": "Age of Discovery",
         "number": 2
     },
     {
-        "name": "Secrets",
         "arc": "Age of Discovery",
+        "id": "2B7B72C4-ADB1-4871-98C3-566C95D036C5",
+        "name": "Secrets",
         "number": 3
     },
     {
-        "name": "Downfall",
         "arc": "Age of Discovery",
+        "id": "B26A614B-3A88-4356-AFFD-B2972CEFAFB7",
+        "name": "Downfall",
         "number": 4
     },
     {
-        "name": "Para Pacem",
         "arc": "J'Ula's Discovery",
+        "id": "DD52EE27-35E7-4D27-AAD7-2B47D4207A0B",
+        "name": "Para Pacem",
         "number": 1
     },
     {
-        "name": "Illusion of Communication",
         "arc": "J'Ula's Discovery",
+        "id": "6F7B2032-391E-43F9-8B76-B740086736B5",
+        "name": "Illusion of Communication",
         "number": 2
     },
     {
-        "name": "Beneath the Skin",
         "arc": "J'Ula's Discovery",
+        "id": "73EF7411-0297-4619-85F8-EC7E96486A25",
+        "name": "Beneath the Skin",
         "number": 3
     },
     {
-        "name": "Sentinels",
         "arc": "J'Ula's Discovery",
+        "id": "D6145555-6D5F-406E-8948-A52E07982629",
+        "name": "Sentinels",
         "number": 4
     },
     {
-        "name": "Rescue and Search",
         "arc": "J'Ula's Discovery",
+        "id": "03EE7CD9-F447-4A7C-B22C-95604558C13E",
+        "name": "Rescue and Search",
         "number": 5
     },
     {
-        "name": "Within the Briars",
         "arc": "J'Ula's Discovery",
+        "id": "ED9EC633-7291-4B73-8C98-E84F4CE99CD5",
+        "name": "Within the Briars",
         "number": 6
     },
     {
-        "name": "The Ninth Rule",
         "arc": "J'Ula's Discovery",
+        "id": "09489EF5-4595-4A73-A2EC-9017D72F0098",
+        "name": "The Ninth Rule",
         "number": 7
     },
     {
-        "name": "Ruins of Doom",
         "arc": "J'Ula's Discovery",
+        "id": "CB4F252F-80F1-40FF-81B4-AF5D0D384550",
+        "name": "Ruins of Doom",
         "number": 8
     },
     {
-        "name": "The Measure of Morality (Part 1)",
         "arc": "J'Ula's Discovery",
+        "id": "4366A75B-EBCE-4694-AC28-34A722A19D36",
+        "name": "The Measure of Morality (Part 1)",
         "number": 9
     },
     {
-        "name": "The Measure of Morality (Part 2)",
         "arc": "J'Ula's Discovery",
+        "id": "9DCB66BA-C77B-4E3A-81E3-0CBF98D4700A",
+        "name": "The Measure of Morality (Part 2)",
         "number": 10
     },
     {
-        "name": "The Centre Cannot Hold",
         "arc": "Klingon Civil War",
+        "id": "4D22F1C7-2931-49FF-A8E4-C6E1B7A374BF",
+        "name": "The Centre Cannot Hold",
         "number": 1
     },
     {
-        "name": "The Khitomer Discord",
         "arc": "Klingon Civil War",
+        "id": "DC44E069-D6C7-4392-AFAA-048B3D9E1B67",
+        "name": "The Khitomer Discord",
         "number": 2
     },
     {
-        "name": "Partisans",
         "arc": "Klingon Civil War",
+        "id": "17A8585F-17FF-4721-BED2-A7C127CE3BBD",
+        "name": "Partisans",
         "number": 3
     },
     {
-        "name": "Knowledge is Power",
         "arc": "Klingon Civil War",
+        "id": "41231DFD-3BE3-4354-A772-1E234AE943C0",
+        "name": "Knowledge is Power",
         "number": 4
     },
     {
-        "name": "Leap of Faith",
         "arc": "Klingon Civil War",
+        "id": "AD03CCBF-95C4-459D-B7C1-E9F61CB3C234",
+        "name": "Leap of Faith",
         "number": 5
     }
 ]

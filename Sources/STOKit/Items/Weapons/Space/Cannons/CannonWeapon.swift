@@ -17,7 +17,7 @@ open class CannonWeapon: Weapon {
     ) {
         self._weaponType = weaponType
         self._damageType = damageType
-        super.init(mark, quality)
+        super.init(mark: mark, quality: quality)
     }
 
     public override var description: String {
@@ -29,17 +29,16 @@ open class CannonWeapon: Weapon {
         self._weaponType = try container.decode(CannonWeaponType.self, forKey: ._weaponType)
         self._damageType = try container.decode(EnergyDamageType.self, forKey: ._damageType)
         super.init(
-            try container.decode(Mark.self, forKey: .mark),
-            try container.decode(Quality.self, forKey: .quality)
+            mark: try container.decode(Mark.self, forKey: .mark),
+            quality: try container.decode(Quality.self, forKey: .quality)
         )
     }
 
     public override func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: WeaponCodingKeys.self)
-        try container.encode(mark, forKey: .mark)
-        try container.encode(quality, forKey: .quality)
         try container.encode(_weaponType, forKey: ._weaponType)
         try container.encode(_damageType, forKey: ._damageType)
+        try super.encode(to: encoder)
     }
 
     internal static func decode<W: CannonWeapon>(from container: KeyedDecodingContainer<WeaponCodingKeys>, as type: W.Type) throws -> W {

@@ -1,14 +1,14 @@
 open class TacticalConsole: Console {
-    public let mark: Mark
-    public let quality: Quality
-
     public required init(_ mark: Mark, _ quality: Quality) {
-        self.mark = mark
-        self.quality = quality
+        super.init(mark: mark, quality: quality)
     }
 
-    public var description: String {
+    public override var description: String {
         return "- Mk \(mark) \(quality)"
+    }
+
+    public required init(from decoder: Decoder) throws {
+        fatalError("You cannot instantiate an abstract console")
     }
 
     internal static func decode<C: TacticalConsole>(from container: KeyedDecodingContainer<ItemCodingKeys>, as type: C.Type) throws -> C {

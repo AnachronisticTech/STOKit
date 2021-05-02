@@ -180,14 +180,13 @@ open class Starship: StarshipBase {
 
     internal func decode(consolesContainer container: KeyedDecodingContainer<ComponentArrayCodingKeys>) throws {
         func setConsole<C: Console>(slot index: Int, to console: C?) {
-            if let console = console {
-                if let console = console as? EngineeringConsole {
-                    setEngineeringConsole(slot: index, to: console)
-                } else if let console = console as? ScienceConsole {
-                    setScienceConsole(slot: index, to: console)
-                } else if let console = console as? TacticalConsole {
-                    setTacticalConsole(slot: index, to: console)
-                }
+            guard let console = console else { return }
+            if let console = console as? EngineeringConsole {
+                setEngineeringConsole(slot: index, to: console)
+            } else if let console = console as? ScienceConsole {
+                setScienceConsole(slot: index, to: console)
+            } else if let console = console as? TacticalConsole {
+                setTacticalConsole(slot: index, to: console)
             }
         }
 

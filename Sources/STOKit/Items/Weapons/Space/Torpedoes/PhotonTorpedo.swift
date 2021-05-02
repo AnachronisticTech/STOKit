@@ -1,6 +1,6 @@
 public class PhotonTorpedo: KineticTorpedoWeapon {
-    public init(_ mark: Mark, _ quality: Quality) {
-        super.init(.Standard, .Photon, mark, quality)
+    public convenience init(_ mark: Mark, _ quality: Quality) {
+        self.init(.Standard, .Photon, mark, quality)
     }
 
     internal required init(

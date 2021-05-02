@@ -1,24 +1,6 @@
-internal protocol WeaponBase: Item, CustomStringConvertible, Codable {}
+internal protocol WeaponBase {}
 
-open class Weapon: WeaponBase {
-    public let mark: Mark
-    public let quality: Quality
-
-    public var description: String { "Weapon Base" }
-
-    internal init(_ mark: Mark, _ quality: Quality) {
-        self.mark = mark
-        self.quality = quality
-    }
-
-    public required init(from decoder: Decoder) throws {
-        fatalError("You cannot instantiate an abstract weapon")
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        fatalError("You cannot encode an abstract weapon")
-    }
-}
+open class Weapon: Item, WeaponBase {}
 
 enum WeaponCodingKeys: String, CodingKey {
     case mark, quality, `class`
@@ -26,9 +8,9 @@ enum WeaponCodingKeys: String, CodingKey {
     case _damageType = "damageType"
 }
 
-public protocol WeaponType {}
+public protocol WeaponType: Codable, CustomStringConvertible {}
 
-public enum BeamWeaponType: String, WeaponType, Codable, CustomStringConvertible {
+public enum BeamWeaponType: String, WeaponType {
     case BeamArray, DualBeamBank, OmnidirectionalBeamArray
 
     public var description: String {
@@ -40,7 +22,7 @@ public enum BeamWeaponType: String, WeaponType, Codable, CustomStringConvertible
     }
 }
 
-public enum CannonWeaponType: String, WeaponType, Codable, CustomStringConvertible {
+public enum CannonWeaponType: String, WeaponType {
     case Single, Dual, DualHeavy, Quad
 
     public var description: String {
@@ -53,7 +35,7 @@ public enum CannonWeaponType: String, WeaponType, Codable, CustomStringConvertib
     }
 }
 
-public enum TorpedoWeaponType: String, WeaponType, Codable, CustomStringConvertible {
+public enum TorpedoWeaponType: String, WeaponType {
     case Standard, WideAngle
 
     public var description: String {

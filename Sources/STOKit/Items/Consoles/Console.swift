@@ -1,1 +1,5 @@
-public protocol Console: Item, CustomStringConvertible, Codable {}
+// public protocol Console: Item, CustomStringConvertible, Codable {}
+
+internal protocol ConsoleBase {}
+
+open class Console: Item, ConsoleBase {}

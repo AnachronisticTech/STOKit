@@ -1,6 +1,6 @@
 public class AncientAntiprotonOmniBeamArray: BeamWeapon {
-    public init(_ mark: Mark, _ quality: Quality) {
-        super.init(.OmnidirectionalBeamArray, .Antiproton, mark, quality)
+    public convenience init(_ mark: Mark, _ quality: Quality) {
+        self.init(.OmnidirectionalBeamArray, .Antiproton, mark, quality)
     }
 
     internal required init(

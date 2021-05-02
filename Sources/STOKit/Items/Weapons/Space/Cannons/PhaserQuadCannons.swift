@@ -1,6 +1,6 @@
 public class PhaserQuadCannons: CannonWeapon {
-    public init(_ mark: Mark, _ quality: Quality) {
-        super.init(.Quad, .Phaser, mark, quality)
+    public convenience init(_ mark: Mark, _ quality: Quality) {
+        self.init(.Quad, .Phaser, mark, quality)
     }
 
     internal required init(

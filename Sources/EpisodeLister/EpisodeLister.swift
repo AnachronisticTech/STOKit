@@ -5,24 +5,7 @@ import SQLite
 @main
 struct EpisodeLister {
     static func main() {
-        // guard let db = try? getDatabase() else {
-        //     print("Could not get database")
-        //     return
-        // }
-        // let ships = Table("ships")
-        // let id = Expression<String>("id")
-        // do {
-        //     try db.run(ships.drop())
-        // } catch {
-        //     print("Could not delete table")
-        // }
-        // do {
-        //     try db.run(ships.create { table in
-        //         table.column(id, primaryKey: true)
-        //     })
-        // } catch {
-        //     print("Could not create table")
-        // }
+        characters()
         ships()
     }
 
@@ -94,12 +77,17 @@ struct EpisodeLister {
         }
         character.reputations[.Omega].set(xp: 7500)
         character.bridgeOfficers.append(jessica)
+        character.inventory[0] = BeamWeapon(.DualBeamBank, .Polaron, .II, .Uncommon)
+        character.inventory[1] = NeutroniumAlloy(.X, .Uncommon)
+        character.inventory[5] = BeamWeapon(.DualBeamBank, .Tetryon, .VI, .Rare)
+        character.inventory[6] = AncientAntiprotonOmniBeamArray(.XII, .VeryRare)
         character.save()
         guard let talia = PlayableCharacter.load("Talia") else { fatalError() }
-        print("eps: \(talia.journal.episodes.sorted())")
+        // print("eps: \(talia.journal.episodes.sorted())")
         print("reps: \(talia.reputations.sorted())")
         print("boffs: \(talia.bridgeOfficers)")
         print("completed: \(talia.journal.episodes.completed)")
+        print("inventory: \(talia.inventory)")
     }
 
     static func ships() {

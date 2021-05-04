@@ -46,9 +46,7 @@ public struct BridgeOfficer: Character {
         try container.encode(faction, forKey: .faction)
         try container.encode(career, forKey: .career)
     }
-}
-
-extension BridgeOfficer: CustomStringConvertible {
+    
     public var description: String {
         return "\(name) - \(faction) \(career)"
     }

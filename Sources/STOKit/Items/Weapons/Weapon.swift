@@ -1,6 +1,36 @@
 internal protocol WeaponBase {}
 
-open class Weapon: Item, WeaponBase {}
+open class Weapon: Item, WeaponBase {
+    typealias Keys = WeaponCodingKeys
+
+    internal class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
+        guard let className = try? container.decode(String.self, forKey: .class) else { return nil }
+
+        if 
+            BeamWeapon.specialTypes[className] != nil,
+            let weapon = BeamWeapon.decode(container: container) as? Self
+        {
+            return weapon
+        } else if 
+            CannonWeapon.specialTypes[className] != nil,
+            let weapon = CannonWeapon.decode(container: container) as? Self
+        {
+            return weapon
+        } else if 
+            KineticTorpedoWeapon.specialTypes[className] != nil,
+            let weapon = KineticTorpedoWeapon.decode(container: container) as? Self
+        {
+            return weapon
+        } else if 
+            EnergyTorpedoWeapon.specialTypes[className] != nil,
+            let weapon = EnergyTorpedoWeapon.decode(container: container) as? Self
+        {
+            return weapon
+        }
+
+        return nil
+    }
+}
 
 enum WeaponCodingKeys: String, CodingKey {
     case mark, quality, `class`

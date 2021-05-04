@@ -7,6 +7,7 @@ extension KineticTorpedoWeapon {
         }
     }()
     private static let _specialTypes: [KineticTorpedoWeapon.Type] = [
+        KineticTorpedoWeapon.self,
         PhotonTorpedo.self
     ]
 }

@@ -5,7 +5,15 @@ internal protocol ItemBase: Codable, CustomStringConvertible {
     var description: String { get }
 }
 
-open class Item: ItemBase {
+internal protocol Specializable {
+    associatedtype Keys: CodingKey
+
+    static func decode(container: KeyedDecodingContainer<Keys>) -> Self?
+}
+
+open class Item: ItemBase, Specializable {
+    typealias Keys = ItemCodingKeys
+
     public let mark: Mark
     public let quality: Quality
 
@@ -16,6 +24,10 @@ open class Item: ItemBase {
 
     public var description: String {
         return "Abstract item"
+    }
+
+    internal class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
+        return nil
     }
 }
 

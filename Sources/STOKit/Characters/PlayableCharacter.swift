@@ -10,6 +10,7 @@ public struct PlayableCharacter: Character {
     public var journal: Journal
     public var reputations: ReputationCollection
     public var bridgeOfficers: [BridgeOfficer]
+    public var inventory: Inventory
 
     public init(name: String, faction: Faction, career: Career) {
         self.identifier = UUID()
@@ -19,10 +20,13 @@ public struct PlayableCharacter: Character {
         self.journal = Journal(faction: faction)
         self.reputations = ReputationCollection()
         self.bridgeOfficers = []
+        self.inventory = Inventory()
     }
 
     enum CodingKeys: String, CodingKey {
-        case name, faction, career, journal, reputations, bridgeOfficers
+        case name, faction, career
+        case journal, reputations, bridgeOfficers
+        case inventory
         case identifier = "id"
     }
 
@@ -50,6 +54,7 @@ public struct PlayableCharacter: Character {
             bridgeOfficers.append(officer)
         }
         self.bridgeOfficers = bridgeOfficers
+        self.inventory = try container.decode(Inventory.self, forKey: .inventory)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -69,10 +74,10 @@ public struct PlayableCharacter: Character {
         try bridgeOfficers.forEach { officer in
             try boffs.encode(officer.identifier)
         }
-    }
-}
 
-extension PlayableCharacter: CustomStringConvertible {
+        try container.encode(inventory, forKey: .inventory)
+    }
+    
     public var description: String {
         return "\(name) - \(faction) \(career)"
     }

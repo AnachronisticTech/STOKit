@@ -121,7 +121,7 @@ open class Starship: StarshipBase {
                 try container.nestedContainer(
                     keyedBy: ComponentArrayCodingKeys.self,
                     forKey: consoleKey
-                )
+                ), forKey: consoleKey
             )
         }
 
@@ -152,40 +152,27 @@ open class Starship: StarshipBase {
                 keyedBy: WeaponCodingKeys.self,
                 forKey: key
             )
-            if let className = try? weaponContainer.decode(String.self, forKey: .class) {
-                if let type = BeamWeapon.specialTypes[className] {
-                    let weapon = try BeamWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                } else if let type = CannonWeapon.specialTypes[className] {
-                    let weapon = try CannonWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                } else if let type = KineticTorpedoWeapon.specialTypes[className] {
-                    let weapon = try KineticTorpedoWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                } else if let type = EnergyTorpedoWeapon.specialTypes[className] {
-                    let weapon = try EnergyTorpedoWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                }
-            } else if let weapon = try? container.decode(CannonWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(BeamWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(KineticTorpedoWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(EnergyTorpedoWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            }
+            setWeapon(slot: index+1, to: Weapon.decode(container: weaponContainer))
         }
     }
 
-    internal func decode(consolesContainer container: KeyedDecodingContainer<ComponentArrayCodingKeys>) throws {
-        func setConsole<C: Console>(slot index: Int, to console: C?) {
+    internal func decode(consolesContainer container: KeyedDecodingContainer<ComponentArrayCodingKeys>, forKey codingKey: CodingKeys) throws {
+        func setConsole<C: Console>(_ group: CodingKeys, slot index: Int, to console: C?) {
             guard let console = console else { return }
-            if let console = console as? EngineeringConsole {
+            if
+                case .engConsoles = group,
+                let console = console as? EngineeringConsole
+            {
                 setEngineeringConsole(slot: index, to: console)
-            } else if let console = console as? ScienceConsole {
+            } else if
+                case .sciConsoles = group,
+                let console = console as? ScienceConsole
+            {
                 setScienceConsole(slot: index, to: console)
-            } else if let console = console as? TacticalConsole {
+            } else if
+                case .tacConsoles = group,
+                let console = console as? TacticalConsole
+            {
                 setTacticalConsole(slot: index, to: console)
             }
         }
@@ -197,18 +184,7 @@ open class Starship: StarshipBase {
                 keyedBy: ItemCodingKeys.self,
                 forKey: key
             )
-            if let className = try? consoleContainer.decode(String.self, forKey: .class) {
-                if let type = EngineeringConsole.specialTypes[className] {
-                    let console = try EngineeringConsole.decode(from: consoleContainer, as: type)
-                    setConsole(slot: index+1, to: console)
-                } else if let type = ScienceConsole.specialTypes[className] {
-                    let console = try ScienceConsole.decode(from: consoleContainer, as: type)
-                    setConsole(slot: index+1, to: console)
-                } else if let type = TacticalConsole.specialTypes[className] {
-                    let console = try TacticalConsole.decode(from: consoleContainer, as: type)
-                    setConsole(slot: index+1, to: console)
-                }
-            }
+            setConsole(codingKey, slot: index+1, to: Console.decode(container: consoleContainer))
         }
     }
 }

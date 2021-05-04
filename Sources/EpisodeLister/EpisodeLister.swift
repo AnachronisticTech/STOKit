@@ -79,6 +79,7 @@ struct EpisodeLister {
         character.bridgeOfficers.append(jessica)
         character.inventory[0] = BeamWeapon(.DualBeamBank, .Polaron, .II, .Uncommon)
         character.inventory[1] = NeutroniumAlloy(.X, .Uncommon)
+        character.inventory[2] = PositronDeflector(.II, .UltraRare)
         character.inventory[5] = BeamWeapon(.DualBeamBank, .Tetryon, .VI, .Rare)
         character.inventory[6] = AncientAntiprotonOmniBeamArray(.XII, .VeryRare)
         character.save()

@@ -26,11 +26,32 @@ open class Item: ItemBase, Specializable {
         return "Abstract item"
     }
 
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: Keys.self)
+        try container.encode(String(describing: type(of: self)), forKey: .class)
+        try container.encode(mark, forKey: .mark)
+        try container.encode(quality, forKey: .quality)
+    }
+    
     internal class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
+        // Modify this function when adding new item types
+        if let item = Weapon.decode(container: container) as? Self {
+            return item
+        } else if let item = Console.decode(container: container) as? Self {
+            return item
+        } else if let item = Deflector.decode(container: container) as? Self {
+            return item
+        }
+
         return nil
     }
 }
 
 enum ItemCodingKeys: String, CodingKey {
+    // Keys for all items
     case mark, quality, `class`
+
+    // Keys unique to weapons
+    case _weaponType = "weaponType"
+    case _damageType = "damageType"
 }

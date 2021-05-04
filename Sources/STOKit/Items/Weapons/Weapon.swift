@@ -1,9 +1,7 @@
 internal protocol WeaponBase {}
 
 open class Weapon: Item, WeaponBase {
-    typealias Keys = WeaponCodingKeys
-
-    internal class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
+    internal override class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
         guard let className = try? container.decode(String.self, forKey: .class) else { return nil }
 
         if 
@@ -30,12 +28,6 @@ open class Weapon: Item, WeaponBase {
 
         return nil
     }
-}
-
-enum WeaponCodingKeys: String, CodingKey {
-    case mark, quality, `class`
-    case _weaponType = "weaponType"
-    case _damageType = "damageType"
 }
 
 public protocol WeaponType: Codable, CustomStringConvertible {}

@@ -16,12 +16,6 @@ public class AncientAntiprotonOmniBeamArray: BeamWeapon {
         fatalError("This shouldn't ever be used")
     }
 
-    public override func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: WeaponCodingKeys.self)
-        try container.encode(String(describing: type(of: self)), forKey: .class)
-        try super.encode(to: encoder)
-    }
-
     public override var description: String {
         return "Ancient \(weaponType) - Mk \(mark) \(quality)"
     }

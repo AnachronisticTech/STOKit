@@ -25,7 +25,7 @@ open class BeamWeapon: Weapon {
     }
 
     public required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: WeaponCodingKeys.self)
+        let container = try decoder.container(keyedBy: Keys.self)
         self._weaponType = try container.decode(BeamWeaponType.self, forKey: ._weaponType)
         self._damageType = try container.decode(EnergyDamageType.self, forKey: ._damageType)
         super.init(
@@ -35,14 +35,13 @@ open class BeamWeapon: Weapon {
     }
 
     public override func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: WeaponCodingKeys.self)
-        try container.encode(String(describing: type(of: self)), forKey: .class)
+        var container = encoder.container(keyedBy: Keys.self)
         try container.encode(_weaponType, forKey: ._weaponType)
         try container.encode(_damageType, forKey: ._damageType)
         try super.encode(to: encoder)
     }
 
-    private static func decode<W: BeamWeapon>(from container: KeyedDecodingContainer<WeaponCodingKeys>, as type: W.Type) throws -> W {
+    private static func decode<W: BeamWeapon>(from container: KeyedDecodingContainer<Keys>, as type: W.Type) throws -> W {
         let mark = try container.decode(Mark.self, forKey: .mark)
         let quality = try container.decode(Quality.self, forKey: .quality)
         let weaponType = try container.decode(BeamWeaponType.self, forKey: ._weaponType)

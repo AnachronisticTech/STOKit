@@ -11,9 +11,20 @@ open class Deflector: Item {
         return "- Mk \(mark) \(quality)"
     }
 
-    internal static func decode<C: Deflector>(from container: KeyedDecodingContainer<ItemCodingKeys>, as type: C.Type) throws -> C {
+    private static func decode<C: Deflector>(from container: KeyedDecodingContainer<Keys>, as type: C.Type) throws -> C {
         let mark = try container.decode(Mark.self, forKey: .mark)
         let quality = try container.decode(Quality.self, forKey: .quality)
         return type.init(mark: mark, quality: quality)
+    }
+
+    internal override class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
+        guard
+            let className = try? container.decode(String.self, forKey: .class),
+            let type = specialTypes[className],
+            let item = try? decode(from: container, as: type) as? Self
+        else {
+            return nil
+        }
+        return item
     }
 }

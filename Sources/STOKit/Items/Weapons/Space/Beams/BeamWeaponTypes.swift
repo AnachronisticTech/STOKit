@@ -7,6 +7,7 @@ extension BeamWeapon {
         }
     }()
     private static let _specialTypes: [BeamWeapon.Type] = [
+        BeamWeapon.self,
         AncientAntiprotonOmniBeamArray.self
     ]
 }

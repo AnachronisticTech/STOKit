@@ -1,19 +1,30 @@
-open class Deflector: Item, Codable, CustomStringConvertible {
-    public let mark: Mark
-    public let quality: Quality
-
-    public required init(_ mark: Mark, _ quality: Quality) {
-        self.mark = mark
-        self.quality = quality
+open class Deflector: Item {
+    public required override init(mark: Mark, quality: Quality) {
+        super.init(mark: mark, quality: quality)
     }
 
-    public var description: String {
+    public required init(from decoder: Decoder) throws {
+        fatalError("This shouldn't ever be used")
+    }
+
+    public override var description: String {
         return "- Mk \(mark) \(quality)"
     }
 
-    internal static func decode<C: Deflector>(from container: KeyedDecodingContainer<ItemCodingKeys>, as type: C.Type) throws -> C {
+    private static func decode<C: Deflector>(from container: KeyedDecodingContainer<Keys>, as type: C.Type) throws -> C {
         let mark = try container.decode(Mark.self, forKey: .mark)
         let quality = try container.decode(Quality.self, forKey: .quality)
-        return type.init(mark, quality)
+        return type.init(mark: mark, quality: quality)
+    }
+
+    internal override class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
+        guard
+            let className = try? container.decode(String.self, forKey: .class),
+            let type = specialTypes[className],
+            let item = try? decode(from: container, as: type) as? Self
+        else {
+            return nil
+        }
+        return item
     }
 }

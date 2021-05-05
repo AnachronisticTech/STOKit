@@ -44,22 +44,7 @@ extension ComponentArray: Encodable {
                 try container.encodeNil(forKey: key)
                 continue
             }
-            switch component {
-                case is EngineeringConsole:
-                    try container.encode(component as! EngineeringConsole, forKey: key)
-                case is ScienceConsole:
-                    try container.encode(component as! ScienceConsole, forKey: key)
-                case is TacticalConsole:
-                    try container.encode(component as! TacticalConsole, forKey: key)
-                case is BeamWeapon:
-                    try container.encode(component as! BeamWeapon, forKey: key)
-                case is CannonWeapon:
-                    try container.encode(component as! CannonWeapon, forKey: key)
-                case is KineticTorpedoWeapon:
-                    try container.encode(component as! KineticTorpedoWeapon, forKey: key)
-                default:
-                    try container.encodeNil(forKey: key)
-            }
+            try container.encode(component, forKey: key)
         }
     }
 }

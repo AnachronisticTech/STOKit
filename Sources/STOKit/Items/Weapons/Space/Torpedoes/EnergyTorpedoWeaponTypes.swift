@@ -7,5 +7,6 @@ extension EnergyTorpedoWeapon {
         }
     }()
     private static let _specialTypes: [EnergyTorpedoWeapon.Type] = [
+        EnergyTorpedoWeapon.self,
     ]
 }

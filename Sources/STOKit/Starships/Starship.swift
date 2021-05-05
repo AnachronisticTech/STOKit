@@ -104,112 +104,55 @@ open class Starship: StarshipBase {
     }
 
     internal func decodeLoadout(from container: KeyedDecodingContainer<CodingKeys>) throws {
-        let weaponKeys: [CodingKeys] = [.foreWeapons, .rearWeapons]
-        for weaponKey in weaponKeys {
-            try decode(weaponsContainer:
+        let groupKeys: [CodingKeys] = [.engConsoles, .sciConsoles, .tacConsoles, .foreWeapons, .rearWeapons]
+        for group in groupKeys {
+            try decode(container:
                 try container.nestedContainer(
                     keyedBy: ComponentArrayCodingKeys.self,
-                    forKey: weaponKey
-                ),
-                weaponKey == .rearWeapons
+                    forKey: group
+                ), forKey: group
             )
         }
 
-        let consoleKeys: [CodingKeys] = [.engConsoles, .sciConsoles, .tacConsoles]
-        for consoleKey in consoleKeys {
-            try decode(consolesContainer:
-                try container.nestedContainer(
-                    keyedBy: ComponentArrayCodingKeys.self,
-                    forKey: consoleKey
-                )
-            )
-        }
-
-        if
-            let deflectorContainer = try? container.nestedContainer(
-                keyedBy: ItemCodingKeys.self,
-                forKey: .deflector
-            ),
-            let className = try? deflectorContainer.decode(String.self, forKey: .class),
-            let type = Deflector.specialTypes[className]
-        {
-            deflector = try Deflector.decode(from: deflectorContainer, as: type.self)
+        if let deflectorContainer = try? container.nestedContainer(
+            keyedBy: ItemCodingKeys.self,
+            forKey: .deflector
+        ) {
+            deflector = Deflector.decode(container: deflectorContainer)
         }
     }
 
-    internal func decode(
-        weaponsContainer container: KeyedDecodingContainer<ComponentArrayCodingKeys>, 
-        _ rear: Bool = false
-    ) throws {
-        func setWeapon<W: Weapon>(slot index: Int, to weapon: W?) {
-            rear ? setRearWeapon(slot: index, to: weapon) : setForeWeapon(slot: index, to: weapon)
-        }
-
+    private func decode(container: KeyedDecodingContainer<ComponentArrayCodingKeys>, forKey group: CodingKeys) throws {
         for (index, key) in ComponentArrayCodingKeys.allCases.enumerated() {
             if !container.allKeys.contains(key) { continue }
             if try container.decodeNil(forKey: key) { continue }
-            let weaponContainer = try container.nestedContainer(
-                keyedBy: WeaponCodingKeys.self,
-                forKey: key
-            )
-            if let className = try? weaponContainer.decode(String.self, forKey: .class) {
-                if let type = BeamWeapon.specialTypes[className] {
-                    let weapon = try BeamWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                } else if let type = CannonWeapon.specialTypes[className] {
-                    let weapon = try CannonWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                } else if let type = KineticTorpedoWeapon.specialTypes[className] {
-                    let weapon = try KineticTorpedoWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                } else if let type = EnergyTorpedoWeapon.specialTypes[className] {
-                    let weapon = try EnergyTorpedoWeapon.decode(from: weaponContainer, as: type)
-                    setWeapon(slot: index+1, to: weapon)
-                }
-            } else if let weapon = try? container.decode(CannonWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(BeamWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(KineticTorpedoWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            } else if let weapon = try? container.decode(EnergyTorpedoWeapon.self, forKey: key) {
-                setWeapon(slot: index+1, to: weapon)
-            }
-        }
-    }
-
-    internal func decode(consolesContainer container: KeyedDecodingContainer<ComponentArrayCodingKeys>) throws {
-        func setConsole<C: Console>(slot index: Int, to console: C?) {
-            if let console = console {
-                if let console = console as? EngineeringConsole {
-                    setEngineeringConsole(slot: index, to: console)
-                } else if let console = console as? ScienceConsole {
-                    setScienceConsole(slot: index, to: console)
-                } else if let console = console as? TacticalConsole {
-                    setTacticalConsole(slot: index, to: console)
-                }
-            }
-        }
-
-        for (index, key) in ComponentArrayCodingKeys.allCases.enumerated() {
-            if !container.allKeys.contains(key) { continue }
-            if try container.decodeNil(forKey: key) { continue }
-            let consoleContainer = try container.nestedContainer(
+            let itemContainer = try container.nestedContainer(
                 keyedBy: ItemCodingKeys.self,
                 forKey: key
             )
-            if let className = try? consoleContainer.decode(String.self, forKey: .class) {
-                if let type = EngineeringConsole.specialTypes[className] {
-                    let console = try EngineeringConsole.decode(from: consoleContainer, as: type)
-                    setConsole(slot: index+1, to: console)
-                } else if let type = ScienceConsole.specialTypes[className] {
-                    let console = try ScienceConsole.decode(from: consoleContainer, as: type)
-                    setConsole(slot: index+1, to: console)
-                } else if let type = TacticalConsole.specialTypes[className] {
-                    let console = try TacticalConsole.decode(from: consoleContainer, as: type)
-                    setConsole(slot: index+1, to: console)
-                }
-            }
+            setItem(in: group, slot: index+1, to: Item.decode(container: itemContainer))
+        }
+    }
+
+    private func setItem(in group: CodingKeys, slot index: Int, to item: Item?) {
+        guard let item = item else { return }
+        switch group {
+            case .engConsoles:
+                guard let item = item as? Console else { return }
+                setEngineeringConsole(slot: index, to: item)
+            case .sciConsoles:
+                guard let item = item as? Console else { return }
+                setScienceConsole(slot: index, to: item)
+            case .tacConsoles:
+                guard let item = item as? Console else { return }
+                setTacticalConsole(slot: index, to: item)
+            case .foreWeapons:
+                guard let item = item as? Weapon else { return }
+                setForeWeapon(slot: index, to: item)
+            case .rearWeapons:
+                guard let item = item as? Weapon else { return }
+                setRearWeapon(slot: index, to: item)
+            default: return
         }
     }
 }

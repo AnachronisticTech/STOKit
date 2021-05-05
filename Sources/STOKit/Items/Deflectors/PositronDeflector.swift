@@ -1,6 +1,10 @@
 public class PositronDeflector: Deflector {
-    public required init(_ mark: Mark, _ quality: Quality) {
-        super.init(mark, quality)
+    public convenience init(_ mark: Mark, _ quality: Quality) {
+        self.init(mark: mark, quality: quality)
+    }
+
+    internal required init(mark: Mark, quality: Quality) {
+        super.init(mark: mark, quality: quality)
     }
 
     public required init(from decoder: Decoder) throws {

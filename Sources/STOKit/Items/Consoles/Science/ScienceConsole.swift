@@ -3,12 +3,12 @@ open class ScienceConsole: Console {
         super.init(mark: mark, quality: quality)
     }
 
-    public override var description: String {
-        return "- Mk \(mark) \(quality)"
-    }
-
     public required init(from decoder: Decoder) throws {
         fatalError("You cannot instantiate an abstract console")
+    }
+
+    public override var description: String {
+        return "- Mk \(mark) \(quality)"
     }
 
     internal static func decode<C: ScienceConsole>(from container: KeyedDecodingContainer<Keys>, as type: C.Type) throws -> C {

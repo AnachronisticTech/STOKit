@@ -1,5 +1,5 @@
 public class PhaserQuadCannons: CannonWeapon {
-    public convenience init(_ mark: Mark, _ quality: Quality) {
+    public convenience init(_ mark: Mark, _ quality: Quality = .VeryRare) {
         self.init(.Quad, .Phaser, mark, quality)
     }
 

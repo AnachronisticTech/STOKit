@@ -1,5 +1,5 @@
 public class PhotonTorpedo: KineticTorpedoWeapon {
-    public convenience init(_ mark: Mark, _ quality: Quality) {
+    public convenience init(_ mark: Mark = .I, _ quality: Quality = .Common) {
         self.init(.Standard, .Photon, mark, quality)
     }
 

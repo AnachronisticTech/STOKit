@@ -1,5 +1,5 @@
-public class PositronDeflector: Deflector {
-    public required init(_ mark: Mark = .I, _ quality: Quality = .Common) {
+public class MACOGravitonDeflector: Deflector {
+    public required init(_ mark: Mark = .XII, _ quality: Quality = .VeryRare) {
         super.init(mark, quality)
     }
 
@@ -8,6 +8,6 @@ public class PositronDeflector: Deflector {
     }
 
     public override var description: String {
-        return "Positron \(super.description)"
+        return "M.A.C.O. Graviton \(super.description)"
     }
 }

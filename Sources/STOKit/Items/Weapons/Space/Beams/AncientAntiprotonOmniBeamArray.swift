@@ -1,5 +1,5 @@
 public class AncientAntiprotonOmniBeamArray: BeamWeapon {
-    public convenience init(_ mark: Mark, _ quality: Quality) {
+    public convenience init(_ mark: Mark = .XII, _ quality: Quality = .VeryRare) {
         self.init(.OmnidirectionalBeamArray, .Antiproton, mark, quality)
     }
 

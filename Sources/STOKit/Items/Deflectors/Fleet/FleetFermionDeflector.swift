@@ -1,5 +1,5 @@
-public class PositronDeflector: Deflector {
-    public required init(_ mark: Mark = .I, _ quality: Quality = .Common) {
+public class FleetFermionDeflector: Deflector {
+    public required init(_ mark: Mark = .XII, _ quality: Quality = .UltraRare) {
         super.init(mark, quality)
     }
 
@@ -8,6 +8,6 @@ public class PositronDeflector: Deflector {
     }
 
     public override var description: String {
-        return "Positron \(super.description)"
+        return "Elite Fleet Fermion \(super.description)"
     }
 }

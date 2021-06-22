@@ -13,9 +13,9 @@ struct EpisodeLister {
         print("Getting episodes")
         let episodes = Episode.all()
         for faction in Faction.allCases {
-            print("Story arcs for \(faction.description)")
+            print("Story arcs for \(faction)")
             for arc in faction.arcs.sorted() {
-                print("\t\(arc.description): \(episodes.filter({ $0.arc == arc }).sorted().map({ $0.name }))")
+                print("\t\(arc): \(episodes.filter({ $0.arc == arc }).sorted().map({ $0.name }))")
             }
         }
     }

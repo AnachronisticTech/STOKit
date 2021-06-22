@@ -60,6 +60,7 @@ open class Starship: StarshipBase {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(name, forKey: .name)
+        try container.encode(String(describing: type(of: self)), forKey: .class)
         try container.encode(foreWeapons, forKey: .foreWeapons)
         try container.encode(rearWeapons, forKey: .rearWeapons)
         try container.encode(engConsoles, forKey: .engConsoles)

@@ -1,7 +1,5 @@
 public class AssaultCruiser: Starship {
-    public override var className: String {
-        "Assault Cruiser"
-    }
+    public override var className: String { "Assault Cruiser" }
 
     public init(_ name: String) {
         super.init(
@@ -26,11 +24,5 @@ public class AssaultCruiser: Starship {
             tacConsoles: 3
         )
         try super.decodeLoadout(from: container)
-    }
-
-    public override func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: Starship.CodingKeys.self)
-        try container.encode(String(describing: type(of: self)), forKey: .class)
-        try super.encode(to: encoder)
     }
 }

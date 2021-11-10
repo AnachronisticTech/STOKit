@@ -41,3 +41,7 @@ let package = Package(
         ),
     ]
 )
+
+#if os(macOS)
+    package.platforms = [.macOS(.v10_15)]
+#endif

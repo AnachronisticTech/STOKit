@@ -18,6 +18,8 @@ public struct ComponentArray<Component: Item> {
             components[index] = newValue
         }
     }
+
+    public var count: Int { components.count }
 }
 
 extension ComponentArray: CustomStringConvertible {

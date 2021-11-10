@@ -213,4 +213,19 @@ extension Starship {
             fatalError("Could not decode ship named \(name)")
         }
     }
+
+    public static func load(from string: String) -> some Starship {
+        let decoder = JSONDecoder()
+        if
+            let data = try? string.data(using: .utf8),
+            let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let shipClass = dict["class"] as? String,
+            let shipType = Starship.specialTypes[shipClass],
+            let ship = try? decoder.decode(shipType, from: data)
+        {
+            return ship
+        } else {
+            fatalError("Could not decode ship from provided string")
+        }
+    }
 }

@@ -35,12 +35,15 @@ open class Item: ItemBase, Specializable {
     
     internal class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
         // Modify this function when adding new item types
-        if let item = Weapon.decode(container: container) as? Self {
-            return item
-        } else if let item = Console.decode(container: container) as? Self {
-            return item
-        } else if let item = Deflector.decode(container: container) as? Self {
-            return item
+        let types: [Item.Type] = [
+            Weapon.self,
+            Console.self,
+            Deflector.self
+        ]
+        for subtype in types {
+            if let item = subtype.decode(container: container) as? Self {
+                return item
+            }
         }
 
         return nil

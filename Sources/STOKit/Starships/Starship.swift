@@ -217,7 +217,7 @@ extension Starship {
     public static func load(from string: String) -> some Starship {
         let decoder = JSONDecoder()
         if
-            let data = try? string.data(using: .utf8),
+            let data = string.data(using: .utf8),
             let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
             let shipClass = dict["class"] as? String,
             let shipType = Starship.specialTypes[shipClass],

@@ -9,6 +9,7 @@ extension Starship {
     
     private static let _specialTypes: [Starship.Type] = [
         LightCruiser.self,
+        PatrolEscortRefit.self,
         AssaultCruiser.self,
         FleetImperialIntelAssaultCruiserT6.self
     ]

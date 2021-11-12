@@ -69,39 +69,87 @@ open class Starship: StarshipBase {
         try container.encode(deflector, forKey: .deflector)
     }
 
-    public func setForeWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
-        if let weapon = weapon as? CannonWeapon {
-            if canEquipDualCannons {
-                foreWeapons[index-1] = weapon
-            } else if case .Single = weapon.weaponType as! CannonWeaponType {
-                foreWeapons[index-1] = weapon
-            }
-        } else {
-            foreWeapons[index-1] = weapon
-        }
+    internal func setForeWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
+        foreWeapons[index-1] = weapon
     }
 
-    public func setRearWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
-        if weapon as? CannonWeapon != nil { return }
-        if let weapon = weapon as? BeamWeapon {
-            if case .DualBeamBank = weapon.weaponType as! BeamWeaponType { return }
-        }
+    internal func setRearWeapon<W: Weapon>(slot index: Int, to weapon: W? = nil) {
         rearWeapons[index-1] = weapon
     }
 
-    public func setEngineeringConsole<C: Console>(slot index: Int, to console: C? = nil) {
+    internal func setEngineeringConsole<C: Console>(slot index: Int, to console: C? = nil) {
         guard let console = console as? EngineeringConsole else { return }
         engConsoles[index-1] = console
     }
 
-    public func setScienceConsole<C: Console>(slot index: Int, to console: C? = nil) {
+    internal func setScienceConsole<C: Console>(slot index: Int, to console: C? = nil) {
         guard let console = console as? ScienceConsole else { return }
         sciConsoles[index-1] = console
     }
 
-    public func setTacticalConsole<C: Console>(slot index: Int, to console: C? = nil) {
+    internal func setTacticalConsole<C: Console>(slot index: Int, to console: C? = nil) {
         guard let console = console as? TacticalConsole else { return }
         tacConsoles[index-1] = console
+    }
+
+    public subscript(fore index: Int) -> Weapon? {
+        get {
+            guard (0..<foreWeapons.count).contains(index - 1) else { return nil }
+            return foreWeapons[index - 1]
+        }
+        set {
+            guard (0..<foreWeapons.count).contains(index - 1) else { return }
+            guard newValue == nil || newValue!.isForeWeapon else { return }
+            foreWeapons[index - 1] = newValue
+        }
+    }
+
+    public subscript(rear index: Int) -> Weapon? {
+        get {
+            guard (0..<rearWeapons.count).contains(index - 1) else { return nil }
+            return rearWeapons[index - 1]
+        }
+        set {
+            guard (0..<foreWeapons.count).contains(index - 1) else { return }
+            guard newValue == nil || newValue!.isRearWeapon else { return }
+            rearWeapons[index - 1] = newValue
+        }
+    }
+
+    public subscript(eng index: Int) -> Console? {
+        get {
+            guard (0..<engConsoles.count).contains(index - 1) else { return nil }
+            return engConsoles[index - 1]
+        }
+        set {
+            guard (0..<engConsoles.count).contains(index - 1) else { return }
+            guard let console = newValue as? EngineeringConsole else { return }
+            engConsoles[index - 1] = console
+        }
+    }
+
+    public subscript(sci index: Int) -> Console? {
+        get {
+            guard (0..<sciConsoles.count).contains(index - 1) else { return nil }
+            return sciConsoles[index - 1]
+        }
+        set {
+            guard (0..<sciConsoles.count).contains(index - 1) else { return }
+            guard let console = newValue as? ScienceConsole else { return }
+            sciConsoles[index - 1] = console
+        }
+    }
+
+    public subscript(tac index: Int) -> Console? {
+        get {
+            guard (0..<tacConsoles.count).contains(index - 1) else { return nil }
+            return tacConsoles[index - 1]
+        }
+        set {
+            guard (0..<tacConsoles.count).contains(index - 1) else { return }
+            guard let console = newValue as? TacticalConsole else { return }
+            tacConsoles[index - 1] = console
+        }
     }
 
     internal func decodeLoadout(from container: KeyedDecodingContainer<CodingKeys>) throws {
@@ -140,19 +188,19 @@ open class Starship: StarshipBase {
         switch group {
             case .engConsoles:
                 guard let item = item as? Console else { return }
-                setEngineeringConsole(slot: index, to: item)
+                self[eng: index] = item
             case .sciConsoles:
                 guard let item = item as? Console else { return }
-                setScienceConsole(slot: index, to: item)
+                self[sci: index] = item
             case .tacConsoles:
                 guard let item = item as? Console else { return }
-                setTacticalConsole(slot: index, to: item)
+                self[tac: index] = item
             case .foreWeapons:
                 guard let item = item as? Weapon else { return }
-                setForeWeapon(slot: index, to: item)
+                self[fore: index] = item
             case .rearWeapons:
                 guard let item = item as? Weapon else { return }
-                setRearWeapon(slot: index, to: item)
+                self[rear: index] = item
             default: return
         }
     }

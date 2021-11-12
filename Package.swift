@@ -42,6 +42,6 @@ let package = Package(
     ]
 )
 
-#if os(macOS)
-    package.platforms = [.macOS(.v10_15)]
+#if os(macOS) || os(iOS)
+package.platforms = [.macOS(.v10_15), .iOS(.v13)]
 #endif

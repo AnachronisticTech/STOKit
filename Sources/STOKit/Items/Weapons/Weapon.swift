@@ -1,6 +1,12 @@
-internal protocol WeaponBase {}
+internal protocol WeaponBase {
+    var isForeWeapon: Bool { get }
+    var isRearWeapon: Bool { get }
+}
 
 open class Weapon: Item, WeaponBase {
+    var isForeWeapon: Bool { true }
+    var isRearWeapon: Bool { true }
+
     internal override class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
         guard let className = try? container.decode(String.self, forKey: .class) else { return nil }
 

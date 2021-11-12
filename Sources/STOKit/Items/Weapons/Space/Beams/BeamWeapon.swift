@@ -9,6 +9,13 @@ open class BeamWeapon: Weapon {
         _damageType
     }
 
+    override var isRearWeapon: Bool {
+        switch _weaponType {
+            case .DualBeamBank: return false
+            default: return true
+        }
+    }
+
     public required init(
         _ weaponType: BeamWeaponType, 
         _ damageType: EnergyDamageType, 

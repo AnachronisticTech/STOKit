@@ -8,6 +8,7 @@ extension CannonWeapon {
     }()
     private static let _specialTypes: [CannonWeapon.Type] = [
         CannonWeapon.self,
-        PhaserQuadCannons.self
+        PhaserQuadCannons.self,
+        TempestTailGun.self
     ]
 }

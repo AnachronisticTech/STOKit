@@ -9,6 +9,8 @@ open class CannonWeapon: Weapon {
         _damageType
     }
 
+    override var isRearWeapon: Bool { false }
+
     public required init(
         _ weaponType: CannonWeaponType, 
         _ damageType: EnergyDamageType, 

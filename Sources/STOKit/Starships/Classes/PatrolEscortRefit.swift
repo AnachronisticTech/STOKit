@@ -14,7 +14,7 @@ public class PatrolEscortRefit: Starship {
             sciConsoles: 2,
             tacConsoles: 5
         )
-        setRearWeapon(slot: 4, to: TempestTailGun(.XII, .Epic))
+        setRearWeapon(slot: 4, to: TempestTailGun())
     }
 
     public required init(from decoder: Decoder) throws {
@@ -29,7 +29,7 @@ public class PatrolEscortRefit: Starship {
             tacConsoles: 5
         )
         try super.decodeLoadout(from: container)
-        setRearWeapon(slot: 4, to: TempestTailGun(.XII, .Epic))
+        setRearWeapon(slot: 4, to: TempestTailGun())
     }
 
     public override subscript(rear index: Int) -> Weapon? {

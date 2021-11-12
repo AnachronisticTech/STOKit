@@ -2,7 +2,7 @@ public class TempestTailGun: CannonWeapon {
     override var isForeWeapon: Bool { false }
     override var isRearWeapon: Bool { true }
 
-    public convenience init(_ mark: Mark, _ quality: Quality = .VeryRare) {
+    public convenience init(_ mark: Mark = .Infinity, _ quality: Quality = .Epic) {
         self.init(.Dual, .Phaser, mark, quality)
     }
 

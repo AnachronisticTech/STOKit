@@ -4,9 +4,9 @@ public enum Quality: String, CustomStringConvertible, Codable {
 
     public var description: String {
         switch self {
-            case .Common, .Uncommon, .Rare, .Epic: return self.rawValue
             case .VeryRare: return "Very Rare"
             case .UltraRare: return "Ultra Rare"
+            default: return rawValue
         }
     }
 }

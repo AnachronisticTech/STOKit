@@ -1,6 +1,9 @@
-open class Deflector: Item {
+open class Deflector: Item, Markable {
+    public var mark: Mark
+
     public required init(_ mark: Mark = .I, _ quality: Quality = .Common) {
-        super.init(mark: mark, quality: quality)
+        self.mark = mark
+        super.init(quality: quality)
     }
 
     public required init(from decoder: Decoder) throws {
@@ -8,7 +11,7 @@ open class Deflector: Item {
     }
 
     public override var description: String {
-        return "Deflector Array - Mk \(mark) \(quality)"
+        return "Deflector Array - \(mark) \(quality)"
     }
 
     private static func decode<C: Deflector>(from container: KeyedDecodingContainer<Keys>, as type: C.Type) throws -> C {

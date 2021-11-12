@@ -20,6 +20,6 @@ public class TempestTailGun: CannonWeapon {
     }
 
     public override var description: String {
-        return "Tempest Tail Gun - Mk \(mark) \(quality)"
+        return "Tempest Tail Gun - \(mark) \(quality)"
     }
 }

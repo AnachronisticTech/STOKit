@@ -23,7 +23,7 @@ open class CannonWeapon: Weapon {
     }
 
     public override var description: String {
-        return "\(damageType) \(weaponType) - Mk \(mark) \(quality)"
+        return "\(damageType) \(weaponType) - \(mark) \(quality)"
     }
 
     public required init(from decoder: Decoder) throws {

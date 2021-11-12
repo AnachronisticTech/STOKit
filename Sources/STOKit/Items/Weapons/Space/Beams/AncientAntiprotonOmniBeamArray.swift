@@ -17,6 +17,6 @@ public class AncientAntiprotonOmniBeamArray: BeamWeapon {
     }
 
     public override var description: String {
-        return "Ancient \(weaponType) - Mk \(mark) \(quality)"
+        return "Ancient \(weaponType) - \(mark) \(quality)"
     }
 }

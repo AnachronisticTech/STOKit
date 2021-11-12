@@ -21,7 +21,7 @@ open class KineticTorpedoWeapon: Weapon {
     }
 
     public override var description: String {
-        return "\(weaponType)\(damageType) Torpedo Launcher - Mk \(mark) \(quality)"
+        return "\(weaponType)\(damageType) Torpedo Launcher - \(mark) \(quality)"
     }
 
     public required init(from decoder: Decoder) throws {

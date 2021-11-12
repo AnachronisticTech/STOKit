@@ -3,9 +3,20 @@ internal protocol WeaponBase {
     var isRearWeapon: Bool { get }
 }
 
-open class Weapon: Item, WeaponBase {
+open class Weapon: Item, WeaponBase, Markable {
     var isForeWeapon: Bool { true }
     var isRearWeapon: Bool { true }
+
+    public var mark: Mark
+
+    init(mark: Mark, quality: Quality) {
+        self.mark = mark
+        super.init(quality: quality)
+    }
+
+    public required init(from decoder: Decoder) throws {
+        fatalError("You cannot instantiate an abstract weapon")
+    }
 
     internal override class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
         guard let className = try? container.decode(String.self, forKey: .class) else { return nil }

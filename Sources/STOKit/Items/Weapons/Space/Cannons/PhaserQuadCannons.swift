@@ -17,6 +17,6 @@ public class PhaserQuadCannons: CannonWeapon {
     }
 
     public override var description: String {
-        return "\(damageType) \(weaponType) - Mk \(mark) \(quality)"
+        return "\(damageType) \(weaponType) - \(mark) \(quality)"
     }
 }

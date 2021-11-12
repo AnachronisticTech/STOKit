@@ -1,6 +1,17 @@
 internal protocol ConsoleBase {}
 
-open class Console: Item, ConsoleBase {
+open class Console: Item, ConsoleBase, Markable {
+    public var mark: Mark
+
+    init(mark: Mark, quality: Quality) {
+        self.mark = mark
+        super.init(quality: quality)
+    }
+
+    public required init(from decoder: Decoder) throws {
+        fatalError("You cannot instantiate an abstract console")
+    }
+
     internal override class func decode(container: KeyedDecodingContainer<Keys>) -> Self? {
         guard let className = try? container.decode(String.self, forKey: .class) else { return nil }
 
